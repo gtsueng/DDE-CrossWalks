@@ -583,7 +583,7 @@
     {
       "@id": "crosswalks:includesProperty",
       "@type": "rdf:Property",
-      "rdfs:comment": "Properties that are included in the cross walk (ie - are mapped to different schemas)",
+      "rdfs:comment": "Properties that are included in the cross walk (ie - are mapped to different schemas).",
       "rdfs:label": "includesProperty",
       "schema:domainIncludes": {
         "@id": "crosswalks:MetadataCrossWalk"
@@ -597,7 +597,7 @@
     {
       "@id": "crosswalks:sameAs",
       "@type": "rdf:Property",
-      "rdfs:comment": "A URL or metadata object that unambiguously identifies the item",
+      "rdfs:comment": "A URL or metadata object that unambiguously identifies the item.",
       "rdfs:label": "sameAs",
       "schema:domainIncludes": {
         "@id": "crosswalks:MetadataCrossWalk"
@@ -605,6 +605,31 @@
       "schema:rangeIncludes": [
         {
           "@id": "schema:Property"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "crosswalks:isBasisFor",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A resource which is derived from this work or is a modification or adaption of this work. Inverse of isBasedOn.",
+      "rdfs:label": "isBasisFor",
+      "schema:domainIncludes": [
+        {
+          "@id": "crosswalks:MetadataCrossWalk"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:URL"
