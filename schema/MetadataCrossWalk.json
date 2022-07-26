@@ -20,15 +20,15 @@
         "type": "object",
         "properties": {
           "name": {
-            "description": "The name of the CrossWalk.",
+            "description": "The name of the metadata crosswalk or mapping.",
             "type": "string"
           },
           "description": {
-            "description": "A description of the CrossWalk.",
+            "description": "A description of the metadata crosswalk or mapping.",
             "type": "string"
           },
           "author": {
-            "description": "The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.",
+            "description": "The author of this metadata crosswalk or mapping. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.",
             "anyOf": [
               {
                 "$ref": "#/definitions/organization"
@@ -51,7 +51,7 @@
             ]
           },
           "includesProperty": {
-            "description": "Properties that are included in the cross walk (ie - are mapped to different schemas)",
+            "description": "Properties that are included in this metadata crosswalk or mapping (ie - properties that are mapped to different schemas).",
             "oneOf": [
               {
                 "$ref": "#/definitions/propertyObject"
@@ -65,11 +65,11 @@
             ]
           },
           "creditText": {
-            "description": "Text that can be used to credit person(s) and/or organization(s) associated with this CrossWalk.",
+            "description": "Text that can be used to credit person(s) and/or organization(s) associated with this metadata crosswalk or mapping.",
             "type": "string"
           },
           "funding": {
-            "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+            "description": "A person or organization that supported (sponsored) this metadata crosswalk or mapping through some kind of financial contribution.",
             "oneOf": [
               {
                 "$ref": "#/definitions/funding"
@@ -83,7 +83,7 @@
             ]
           },
           "hasPart": {
-            "description": "Metadata objects describing any schemas that have been included in this crosswalk.",
+            "description": "Any schemas that have been included in this metadata crosswalk or mapping. For publications, creative works or anything other than a schema, use 'isBasedOn'.",
             "oneOf": [
               {
                 "$ref": "#/definitions/schemaObject"
@@ -97,7 +97,7 @@
             ]
           },
           "isPartOf": {
-            "description": "Metadata objects describing any schemas or crosswalks which include this crosswalk",
+            "description": "Any Schemas or crosswalks which include this metadata crosswalk or mapping. For publications, creative works, or anything other than schemas, use 'isBasisFor'.",
             "oneOf": [
               {
                 "$ref": "#/definitions/schemaObject"
@@ -111,7 +111,7 @@
             ]
           },
           "isBasedOn": {
-            "description": "Citations of publications, schemas, or other creative works that were the basis for this crosswalk.",
+            "description": "Citations of publications, schemas, or other creative works that were the basis for this metadata crosswalk or mapping.",
             "oneOf": [
               {
                 "$ref": "#/definitions/citation"
@@ -125,7 +125,7 @@
             ]
           },
           "isBasisFor": {
-            "description": "Citations of publications, schemas, or other creative works that were based on this crosswalk. Eg- citations of websites, resources etc. that used this crosswalk.",
+            "description": "Citations of publications, schemas, or other creative works that were based on this metadata crosswalk or mapping. Eg- citations of websites, resources etc. that used this crosswalk.",
             "oneOf": [
               {
                 "$ref": "#/definitions/citation"
@@ -156,7 +156,7 @@
             ]
           },
           "license": {
-            "description": "A license document that applies to this crosswalk, typically indicated by URL.",
+            "description": "A license document that applies to this metadata crosswalk or mapping, typically indicated by URL.",
             "oneOf": [
               {
                 "type": "string"
@@ -170,15 +170,15 @@
             ]
           },
           "datePublished": {
-            "description": "Date of first broadcast/publication.",
+            "description": "Date of first broadcast/publication of this metadata crosswalk or mapping.",
             "format": "date",
             "type": "string"
           },
           "dateModified": {
-            "description": "Date the crosswalk was last updated."
+            "description": "Date the metadata crosswalk or mapping was last updated."
           },
           "citation": {
-            "description": "Citations for any publications, proceedings, working group documents for the CrossWalk itself.",
+            "description": "Citations for any publications, proceedings, working group documents describing the metadata crosswalk or mapping itself.",
             "oneOf": [
               {
                 "$ref": "#/definitions/citation"
@@ -192,7 +192,7 @@
             ]
           },
           "sameAs": {
-            "description": "URL of a reference Web page that unambiguously indicates this CrossWalk's identity. E.g. the URL of the CrossWalk from an official site or published link.",
+            "description": "URL of a reference Web page that unambiguously indicates the identity of this metadata crosswalk or mapping. E.g. the URL of the CrossWalk from an official site or published link.",
             "type": "string",
             "format": "uri"
           }
@@ -208,14 +208,14 @@
           "name"
         ],
         "recommended": [
-          "creditText",
+          "isPartOf",
+          "isBasisFor",
           "funder",
-          "sdPublisher",
           "sameAs"
         ],
         "optional": [
-          "isPartOf",
-          "isBasisFor",
+          "creditText",
+          "sdPublisher",
           "citation"
         ],
         "definitions": {
