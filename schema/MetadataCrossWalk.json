@@ -375,9 +375,7 @@
                 "type": "string"
               }
             },
-            "required": [
-              "name"
-            ]
+            "required": []
           },
           "funding": {
             "type": "object",
@@ -556,9 +554,7 @@
                 ]
               }
             },
-            "required": [
-              "name"
-            ]
+            "required": []
           },
           "classObject": {
             "description": "A schema class or type.",
