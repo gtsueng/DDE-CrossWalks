@@ -8,9 +8,9 @@
   },
   "@graph": [
     {
-      "@id": "crosswalks:CrossWalk",
+      "@id": "crosswalks:MetadataCrossWalk",
       "@type": "rdfs:Class",
-      "rdfs:comment": "This is a schema for defining a schema crosswalk or a collection of properties which have been mapped across multiple schemas or data element definitions.",
+      "rdfs:comment": "This is a schema for defining a metadata crosswalk or a collection of properties which have been mapped across multiple schemas or data element definitions.",
       "rdfs:label": "CrossWalk",
       "rdfs:subClassOf": {
         "@id": "schema:CreativeWork"
@@ -19,37 +19,13 @@
         "$schema": "http://json-schema.org/draft-07/schema#",
         "type": "object",
         "properties": {
-          "includesProperty": {
-            "description": "Properties that are included in the cross walk (ie - are mapped to different schemas)",
-            "oneOf": [
-              {
-                "$ref": "#/definitions/propertyObject"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/propertyObject"
-                }
-              }
-            ]
-          },
-          "creditText": {
-            "description": "Text that can be used to credit person(s) and/or organization(s) associated with this CrossWalk.",
+          "name": {
+            "description": "The name of the CrossWalk.",
             "type": "string"
           },
-          "isPartOf": {
-            "description": "Citations of publications, schemas, or other creative works which used this CrossWalk",
-            "oneOf": [
-              {
-                "$ref": "#/definitions/citation"
-              },
-              {
-                "type": "array",
-                "items": {
-                  "$ref": "#/definitions/citation"
-                }
-              }
-            ]
+          "description": {
+            "description": "A description of the CrossWalk.",
+            "type": "string"
           },
           "author": {
             "description": "The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.",
@@ -74,6 +50,24 @@
               }
             ]
           },
+          "includesProperty": {
+            "description": "Properties that are included in the cross walk (ie - are mapped to different schemas)",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/propertyObject"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/propertyObject"
+                }
+              }
+            ]
+          },
+          "creditText": {
+            "description": "Text that can be used to credit person(s) and/or organization(s) associated with this CrossWalk.",
+            "type": "string"
+          },
           "funding": {
             "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
             "oneOf": [
@@ -89,21 +83,49 @@
             ]
           },
           "hasPart": {
-            "description": "Metadata for any schemas that have been included in this CrossWalk.",
+            "description": "Metadata objects describing any schemas that have been included in this crosswalk.",
             "oneOf": [
               {
-                "$ref": "#/definitions/schemaObjects"
+                "$ref": "#/definitions/schemaObject"
               },
               {
                 "type": "array",
                 "items": {
-                  "$ref": "#/definitions/schemaObjects"
+                  "$ref": "#/definitions/schemaObject"
+                }
+              }
+            ]
+          },
+          "isPartOf": {
+            "description": "Metadata objects describing any schemas or crosswalks which include this crosswalk",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/schemaObject"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/schemaObject"
                 }
               }
             ]
           },
           "isBasedOn": {
-            "description": "Citations of any publications, proceedings, working group publications, or schemas that were the basis for this crosswalk.",
+            "description": "Citations of publications, schemas, or other creative works that were the basis for this crosswalk.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/citation"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/citation"
+                }
+              }
+            ]
+          },
+          "isBasisFor": {
+            "description": "Citations of publications, schemas, or other creative works that were based on this crosswalk. Eg- citations of websites, resources etc. that used this crosswalk.",
             "oneOf": [
               {
                 "$ref": "#/definitions/citation"
@@ -169,14 +191,6 @@
               }
             ]
           },
-          "description": {
-            "description": "A description of the CrossWalk.",
-            "type": "string"
-          },
-          "name": {
-            "description": "The name of the CrossWalk.",
-            "type": "string"
-          },
           "sameAs": {
             "description": "URL of a reference Web page that unambiguously indicates this CrossWalk's identity. E.g. the URL of the CrossWalk from an official site or published link.",
             "type": "string",
@@ -201,6 +215,7 @@
         ],
         "optional": [
           "isPartOf",
+          "isBasisFor",
           "citation"
         ],
         "definitions": {
@@ -244,12 +259,12 @@
                 "description": "The schema or Data Element set (if it is a mix and match instead of concept set-based) to which this property belongs.",
                 "oneOf": [
                   {
-                    "$ref": "#/definitions/schemaObjects"
+                    "$ref": "#/definitions/schemaObject"
                   },
                   {
                     "type": "array",
                     "items": {
-                      "$ref": "#/definitions/schemaObjects"
+                      "$ref": "#/definitions/schemaObject"
                     }
                   }
                 ]
@@ -412,13 +427,33 @@
               },
               "domainIncludes": {
                 "description": "Relates a property to a class that is (one of) the type(s) the property is expected to be used on.",
-                "type": "string",
-                "format": "uri"
+                "type": "array",
+                "oneOf": [
+                  {
+                    "$ref": "#/definitions/classObject"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/classObject"
+                    }
+                  }
+                ]
               },
               "rangeIncludes": {
                 "description": "Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.",
-                "type": "string",
-                "format": "uri"
+                "type": "array",
+                "oneOf": [
+                  {
+                    "$ref": "#/definitions/classObject"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/classObject"
+                    }
+                  }
+                ]
               },
               "url": {
                   "description": "The url to the property in its respective schema. Example, for something like 'owl:cardinality', it the url would be 'https://www.w3.org/TR/owl-ref/#cardinality-def'."
@@ -427,12 +462,12 @@
                 "description": "The schema or Data Element set (if it is a mix and match instead of concept set-based) to which this property belongs.",
                 "oneOf": [
                   {
-                    "$ref": "#/definitions/schemaObjects"
+                    "$ref": "#/definitions/schemaObject"
                   },
                   {
                     "type": "array",
                     "items": {
-                      "$ref": "#/definitions/schemaObjects"
+                      "$ref": "#/definitions/schemaObject"
                     }
                   }
                 ]
@@ -463,7 +498,7 @@
               "name"
             ]
           },
-          "schemaObjects": {
+          "schemaObject": {
             "description": "A schema which was included in the mapping/crosswalk.",
             "@type": "schema:CreativeWork",
             "type": "object",
@@ -524,6 +559,23 @@
             "required": [
               "name"
             ]
+          },
+          "classObject": {
+            "description": "A schema class or type.",
+            "@type": "schema:Class",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "Schema name",
+                "type": "string"
+              },
+              "url": {
+                "description": "Url of the schema",
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": []
           }
         }
       }
@@ -534,7 +586,7 @@
       "rdfs:comment": "Properties that are included in the cross walk (ie - are mapped to different schemas)",
       "rdfs:label": "includesProperty",
       "schema:domainIncludes": {
-        "@id": "crosswalks:CrossWalk"
+        "@id": "crosswalks:MetadataCrossWalk"
       },
       "schema:rangeIncludes": [
         {
@@ -548,7 +600,7 @@
       "rdfs:comment": "A URL or metadata object that unambiguously identifies the item",
       "rdfs:label": "sameAs",
       "schema:domainIncludes": {
-        "@id": "crosswalks:CrossWalk"
+        "@id": "crosswalks:MetadataCrossWalk"
       },
       "schema:rangeIncludes": [
         {
