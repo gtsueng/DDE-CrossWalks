@@ -11,7 +11,7 @@
       "@id": "crosswalks:MetadataCrossWalk",
       "@type": "rdfs:Class",
       "rdfs:comment": "This is a schema for defining a metadata crosswalk or a collection of properties which have been mapped across multiple schemas or data element definitions.",
-      "rdfs:label": "CrossWalk",
+      "rdfs:label": "MetadataCrossWalk",
       "rdfs:subClassOf": {
         "@id": "schema:CreativeWork"
       },
