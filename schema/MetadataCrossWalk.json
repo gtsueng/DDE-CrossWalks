@@ -198,20 +198,21 @@
           }
         },
         "required": [
-          "includesProperty",
-          "author",
-          "hasPart",
-          "isBasedOn",
-          "license",
-          "datePublished",
+          "name",
           "description",
-          "name"
+          "author",
+          "includesProperty",
+          "hasPart",
+          "license"
         ],
         "recommended": [
           "isPartOf",
+          "isBasedOn",
           "isBasisFor",
           "funder",
-          "sameAs"
+          "sameAs",
+          "datePublished",
+          "dateModified"
         ],
         "optional": [
           "creditText",
