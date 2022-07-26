@@ -4,11 +4,11 @@
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "owl": "http://www.w3.org/2002/07/owl#",
-    "dde": "https://discovery.biothings.io/view/dde/"
+    "crosswalks": "https://discovery.biothings.io/view/crosswalks/"
   },
   "@graph": [
     {
-      "@id": "dde:CrossWalk",
+      "@id": "crosswalks:CrossWalk",
       "@type": "rdfs:Class",
       "rdfs:comment": "This is a schema for defining a schema crosswalk or a collection of properties which have been mapped across multiple schemas or data element definitions.",
       "rdfs:label": "CrossWalk",
@@ -529,12 +529,12 @@
       }
     },
     {
-      "@id": "dde:includesProperty",
+      "@id": "crosswalks:includesProperty",
       "@type": "rdf:Property",
       "rdfs:comment": "Properties that are included in the cross walk (ie - are mapped to different schemas)",
       "rdfs:label": "includesProperty",
       "schema:domainIncludes": {
-        "@id": "dde:CrossWalk"
+        "@id": "crosswalks:CrossWalk"
       },
       "schema:rangeIncludes": [
         {
@@ -543,12 +543,12 @@
       ]
     },
     {
-      "@id": "dde:sameAs",
+      "@id": "crosswalks:sameAs",
       "@type": "rdf:Property",
       "rdfs:comment": "A URL or metadata object that unambiguously identifies the item",
       "rdfs:label": "sameAs",
       "schema:domainIncludes": {
-        "@id": "dde:CrossWalk"
+        "@id": "crosswalks:CrossWalk"
       },
       "schema:rangeIncludes": [
         {
@@ -560,7 +560,7 @@
       ]
     },
     {
-      "@id": "dde:marginality",
+      "@id": "crosswalks:marginality",
       "@type": "rdf:Property",
       "rdfs:comment": "The marginality (minimal/required, recommended, optional) of a property.",
       "rdfs:label": "marginality",
@@ -574,7 +574,7 @@
       ]
     },
     {
-      "@id": "dde:doi",
+      "@id": "crosswalks:doi",
       "@type": "rdf:Property",
       "rdfs:comment": "The digital object identifier (DOI) of the item.",
       "rdfs:label": "doi",
@@ -588,7 +588,7 @@
       ]
     },
     {
-      "@id": "dde:pmid",
+      "@id": "crosswalks:pmid",
       "@type": "rdf:Property",
       "rdfs:comment": "The PubMed identifier of a publication.",
       "rdfs:label": "pmid",
