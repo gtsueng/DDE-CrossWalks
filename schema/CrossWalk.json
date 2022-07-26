@@ -1,0 +1,605 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "dde": "https://discovery.biothings.io/view/dde/"
+  },
+  "@graph": [
+    {
+      "@id": "dde:CrossWalk",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "This is a schema for defining a schema crosswalk or a collection of properties which have been mapped across multiple schemas or data element definitions.",
+      "rdfs:label": "CrossWalk",
+      "rdfs:subClassOf": {
+        "@id": "schema:CreativeWork"
+      },
+      "$validation": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "includesProperty": {
+            "description": "Properties that are included in the cross walk (ie - are mapped to different schemas)",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/propertyObject"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/propertyObject"
+                }
+              }
+            ]
+          },
+          "creditText": {
+            "description": "Text that can be used to credit person(s) and/or organization(s) associated with this CrossWalk.",
+            "type": "string"
+          },
+          "isPartOf": {
+            "description": "Citations of publications, schemas, or other creative works which used this CrossWalk",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/citation"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/citation"
+                }
+              }
+            ]
+          },
+          "author": {
+            "description": "The author of this content or rating. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.",
+            "anyOf": [
+              {
+                "$ref": "#/definitions/organization"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/organization"
+                }
+              },
+              {
+                "$ref": "#/definitions/person"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/person"
+                }
+              }
+            ]
+          },
+          "funding": {
+            "description": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/funding"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/funding"
+                }
+              }
+            ]
+          },
+          "hasPart": {
+            "description": "Metadata for any schemas that have been included in this CrossWalk.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/schemaObjects"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/schemaObjects"
+                }
+              }
+            ]
+          },
+          "isBasedOn": {
+            "description": "Citations of any publications, proceedings, working group publications, or schemas that were the basis for this crosswalk.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/citation"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/citation"
+                }
+              }
+            ]
+          },
+          "sdPublisher": {
+            "description": "Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The\n[[sdPublisher]] property helps make such practices more explicit.",
+            "@type": "Person",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "url": {
+                "type": "string",
+                "format": "uri"
+              }
+            },
+            "required": [
+              "name"
+            ]
+          },
+          "license": {
+            "description": "A license document that applies to this crosswalk, typically indicated by URL.",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "datePublished": {
+            "description": "Date of first broadcast/publication.",
+            "format": "date",
+            "type": "string"
+          },
+          "dateModified": {
+            "description": "Date the crosswalk was last updated."
+          },
+          "citation": {
+            "description": "Citations for any publications, proceedings, working group documents for the CrossWalk itself.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/citation"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/citation"
+                }
+              }
+            ]
+          },
+          "description": {
+            "description": "A description of the CrossWalk.",
+            "type": "string"
+          },
+          "name": {
+            "description": "The name of the CrossWalk.",
+            "type": "string"
+          },
+          "sameAs": {
+            "description": "URL of a reference Web page that unambiguously indicates this CrossWalk's identity. E.g. the URL of the CrossWalk from an official site or published link.",
+            "type": "string",
+            "format": "uri"
+          }
+        },
+        "required": [
+          "includesProperty",
+          "author",
+          "hasPart",
+          "isBasedOn",
+          "license",
+          "datePublished",
+          "description",
+          "name"
+        ],
+        "recommended": [
+          "creditText",
+          "funder",
+          "sdPublisher",
+          "sameAs"
+        ],
+        "optional": [
+          "isPartOf",
+          "citation"
+        ],
+        "definitions": {
+          "propertyObject": {
+            "description": "A property object which details a property and its mapping across different schema.",
+            "@type": "schema:Property",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "Name of the property.",
+                "type": "string"
+              },
+              "domainIncludes": {
+                "description": "Relates a property to a class that is (one of) the type(s) the property is expected to be used on.",
+                "type": "string",
+                "format": "uri"
+              },
+              "rangeIncludes": {
+                "description": "Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.",
+                "type": "string",
+                "format": "uri"
+              },
+              "sameAs": {
+                "description": "Equivalent properties in other schemas",
+                "oneOf": [
+                  {
+                    "$ref": "#/definitions/sameAsObject"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/sameAsObject"
+                    }
+                  }
+                ]
+              },
+              "url": {
+                  "description": "The url to the property in its respective schema. Example, for something like 'owl:cardinality', it the url would be 'https://www.w3.org/TR/owl-ref/#cardinality-def'."
+              },
+              "isPartOf": {
+                "description": "The schema or Data Element set (if it is a mix and match instead of concept set-based) to which this property belongs.",
+                "oneOf": [
+                  {
+                    "$ref": "#/definitions/schemaObjects"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/schemaObjects"
+                    }
+                  }
+                ]
+              },
+              "owl:cardinality": {
+                "description": "The cardinality of this property if available as defined in its respective schema. Note, that a schema may have multiple classes and the cardinality of the property may vary based on class, if this is the case the cardinality should be considered 'variable'. If it is not defined in a schema (like in schema.org), it should be considered 'unspecified.",
+                "type": "string",
+                "enum": [
+                  "one",
+                  "many",
+                  "variable",
+                  "unspecified"
+                ]
+              },
+              "marginality": {
+                "description": "The marginality of the property as defined in its respective schema. Note that a schema may include multiple classes and the marginality for the same property may vary between classes within the same schema. If this is the case, use: 'variable'. Otherwise, if the marginality is not specified like in schema.org, use 'unspecified'.",
+                "type": "string",
+                "enum": [
+                  "minimal or required",
+                  "recommended",
+                  "optional",
+                  "variable",
+                  "unspecified"
+                ]
+              }
+            },
+            "required": [
+              "name"
+            ]
+          }, 
+          "person": {
+              "description": "Reusable person definition",
+              "@type": "schema:Person",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "givenName": {
+                  "type": "string"
+                },
+                "familyName": {
+                  "type": "string"
+                },
+                "identifier": {
+                  "type": "string",
+                  "format": "uri"
+                },
+                "affiliation": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/definitions/organization"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/definitions/organization"
+                      }
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "name"
+              ]
+          },
+          "organization": {
+            "description": "Reusable organization definition",
+            "@type": "schema:Organization",
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "alternateName": {
+                "type": "string"
+              }
+            }
+          },
+          "citation": {
+            "description": "A citation object.",
+            "@type": "schema:CreativeWork",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "Name of or title of the citation",
+                "type": "string"
+              },
+              "identifier": {
+                "description": "An identifier associated with the citation",
+                "type": "string"
+              },
+              "pmid": {
+                "description": "A pubmed identifier if available",
+                "type": "string"
+              },
+              "doi": {
+                "description": "A doi if available",
+                "type": "string"
+              },
+              "url": {
+                "description": "The url of the resource cited",
+                "type": "string",
+                "format": "uri"
+              },
+              "citeText": {
+                "description": "The bibliographic citation for the referenced resource as is provided",
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ]
+          },
+          "funding": {
+            "type": "object",
+            "@type": "schema:MonetaryGrant",
+            "description": "Information about funding support",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "The name of the monetary grant that funded/funds the Computational Tool"
+              },
+              "identifier": {
+                "type": "string",
+                "description": "Unique identifier(s) for the grant(s) used to fund the Computational Tool"
+              },
+              "funder": {
+                "description": "name of the funding organization",
+                "oneOf": [
+              {
+                "$ref": "#/definitions/organization"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/organization"
+                }
+              }
+            ]
+              },
+              "url": {
+                "type": "string",
+                "format": "uri",
+                "description": "award URL"
+              }
+            },
+            "required": [
+              "funder"
+            ]
+          },
+          "sameAsObject": {
+            "description": "A property object which details a property and its mapping across different schema.",
+            "@type": "schema:Property",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "Name of the property.",
+                "type": "string"
+              },
+              "domainIncludes": {
+                "description": "Relates a property to a class that is (one of) the type(s) the property is expected to be used on.",
+                "type": "string",
+                "format": "uri"
+              },
+              "rangeIncludes": {
+                "description": "Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.",
+                "type": "string",
+                "format": "uri"
+              },
+              "url": {
+                  "description": "The url to the property in its respective schema. Example, for something like 'owl:cardinality', it the url would be 'https://www.w3.org/TR/owl-ref/#cardinality-def'."
+              },
+              "isPartOf": {
+                "description": "The schema or Data Element set (if it is a mix and match instead of concept set-based) to which this property belongs.",
+                "oneOf": [
+                  {
+                    "$ref": "#/definitions/schemaObjects"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/schemaObjects"
+                    }
+                  }
+                ]
+              },
+              "owl:cardinality": {
+                "description": "The cardinality of this property if available as defined in its respective schema. Note, that a schema may have multiple classes and the cardinality of the property may vary based on class, if this is the case the cardinality should be considered 'variable'. If it is not defined in a schema (like in schema.org), it should be considered 'unspecified.",
+                "type": "string",
+                "enum": [
+                  "one",
+                  "many",
+                  "variable",
+                  "unspecified"
+                ]
+              },
+              "marginality": {
+                "description": "The marginality of the property as defined in its respective schema. Note that a schema may include multiple classes and the marginality for the same property may vary between classes within the same schema. If this is the case, use: 'variable'. Otherwise, if the marginality is not specified like in schema.org, use 'unspecified'.",
+                "type": "string",
+                "enum": [
+                  "minimal or required",
+                  "recommended",
+                  "optional",
+                  "variable",
+                  "unspecified"
+                ]
+              }
+            },
+            "required": [
+              "name"
+            ]
+          },
+          "schemaObjects": {
+            "description": "A schema which was included in the mapping/crosswalk.",
+            "@type": "schema:CreativeWork",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "Schema name",
+                "type": "string"
+              },
+              "alternateName": {
+                "description": "Commonly-used abbreviations of the schema",
+                "type": "array",
+                "oneOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                ]
+              },
+              "url": {
+                "description": "Url of the schema",
+                "type": "string",
+                "format": "uri"
+              },
+              "version": {
+                "description": "The version of the schema referenced if available.",
+                "type": "string"
+              },
+              "citation": {
+                "description": "A citation of the schema if available.",
+                "type": "array",
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/citation"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/citation"
+                    }
+                  },
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                ]
+              }
+            },
+            "required": [
+              "name"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "@id": "dde:includesProperty",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Properties that are included in the cross walk (ie - are mapped to different schemas)",
+      "rdfs:label": "includesProperty",
+      "schema:domainIncludes": {
+        "@id": "dde:CrossWalk"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Property"
+        }
+      ]
+    },
+    {
+      "@id": "dde:sameAs",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A URL or metadata object that unambiguously identifies the item",
+      "rdfs:label": "sameAs",
+      "schema:domainIncludes": {
+        "@id": "dde:CrossWalk"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Property"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "dde:marginality",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The marginality (minimal/required, recommended, optional) of a property.",
+      "rdfs:label": "marginality",
+      "schema:domainIncludes": {
+        "@id": "schema:Property"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "dde:doi",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The digital object identifier (DOI) of the item.",
+      "rdfs:label": "doi",
+      "schema:domainIncludes": {
+        "@id": "schema:CreativeWork"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "dde:pmid",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The PubMed identifier of a publication.",
+      "rdfs:label": "pmid",
+      "schema:domainIncludes": {
+        "@id": "schema:CreativeWork"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    }
+  ]
+}
