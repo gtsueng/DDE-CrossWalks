@@ -240,13 +240,31 @@
               },
               "domainIncludes": {
                 "description": "Relates a property to a class that is (one of) the type(s) the property is expected to be used on.",
-                "type": "string",
-                "format": "uri"
+                "oneOf": [
+                  {
+                    "$ref": "#/definitions/classObject"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/classObject"
+                    }
+                  }
+                ]
               },
               "rangeIncludes": {
                 "description": "Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.",
-                "type": "string",
-                "format": "uri"
+                "oneOf": [
+                  {
+                    "$ref": "#/definitions/classObject"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/classObject"
+                    }
+                  }
+                ]
               },
               "sameAs": {
                 "description": "Equivalent properties in other schemas",
@@ -443,7 +461,6 @@
               },
               "domainIncludes": {
                 "description": "Relates a property to a class that is (one of) the type(s) the property is expected to be used on.",
-                "type": "array",
                 "oneOf": [
                   {
                     "$ref": "#/definitions/classObject"
