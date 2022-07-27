@@ -226,12 +226,16 @@
         ],
         "definitions": {
           "propertyObject": {
-            "description": "A property object which details a property and its mapping across different schema.",
+            "description": "A property that is mapped across (a) different schema(s). ",
             "@type": "schema:Property",
             "type": "object",
             "properties": {
               "name": {
-                "description": "Name of the property.",
+                "description": "Name of the property. Note that a property may be heavily nested in one schema, and relatively unnested in another. If a property is heavily nested, use just the unnested property name for this field, and include the hierarchy using the dot notation under 'alternateName'.",
+                "type": "string"
+              },
+              "alternateName": {
+                "description": "Alternate name of the property. Note that a property may be heavily nested in one schema, and relatively unnested in another. If a property is heavily nested, include the hierarchy using the dot notation for this property, and the unnested property name for 'name'.",
                 "type": "string"
               },
               "domainIncludes": {
@@ -426,7 +430,11 @@
             "type": "object",
             "properties": {
               "name": {
-                "description": "Name of the property.",
+                "description": "Name of the property. Note that a property may be heavily nested in one schema, and relatively unnested in another. If the property is heavily nested, use just the unnested property name for this field, and include the hierarchy using the dot notation under 'alternateName'.",
+                "type": "string"
+              },
+              "alternateName": {
+                "description": "Alternate name of the property. Note that a property may be heavily nested in one schema, and relatively unnested in another. If a property is heavily nested, include the hierarchy using the dot notation for this property, and the unnested property name for 'name'.",
                 "type": "string"
               },
               "identifier": {
