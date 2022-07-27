@@ -27,6 +27,10 @@
             "description": "A description of the metadata crosswalk or mapping.",
             "type": "string"
           },
+          "identifier": {
+            "description": "An identifier for the crosswalk itself.",
+            "type": "string"
+          },
           "author": {
             "description": "The author of this metadata crosswalk or mapping. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.",
             "anyOf": [
@@ -206,6 +210,7 @@
           "license"
         ],
         "recommended": [
+          "identifier",
           "isPartOf",
           "isBasedOn",
           "isBasisFor",
@@ -424,6 +429,10 @@
                 "description": "Name of the property.",
                 "type": "string"
               },
+              "identifier": {
+                "description": "An identifier for the property. Suggested format: '{schema short name}:{property name}'.",
+                "type": "string"
+              },
               "domainIncludes": {
                 "description": "Relates a property to a class that is (one of) the type(s) the property is expected to be used on.",
                 "type": "array",
@@ -507,7 +516,7 @@
                 "type": "string"
               },
               "alternateName": {
-                "description": "Commonly-used abbreviations of the schema",
+                "description": "Commonly-used abbreviations or short names for the schema",
                 "type": "array",
                 "oneOf": [
                   {
@@ -520,6 +529,10 @@
                     }
                   }
                 ]
+              },
+              "identifier": {
+                "description": "An identifier for the schema. Suggested format: '{schema short name}: {schema class name}' if class-specific, otherwise use the {schema short name}.",
+                "type": "string"
               },
               "url": {
                 "description": "Url of the schema",
@@ -563,13 +576,17 @@
             "type": "object",
             "properties": {
               "name": {
-                "description": "Schema name",
+                "description": "The name of the class or type.",
                 "type": "string"
               },
               "url": {
-                "description": "Url of the schema",
+                "description": "Url for the class or type",
                 "type": "string",
                 "format": "uri"
+              },
+              "identifier": {
+                "description": "An identifier for the class or type. Suggest using '{schema short name}:{class name}'",
+                "type": "string"
               }
             },
             "required": []
