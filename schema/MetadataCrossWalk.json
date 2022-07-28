@@ -8,10 +8,10 @@
   },
   "@graph": [
     {
-      "@id": "crosswalks:MetadataCrossWalk",
+      "@id": "crosswalks:MetadataCrosswalk",
       "@type": "rdfs:Class",
       "rdfs:comment": "This is a schema for defining a metadata crosswalk or a collection of properties which have been mapped across multiple schemas or data element definitions.",
-      "rdfs:label": "MetadataCrossWalk",
+      "rdfs:label": "MetadataCrosswalk",
       "rdfs:subClassOf": {
         "@id": "schema:CreativeWork"
       },
@@ -231,11 +231,11 @@
             "type": "object",
             "properties": {
               "name": {
-                "description": "Name of the property. Note that a property may be heavily nested in one schema, and relatively unnested in another. If a property is heavily nested, use just the unnested property name for this field, and include the hierarchy using the dot notation under 'alternateName'.",
+                "description": "Name of the property. Note that a property may be heavily nested in one schema, and relatively unnested in another. If a property is heavily nested, use just the unnested property name for this field, and include the hierarchy using the dot notation under 'nestedName'.",
                 "type": "string"
               },
-              "alternateName": {
-                "description": "Alternate name of the property. Note that a property may be heavily nested in one schema, and relatively unnested in another. If a property is heavily nested, include the hierarchy using the dot notation for this property, and the unnested property name for 'name'.",
+              "nestedName": {
+                "description": "The nested name of the property. Note that a property may be heavily nested in one schema, and relatively unnested in another. If a property is heavily nested, include the hierarchy using the dot notation for this property, and the unnested property name for 'name'.",
                 "type": "string"
               },
               "domainIncludes": {
@@ -448,11 +448,11 @@
             "type": "object",
             "properties": {
               "name": {
-                "description": "Name of the property. Note that a property may be heavily nested in one schema, and relatively unnested in another. If the property is heavily nested, use just the unnested property name for this field, and include the hierarchy using the dot notation under 'alternateName'.",
+                "description": "Name of the property. Note that a property may be heavily nested in one schema, and relatively unnested in another. If the property is heavily nested, use just the unnested property name for this field, and include the hierarchy using the dot notation under 'nestedName'.",
                 "type": "string"
               },
-              "alternateName": {
-                "description": "Alternate name of the property. Note that a property may be heavily nested in one schema, and relatively unnested in another. If a property is heavily nested, include the hierarchy using the dot notation for this property, and the unnested property name for 'name'.",
+              "nestedName": {
+                "description": "The nested name of the property. Note that a property may be heavily nested in one schema, and relatively unnested in another. If a property is heavily nested, include the hierarchy using the dot notation for this property, and the unnested property name for 'name'.",
                 "type": "string"
               },
               "identifier": {
@@ -625,7 +625,7 @@
       "rdfs:comment": "Properties that are included in the cross walk (ie - are mapped to different schemas).",
       "rdfs:label": "includesProperty",
       "schema:domainIncludes": {
-        "@id": "crosswalks:MetadataCrossWalk"
+        "@id": "crosswalks:MetadataCrosswalk"
       },
       "schema:rangeIncludes": [
         {
@@ -639,7 +639,7 @@
       "rdfs:comment": "A URL or metadata object that unambiguously identifies the item.",
       "rdfs:label": "sameAs",
       "schema:domainIncludes": {
-        "@id": "crosswalks:MetadataCrossWalk"
+        "@id": "crosswalks:MetadataCrosswalk"
       },
       "schema:rangeIncludes": [
         {
@@ -657,7 +657,7 @@
       "rdfs:label": "isBasisFor",
       "schema:domainIncludes": [
         {
-          "@id": "crosswalks:MetadataCrossWalk"
+          "@id": "crosswalks:MetadataCrosswalk"
         },
         {
           "@id": "schema:CreativeWork"
@@ -710,6 +710,20 @@
       "rdfs:label": "pmid",
       "schema:domainIncludes": {
         "@id": "schema:CreativeWork"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "crosswalks:nestedName",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The nested name of a property using dot notation. If a property is heavily nested, its hierarchy may be captured using the dot notation for inclusion as the nested name. For example the name of the property 'distribution.url' should be 'url' for consistency with schema.org, but the nestedName will be 'distribution.url' for improved interpretability and interoperability.",
+      "rdfs:label": "nestedName",
+      "schema:domainIncludes": {
+        "@id": "schema:Property"
       },
       "schema:rangeIncludes": [
         {
