@@ -1,0 +1,671 @@
+{
+  "name": "NIAID Dataset veupathdb crosswalk",
+  "description": "This crosswalk maps veupathdb API field names to the NIAID Dataset schema properties. A few properties from the NIAID Dataset schema were derived rather than being directly mapped. These include \"url\" (derived by concatenation of \"https://veupathdb.org/veupathdb/app/record/dataset/\" with the identifier {records.id.value}, the \"@type\" which was set as \"Dataset\", and the \"includedInDataCatalog.name\" which was set as \"VEuPathDB\"",
+  "author": [
+    {
+      "@type": "schema:Person",
+      "name": "Laura D. Hughes",
+      "familyName": "Hughes",
+      "givenName": "Laura",
+      "affiliation": "Scripps Research"
+    },
+    {
+      "@type": "schema:Person",
+      "name": "Nichollette Acosta",
+      "familyName": "Acosta",
+      "givenName": "Nicholette",
+      "affiliation": "Scripps Research"
+    },
+    {
+      "@type": "schema:Person",
+      "name": "Jason Lin",
+      "familyName": "Lin",
+      "givenName": "Jason",
+      "affiliation": "Scripps Research"
+    },
+    {
+      "@type": "schema:Person",
+      "name": "Ginger Tsueng",
+      "familyName": "Tsueng",
+      "givenName": "Ginger",
+      "affiliation": "Scripps Research"
+    }
+  ],
+  "includesProperty": [
+    {
+      "alternateName": "records.displayName",
+      "isPartOf": {
+        "@id": "veupathdb"
+      },
+      "name": "displayName",
+      "sameAs": {
+        "alternateName": "name",
+        "owl:cardinality": "one",
+        "marginality": "minimal or required",
+        "domainIncludes": [
+          {
+            "@id": "niaid:Dataset"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ],
+        "url": "https://schema.org/name",
+        "isPartOf": {
+          "@id": "niaid:Dataset"
+        },
+        "name": "name"
+      }
+    },
+    {
+      "alternateName": "records.attributes.summary",
+      "isPartOf": {
+        "@id": "veupathdb"
+      },
+      "name": "summary",
+      "sameAs": {
+        "alternateName": "description",
+        "owl:cardinality": "one",
+        "marginality": "minimal or required",
+        "domainIncludes": [
+          {
+            "@id": "niaid:Dataset"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ],
+        "url": "https://schema.org/description",
+        "isPartOf": {
+          "@id": "niaid:Dataset"
+        },
+        "name": "description"
+      }
+    },
+    {
+      "alternateName": "records.attributes.type",
+      "isPartOf": {
+        "@id": "veupathdb"
+      },
+      "name": "type",
+      "sameAs": {
+        "alternateName": "measurementTechnique",
+        "owl:cardinality": "many",
+        "marginality": "minimal or required",
+        "domainIncludes": [
+          {
+            "@id": "niaid:Dataset"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:DefinedTerm"
+          }
+        ],
+        "url": "https://schema.org/measurementTechnique",
+        "isPartOf": {
+          "@id": "niaid:Dataset"
+        },
+        "name": "measurementTechnique"
+      }
+    },
+    {
+      "alternateName": "records.attributes.version",
+      "isPartOf": {
+        "@id": "veupathdb"
+      },
+      "name": "version",
+      "sameAs": {
+        "alternateName": "dateModified",
+        "owl:cardinality": "unspecified",
+        "marginality": "unspecified",
+        "domainIncludes": [
+          {
+            "@id": "schema:CreativeWork"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Date"
+          }
+        ],
+        "url": "https://schema.org/dateModified",
+        "isPartOf": {
+          "@id": "niaid:Dataset"
+        },
+        "name": "dateModified"
+      }
+    },
+    {
+      "alternateName": "records.attributes.release_policy",
+      "isPartOf": {
+        "@id": "veupathdb"
+      },
+      "name": "release_policy",
+      "sameAs": {
+        "alternateName": "conditionOfAccess",
+        "owl:cardinality": "unspecified",
+        "marginality": "unspecified",
+        "domainIncludes": [
+          {
+            "@id": "schema:CreativeWork"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ],
+        "url": "https://schema.org/conditionOfAccess",
+        "isPartOf": {
+          "@id": "niaid:Dataset"
+        },
+        "name": "conditionOfAccess"
+      }
+    },
+    {
+      "alternateName": "records.attributes.project_id",
+      "isPartOf": {
+        "@id": "veupathdb"
+      },
+      "name": "project_id",
+      "sameAs": {
+        "alternateName": "sdPublisher.name",
+        "owl:cardinality": "one",
+        "marginality": "minimal or required",
+        "domainIncludes": [
+          {
+            "@id": "schema:Organization"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ],
+        "url": "https://schema.org/sdPublisher.name",
+        "isPartOf": {
+          "@id": "niaid:Dataset"
+        },
+        "name": "name"
+      }
+    },
+    {
+      "alternateName": "records.attributes.short_attribution",
+      "isPartOf": {
+        "@id": "veupathdb"
+      },
+      "name": "short_attribution",
+      "sameAs": {
+        "alternateName": "creditText",
+        "owl:cardinality": "unspecified",
+        "marginality": "unspecified",
+        "domainIncludes": [
+          {
+            "@id": "schema:CreativeWork"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ],
+        "url": "https://schema.org/creditText",
+        "isPartOf": {
+          "@id": "niaid:Dataset"
+        },
+        "name": "creditText"
+      }
+    },
+    {
+      "alternateName": "records.id.value",
+      "isPartOf": {
+        "@id": "veupathdb"
+      },
+      "name": "value",
+      "sameAs": {
+        "alternateName": "identifier",
+        "owl:cardinality": "many",
+        "marginality": "minimal or required",
+        "domainIncludes": [
+          {
+            "@id": "niaid:Dataset"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ],
+        "url": "https://schema.org/identifier",
+        "isPartOf": {
+          "@id": "niaid:Dataset"
+        },
+        "name": "identifier"
+      }
+    },
+    {
+      "alternateName": "records.tables.GenomeHistory.release_number",
+      "isPartOf": {
+        "@id": "veupathdb"
+      },
+      "name": "release_number",
+      "sameAs": {
+        "alternateName": "version",
+        "owl:cardinality": "unspecified",
+        "marginality": "unspecified",
+        "domainIncludes": [
+          {
+            "@id": "schema:CreativeWork"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ],
+        "url": "https://schema.org/version",
+        "isPartOf": {
+          "@id": "niaid:Dataset"
+        },
+        "name": "version"
+      }
+    },
+    {
+      "alternateName": "records.tables.GenomeHistory.release_date",
+      "isPartOf": {
+        "@id": "veupathdb"
+      },
+      "name": "release_date",
+      "sameAs": {
+        "alternateName": "dateModified",
+        "owl:cardinality": "unspecified",
+        "marginality": "unspecified",
+        "domainIncludes": [
+          {
+            "@id": "schema:CreativeWork"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ],
+        "url": "https://schema.org/dateModified",
+        "isPartOf": {
+          "@id": "niaid:Dataset"
+        },
+        "name": "dateModified"
+      }
+    },
+    {
+      "alternateName": "records.tables.GenomeHistory.datasest_id",
+      "isPartOf": {
+        "@id": "veupathdb"
+      },
+      "name": "datasest_id",
+      "sameAs": {
+        "alternateName": "identifier",
+        "owl:cardinality": "many",
+        "marginality": "minimal or required",
+        "domainIncludes": [
+          {
+            "@id": "niaid:Dataset"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ],
+        "url": "https://schema.org/identifier",
+        "isPartOf": {
+          "@id": "niaid:Dataset"
+        },
+        "name": "identifier"
+      }
+    },
+    {
+      "alternateName": "records.tables.Publications.pmid",
+      "isPartOf": {
+        "@id": "veupathdb"
+      },
+      "name": "pmid",
+      "sameAs": {
+        "alternateName": "citation.pmid",
+        "owl:cardinality": "one",
+        "marginality": "recommended",
+        "domainIncludes": [
+          {
+            "@id": "niaid:ScholarlyArticle"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ],
+        "url": "https://discovery.biothings.io/view/niaid/pmid",
+        "isPartOf": {
+          "@id": "niaid:Dataset"
+        },
+        "name": "pmid"
+      }
+    },
+    {
+      "alternateName": "records.tables.Publications.url",
+      "isPartOf": {
+        "@id": "veupathdb"
+      },
+      "name": "url",
+      "sameAs": {
+        "alternateName": "citation.url",
+        "owl:cardinality": "one",
+        "marginality": "recommended",
+        "domainIncludes": [
+          {
+            "@id": "niaid:ScholarlyArticle"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:URL"
+          }
+        ],
+        "url": "https://schema.org/url",
+        "isPartOf": {
+          "@id": "niaid:Dataset"
+        },
+        "name": "url"
+      }
+    },
+    {
+      "alternateName": "records.tables.Contacts.contact_name",
+      "isPartOf": {
+        "@id": "veupathdb"
+      },
+      "name": "contact_name",
+      "sameAs": {
+        "alternateName": "author.name",
+        "owl:cardinality": "one",
+        "marginality": "minimal or required",
+        "domainIncludes": [
+          {
+            "@id": "schema:Person"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ],
+        "url": "https://schema.org/name",
+        "isPartOf": {
+          "@id": "niaid:Dataset"
+        },
+        "name": "name"
+      }
+    },
+    {
+      "alternateName": "records.tables.Contacts.affiliation",
+      "isPartOf": {
+        "@id": "veupathdb"
+      },
+      "name": "affiliation",
+      "sameAs": {
+        "alternateName": "author.affiliation",
+        "owl:cardinality": "unspecified",
+        "marginality": "unspecified",
+        "domainIncludes": [
+          {
+            "@id": "schema:Person"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "unspecified"
+          }
+        ],
+        "url": "https://schema.org/affiliation",
+        "isPartOf": {
+          "@id": "niaid:Dataset"
+        },
+        "name": "affiliation"
+      }
+    },
+    {
+      "alternateName": "records.tables.Version.organism",
+      "isPartOf": {
+        "@id": "veupathdb"
+      },
+      "name": "organism",
+      "sameAs": {
+        "alternateName": "species",
+        "owl:cardinality": "many",
+        "marginality": "recommended",
+        "domainIncludes": [
+          {
+            "@id": "niaid:Dataset"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:DefinedTerm"
+          }
+        ],
+        "url": "https://discovery.biothings.io/view/niaid/species",
+        "isPartOf": {
+          "@id": "niaid:Dataset"
+        },
+        "name": "species"
+      }
+    },
+    {
+      "alternateName": "records.tables.Version.version",
+      "isPartOf": {
+        "@id": "veupathdb"
+      },
+      "name": "version",
+      "sameAs": {
+        "alternateName": "datePublished",
+        "owl:cardinality": "unspecified",
+        "marginality": "unspecified",
+        "domainIncludes": [
+          {
+            "@id": "schema:CreativeWork"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ],
+        "url": "https://schema.org/datePublished",
+        "isPartOf": {
+          "@id": "niaid:Dataset"
+        },
+        "name": "datePublished"
+      }
+    },
+    {
+      "alternateName": "records.tables.GeneTypeCounts.gene_type",
+      "isPartOf": {
+        "@id": "veupathdb"
+      },
+      "name": "gene_type",
+      "sameAs": {
+        "alternateName": "variableMeasured.name",
+        "owl:cardinality": "unspecified",
+        "marginality": "unspecified",
+        "domainIncludes": [
+          {
+            "@id": "schema:Dataset"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ],
+        "url": "https://schema.org/name",
+        "isPartOf": {
+          "@id": "niaid:Dataset"
+        },
+        "name": "name"
+      }
+    },
+    {
+      "alternateName": "records.tables.GeneTypeCounts.gene_count",
+      "isPartOf": {
+        "@id": "veupathdb"
+      },
+      "name": "gene_count",
+      "sameAs": {
+        "alternateName": "variableMeasured.identifier",
+        "owl:cardinality": "unspecified",
+        "marginality": "unspecified",
+        "domainIncludes": [
+          {
+            "@id": "schema:Dataset"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ],
+        "url": "https://schema.org/identifier",
+        "isPartOf": {
+          "@id": "niaid:Dataset"
+        },
+        "name": "identifier"
+      }
+    },
+    {
+      "alternateName": "records.tables.HyperLinks.text",
+      "isPartOf": {
+        "@id": "veupathdb"
+      },
+      "name": "text",
+      "sameAs": {
+        "alternateName": "distribution.name",
+        "owl:cardinality": "one",
+        "marginality": "unspecified",
+        "domainIncludes": [
+          {
+            "@id": "niaid:DataDownload"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ],
+        "url": "https://schema.org/name",
+        "isPartOf": {
+          "@id": "niaid:Dataset"
+        },
+        "name": "name"
+      }
+    },
+    {
+      "alternateName": "records.tables.HyperLinks.url",
+      "isPartOf": {
+        "@id": "veupathdb"
+      },
+      "name": "url",
+      "sameAs": {
+        "alternateName": "distribution.url",
+        "owl:cardinality": "one",
+        "marginality": "minimal or required",
+        "domainIncludes": [
+          {
+            "@id": "niaid:DataDownload"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:URL"
+          }
+        ],
+        "url": "https://schema.org/url",
+        "isPartOf": {
+          "@id": "niaid:Dataset"
+        },
+        "name": "url"
+      }
+    }
+  ],
+  "hasPart": [
+    {
+      "@type": "CreativeWork",
+      "identifier": "veupathdb",
+      "name": "Eukaryotic Pathogen, Vector and Host Informatics Resource",
+      "alternateName": "veupathdb",
+      "url": "https://veupathdb.org/veupathdb/app/",
+      "version": "2022-04-20",
+      "citation": {
+        "@type": "ScholarlyArticle",
+        "name": "VEuPathDB: the eukaryotic pathogen, vector and host bioinformatics resource center",
+        "url": "https://doi.org/10.1093/nar/gkab929"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "identifier": "niaid:Dataset",
+      "name": "NIAID Dataset Schema",
+      "alternateName": "niaid:Dataset",
+      "url": "https://discovery.biothings.io/view/niaid/Dataset/",
+      "version": "2022-06-09",
+      "citation": {
+        "@type": "Website",
+        "name": "NIAID Data Portal schema",
+        "url": "https://discovery.biothings.io/view/niaid/Dataset"
+      }
+    }
+  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "identifier": "niaidxref_veupathdb",
+  "isBasedOn": [
+    {
+      "@type": "WebAPI",
+      "name": "VEuPathDB Web Services API",
+      "url": "https://VEuPathDB.org/veupathdb/service/",
+      "documentation": "https://veupathdb.org/service-api.html"
+    }
+  ],
+  "isBasisFor": [
+    {
+      "@type": "WebSite",
+      "name": "NIAID Data Portal",
+      "url": "https://discovery.biothings.io/portal/niaid"
+    }
+  ],
+  "funding": [
+    {
+      "@type": "schema:MonetaryGrant",
+      "identifier": "U19 AI135995",
+      "funder": {
+        "@type": "schema:Organization",
+        "name": "National Institute of Allergy and Infectious Diseases"
+      }
+    }
+  ],
+  "sameAs": "https://docs.google.com/spreadsheets/d/1xDAH-0F6HxzQNtpYOeH5NWfLlP-fUxmIJFS8nyqPv2Y/edit#gid=1425490157",
+  "datePublished": "2022-04-20",
+  "dateModified": "2022-06-07",
+  "creditText": NaN,
+  "isPartOf": NaN,
+  "@context": {
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "schema": "https://schema.org/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "@type": "crosswalks:MetadataCrosswalk"
+}
