@@ -1,6 +1,16 @@
 {
+  "@type": "crosswalks:MetadataCrosswalk",
+  "@context": {
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "schema": "https://schema.org/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "identifier": "niaid_xref_veupathdb",
   "name": "NIAID Dataset veupathdb crosswalk",
-  "description": "This crosswalk maps veupathdb API field names to the NIAID Dataset schema properties. A few properties from the NIAID Dataset schema were derived rather than being directly mapped. These include \"url\" (derived by concatenation of \"https://veupathdb.org/veupathdb/app/record/dataset/\" with the identifier {records.id.value}, the \"@type\" which was set as \"Dataset\", and the \"includedInDataCatalog.name\" which was set as \"VEuPathDB\"",
+  "description": "This crosswalk maps veupathdb API field names to the NIAID Dataset schema properties. A few properties from the NIAID Dataset schema were derived rather than being directly mapped. These include 'url' (derived by concatenation of 'https://veupathdb.org/veupathdb/app/record/dataset/' with the identifier {records.id.value}, the '@type' which was set as 'Dataset', and the 'includedInDataCatalog.name' which was set as 'VEuPathDB'",
+  "sameAs": "https://docs.google.com/spreadsheets/d/1xDAH-0F6HxzQNtpYOeH5NWfLlP-fUxmIJFS8nyqPv2Y/edit#gid=1425490157",
   "author": [
     {
       "@type": "schema:Person",
@@ -33,13 +43,13 @@
   ],
   "includesProperty": [
     {
-      "alternateName": "records.displayName",
+      "nestedName": "records.displayName",
       "isPartOf": {
         "@id": "veupathdb"
       },
       "name": "displayName",
       "sameAs": {
-        "alternateName": "name",
+        "nestedName": "name",
         "owl:cardinality": "one",
         "marginality": "minimal or required",
         "domainIncludes": [
@@ -60,13 +70,13 @@
       }
     },
     {
-      "alternateName": "records.attributes.summary",
+      "nestedName": "records.attributes.summary",
       "isPartOf": {
         "@id": "veupathdb"
       },
       "name": "summary",
       "sameAs": {
-        "alternateName": "description",
+        "nestedName": "description",
         "owl:cardinality": "one",
         "marginality": "minimal or required",
         "domainIncludes": [
@@ -87,13 +97,13 @@
       }
     },
     {
-      "alternateName": "records.attributes.type",
+      "nestedName": "records.attributes.type",
       "isPartOf": {
         "@id": "veupathdb"
       },
       "name": "type",
       "sameAs": {
-        "alternateName": "measurementTechnique",
+        "nestedName": "measurementTechnique",
         "owl:cardinality": "many",
         "marginality": "minimal or required",
         "domainIncludes": [
@@ -114,13 +124,13 @@
       }
     },
     {
-      "alternateName": "records.attributes.version",
+      "nestedName": "records.attributes.version",
       "isPartOf": {
         "@id": "veupathdb"
       },
       "name": "version",
       "sameAs": {
-        "alternateName": "dateModified",
+        "nestedName": "dateModified",
         "owl:cardinality": "unspecified",
         "marginality": "unspecified",
         "domainIncludes": [
@@ -141,13 +151,13 @@
       }
     },
     {
-      "alternateName": "records.attributes.release_policy",
+      "nestedName": "records.attributes.release_policy",
       "isPartOf": {
         "@id": "veupathdb"
       },
       "name": "release_policy",
       "sameAs": {
-        "alternateName": "conditionOfAccess",
+        "nestedName": "conditionOfAccess",
         "owl:cardinality": "unspecified",
         "marginality": "unspecified",
         "domainIncludes": [
@@ -168,13 +178,13 @@
       }
     },
     {
-      "alternateName": "records.attributes.project_id",
+      "nestedName": "records.attributes.project_id",
       "isPartOf": {
         "@id": "veupathdb"
       },
       "name": "project_id",
       "sameAs": {
-        "alternateName": "sdPublisher.name",
+        "nestedName": "sdPublisher.name",
         "owl:cardinality": "one",
         "marginality": "minimal or required",
         "domainIncludes": [
@@ -195,13 +205,13 @@
       }
     },
     {
-      "alternateName": "records.attributes.short_attribution",
+      "nestedName": "records.attributes.short_attribution",
       "isPartOf": {
         "@id": "veupathdb"
       },
       "name": "short_attribution",
       "sameAs": {
-        "alternateName": "creditText",
+        "nestedName": "creditText",
         "owl:cardinality": "unspecified",
         "marginality": "unspecified",
         "domainIncludes": [
@@ -222,13 +232,13 @@
       }
     },
     {
-      "alternateName": "records.id.value",
+      "nestedName": "records.id.value",
       "isPartOf": {
         "@id": "veupathdb"
       },
       "name": "value",
       "sameAs": {
-        "alternateName": "identifier",
+        "nestedName": "identifier",
         "owl:cardinality": "many",
         "marginality": "minimal or required",
         "domainIncludes": [
@@ -249,13 +259,13 @@
       }
     },
     {
-      "alternateName": "records.tables.GenomeHistory.release_number",
+      "nestedName": "records.tables.GenomeHistory.release_number",
       "isPartOf": {
         "@id": "veupathdb"
       },
       "name": "release_number",
       "sameAs": {
-        "alternateName": "version",
+        "nestedName": "version",
         "owl:cardinality": "unspecified",
         "marginality": "unspecified",
         "domainIncludes": [
@@ -276,13 +286,13 @@
       }
     },
     {
-      "alternateName": "records.tables.GenomeHistory.release_date",
+      "nestedName": "records.tables.GenomeHistory.release_date",
       "isPartOf": {
         "@id": "veupathdb"
       },
       "name": "release_date",
       "sameAs": {
-        "alternateName": "dateModified",
+        "nestedName": "dateModified",
         "owl:cardinality": "unspecified",
         "marginality": "unspecified",
         "domainIncludes": [
@@ -303,13 +313,13 @@
       }
     },
     {
-      "alternateName": "records.tables.GenomeHistory.datasest_id",
+      "nestedName": "records.tables.GenomeHistory.datasest_id",
       "isPartOf": {
         "@id": "veupathdb"
       },
       "name": "datasest_id",
       "sameAs": {
-        "alternateName": "identifier",
+        "nestedName": "identifier",
         "owl:cardinality": "many",
         "marginality": "minimal or required",
         "domainIncludes": [
@@ -330,13 +340,13 @@
       }
     },
     {
-      "alternateName": "records.tables.Publications.pmid",
+      "nestedName": "records.tables.Publications.pmid",
       "isPartOf": {
         "@id": "veupathdb"
       },
       "name": "pmid",
       "sameAs": {
-        "alternateName": "citation.pmid",
+        "nestedName": "citation.pmid",
         "owl:cardinality": "one",
         "marginality": "recommended",
         "domainIncludes": [
@@ -357,15 +367,15 @@
       }
     },
     {
-      "alternateName": "records.tables.Publications.url",
+      "nestedName": "records.tables.Publications.url",
       "isPartOf": {
         "@id": "veupathdb"
       },
       "name": "url",
       "sameAs": {
-        "alternateName": "citation.url",
+        "nestedName": "citation.url",
         "owl:cardinality": "one",
-        "marginality": "recommended",
+        "marginality": "minimal or required",
         "domainIncludes": [
           {
             "@id": "niaid:ScholarlyArticle"
@@ -384,13 +394,13 @@
       }
     },
     {
-      "alternateName": "records.tables.Contacts.contact_name",
+      "nestedName": "records.tables.Contacts.contact_name",
       "isPartOf": {
         "@id": "veupathdb"
       },
       "name": "contact_name",
       "sameAs": {
-        "alternateName": "author.name",
+        "nestedName": "author.name",
         "owl:cardinality": "one",
         "marginality": "minimal or required",
         "domainIncludes": [
@@ -411,13 +421,13 @@
       }
     },
     {
-      "alternateName": "records.tables.Contacts.affiliation",
+      "nestedName": "records.tables.Contacts.affiliation",
       "isPartOf": {
         "@id": "veupathdb"
       },
       "name": "affiliation",
       "sameAs": {
-        "alternateName": "author.affiliation",
+        "nestedName": "author.affiliation",
         "owl:cardinality": "unspecified",
         "marginality": "unspecified",
         "domainIncludes": [
@@ -427,7 +437,7 @@
         ],
         "rangeIncludes": [
           {
-            "@id": "unspecified"
+            "@id": "schema:Organization"
           }
         ],
         "url": "https://schema.org/affiliation",
@@ -438,13 +448,13 @@
       }
     },
     {
-      "alternateName": "records.tables.Version.organism",
+      "nestedName": "records.tables.Version.organism",
       "isPartOf": {
         "@id": "veupathdb"
       },
       "name": "organism",
       "sameAs": {
-        "alternateName": "species",
+        "nestedName": "species",
         "owl:cardinality": "many",
         "marginality": "recommended",
         "domainIncludes": [
@@ -465,13 +475,13 @@
       }
     },
     {
-      "alternateName": "records.tables.Version.version",
+      "nestedName": "records.tables.Version.version",
       "isPartOf": {
         "@id": "veupathdb"
       },
       "name": "version",
       "sameAs": {
-        "alternateName": "datePublished",
+        "nestedName": "datePublished",
         "owl:cardinality": "unspecified",
         "marginality": "unspecified",
         "domainIncludes": [
@@ -492,13 +502,13 @@
       }
     },
     {
-      "alternateName": "records.tables.GeneTypeCounts.gene_type",
+      "nestedName": "records.tables.GeneTypeCounts.gene_type",
       "isPartOf": {
         "@id": "veupathdb"
       },
       "name": "gene_type",
       "sameAs": {
-        "alternateName": "variableMeasured.name",
+        "nestedName": "variableMeasured.name",
         "owl:cardinality": "unspecified",
         "marginality": "unspecified",
         "domainIncludes": [
@@ -519,13 +529,13 @@
       }
     },
     {
-      "alternateName": "records.tables.GeneTypeCounts.gene_count",
+      "nestedName": "records.tables.GeneTypeCounts.gene_count",
       "isPartOf": {
         "@id": "veupathdb"
       },
       "name": "gene_count",
       "sameAs": {
-        "alternateName": "variableMeasured.identifier",
+        "nestedName": "variableMeasured.identifier",
         "owl:cardinality": "unspecified",
         "marginality": "unspecified",
         "domainIncludes": [
@@ -546,13 +556,13 @@
       }
     },
     {
-      "alternateName": "records.tables.HyperLinks.text",
+      "nestedName": "records.tables.HyperLinks.text",
       "isPartOf": {
         "@id": "veupathdb"
       },
       "name": "text",
       "sameAs": {
-        "alternateName": "distribution.name",
+        "nestedName": "distribution.name",
         "owl:cardinality": "one",
         "marginality": "unspecified",
         "domainIncludes": [
@@ -573,13 +583,13 @@
       }
     },
     {
-      "alternateName": "records.tables.HyperLinks.url",
+      "nestedName": "records.tables.HyperLinks.url",
       "isPartOf": {
         "@id": "veupathdb"
       },
       "name": "url",
       "sameAs": {
-        "alternateName": "distribution.url",
+        "nestedName": "distribution.url",
         "owl:cardinality": "one",
         "marginality": "minimal or required",
         "domainIncludes": [
@@ -622,14 +632,13 @@
       "url": "https://discovery.biothings.io/view/niaid/Dataset/",
       "version": "2022-06-09",
       "citation": {
-        "@type": "Website",
+        "@type": "WebSite",
         "name": "NIAID Data Portal schema",
         "url": "https://discovery.biothings.io/view/niaid/Dataset"
       }
     }
   ],
-  "license": "https://creativecommons.org/licenses/by/4.0/",
-  "identifier": "niaidxref_veupathdb",
+  "isPartOf": [],
   "isBasedOn": [
     {
       "@type": "WebAPI",
@@ -655,17 +664,7 @@
       }
     }
   ],
-  "sameAs": "https://docs.google.com/spreadsheets/d/1xDAH-0F6HxzQNtpYOeH5NWfLlP-fUxmIJFS8nyqPv2Y/edit#gid=1425490157",
   "datePublished": "2022-04-20",
-  "dateModified": "2022-06-07",
-  "creditText": NaN,
-  "isPartOf": NaN,
-  "@context": {
-    "niaid": "https://discovery.biothings.io/view/niaid/",
-    "schema": "https://schema.org/",
-    "owl": "http://www.w3.org/2002/07/owl#",
-    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
-  },
-  "@type": "crosswalks:MetadataCrosswalk"
+  "dateModified": "2022-06-08",
+  "license": "https://creativecommons.org/licenses/by/4.0/"
 }
