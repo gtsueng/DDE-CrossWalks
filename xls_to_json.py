@@ -223,6 +223,25 @@ def convert_xls_xwalk(data_file):
     return xwalkclean
 
 
+def invert_mappings(property_list):
+    inverted_prop_list = []
+    for eachprop in property_list:
+        newprop = eachprop.pop('sameAs')
+        newprop['sameAs'] = eachprop
+        inverted_prop_list.append(newprop)
+    return inverted_prop_list
+
+
+def generate_inverted_crosswalk(xwalkclean):
+    property_list = xwalkclean['includesProperty']
+    inverted_props = invert_mappings(property_list)
+    original_id = xwalkclean['identifier']
+    new_id = 'inverted_'+original_id
+    invertedxwalk = deepcopy(xwalkclean)
+    invertedxwalk['identifier'] = new_id
+    invertedxwalk['includesProperty']=inverted_props
+    return(invertedxwalk)
+
 ## Main
 script_path = pathlib.Path(__file__).parent.absolute()
 data_path = os.path.join(script_path,'crosswalks')
@@ -232,10 +251,15 @@ data_files = os.listdir(data_path)
 for filename in data_files:
     data_file = os.path.join(data_path,filename)
     export_file = os.path.join(export_path,filename.replace('xls','json'))
+    inverted_export_file = os.path.join(export_path,filename.replace('.xls','_inverted.json'))
     try:
         xwalkjson = convert_xls_xwalk(data_file)
         with open(export_file,'w') as outfile:
             jsonfile = json.dumps(xwalkjson, indent=2)
+            outfile.write(jsonfile)
+        invertedxwalk = generate_inverted_crosswalk(xwalkjson)
+        with open(inverted_export_file,'w') as outfile:
+            jsonfile = json.dumps(invertedxwalk, indent=2)
             outfile.write(jsonfile)
     except:
         print("failed to convert: ",filename)

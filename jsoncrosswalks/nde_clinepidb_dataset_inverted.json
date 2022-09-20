@@ -1,0 +1,806 @@
+{
+  "@type": "crosswalks:MetadataCrosswalk",
+  "@context": {
+    "nde": "https://discovery.biothings.io/view/nde/",
+    "schema": "https://schema.org/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "identifier": "inverted_nde_xref_clinepidb_dataset",
+  "name": "NIAID Dataset Ecosystem (NDE) ClinEpiDB crosswalk",
+  "description": "This crosswalk maps ClinEpiDB API field names to the NIAID Dataset Ecosystem (NDE) schema properties. Some ClinEpiDB objects appear to nest other objects, thus certain fields appear redundant between a nested object and the object that was ingested for the nesting. For example, properties nested under 'tables.StudyCharacteristicTable' also appear to be the same as those nested under 'attributes' and will be omitted from this crosswalk. Several properties from ClinEpiDB may map to a single property in the NDE:Dataset schema--in those cases, the value for the property in the NDE:Dataset schema may be a conditional aggregation of the values from different ClinEpiDB properties.",
+  "sameAs": "https://docs.google.com/spreadsheets/d/1xDAH-0F6HxzQNtpYOeH5NWfLlP-fUxmIJFS8nyqPv2Y/edit#gid=2048523076",
+  "author": [
+    {
+      "@type": "schema:Person",
+      "name": "Laura D. Hughes",
+      "familyName": "Hughes",
+      "givenName": "Laura",
+      "affiliation": "Scripps Research"
+    },
+    {
+      "@type": "schema:Person",
+      "name": "Nichollette Acosta",
+      "familyName": "Acosta",
+      "givenName": "Nicholette",
+      "affiliation": "Scripps Research"
+    },
+    {
+      "@type": "schema:Person",
+      "name": "Jason Lin",
+      "familyName": "Lin",
+      "givenName": "Jason",
+      "affiliation": "Scripps Research"
+    },
+    {
+      "@type": "schema:Person",
+      "name": "Ginger Tsueng",
+      "familyName": "Tsueng",
+      "givenName": "Ginger",
+      "affiliation": "Scripps Research"
+    }
+  ],
+  "includesProperty": [
+    {
+      "nestedName": "name",
+      "owl:cardinality": "one",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "nde:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/name",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "name",
+      "sameAs": {
+        "nestedName": "displayName",
+        "isPartOf": {
+          "@id": "clinepidb"
+        },
+        "name": "displayName"
+      }
+    },
+    {
+      "nestedName": "description",
+      "owl:cardinality": "one",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "nde:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/description",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "description",
+      "sameAs": {
+        "nestedName": "attributes.description",
+        "isPartOf": {
+          "@id": "clinepidb"
+        },
+        "name": "description"
+      }
+    },
+    {
+      "nestedName": "measurementTechnique",
+      "owl:cardinality": "many",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "nde:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        }
+      ],
+      "url": "https://schema.org/measurementTechnique",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "measurementTechnique",
+      "sameAs": {
+        "nestedName": "attributes.Study_Design",
+        "isPartOf": {
+          "@id": "clinepidb"
+        },
+        "name": "Study_Design"
+      }
+    },
+    {
+      "nestedName": "conditionOfAccess",
+      "owl:cardinality": "unspecified",
+      "marginality": "unspecified",
+      "domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/conditionOfAccess",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "conditionOfAccess",
+      "sameAs": {
+        "nestedName": "attributes.study_access",
+        "isPartOf": {
+          "@id": "clinepidb"
+        },
+        "name": "study_access"
+      }
+    },
+    {
+      "nestedName": "identifier",
+      "owl:cardinality": "many",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "nde:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/identifier",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "identifier",
+      "sameAs": {
+        "nestedName": "attributes.dataset_id",
+        "isPartOf": {
+          "@id": "clinepidb"
+        },
+        "name": "dataset_id"
+      }
+    },
+    {
+      "nestedName": "version",
+      "owl:cardinality": "unspecified",
+      "marginality": "unspecified",
+      "domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/version",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "version",
+      "sameAs": {
+        "nestedName": "attributes.eupath_release",
+        "isPartOf": {
+          "@id": "clinepidb"
+        },
+        "name": "eupath_release"
+      }
+    },
+    {
+      "nestedName": "citation.name",
+      "owl:cardinality": "one",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "nde:ScholarlyArticle"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/citation.name",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "name",
+      "sameAs": {
+        "nestedName": "tables.Publications.citation",
+        "isPartOf": {
+          "@id": "clinepidb"
+        },
+        "name": "citation"
+      }
+    },
+    {
+      "nestedName": "citation.pmid",
+      "owl:cardinality": "one",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "nde:ScholarlyArticle"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://discovery.biothings.io/view/niaid/pmid",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "pmid",
+      "sameAs": {
+        "nestedName": "tables.Publications.pmid",
+        "isPartOf": {
+          "@id": "clinepidb"
+        },
+        "name": "pmid"
+      }
+    },
+    {
+      "nestedName": "citation.url",
+      "owl:cardinality": "one",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "nde:ScholarlyArticle"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        }
+      ],
+      "url": "https://schema.org/url",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "url",
+      "sameAs": {
+        "nestedName": "tables.Publications.url",
+        "isPartOf": {
+          "@id": "clinepidb"
+        },
+        "name": "url"
+      }
+    },
+    {
+      "nestedName": "author.name",
+      "owl:cardinality": "one",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "schema:Person"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/name",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "name",
+      "sameAs": {
+        "nestedName": "attributes.contact",
+        "isPartOf": {
+          "@id": "clinepidb"
+        },
+        "name": "contact"
+      }
+    },
+    {
+      "nestedName": "author.affiliation",
+      "owl:cardinality": "unspecified",
+      "marginality": "unspecified",
+      "domainIncludes": [
+        {
+          "@id": "schema:Person"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Organization"
+        }
+      ],
+      "url": "https://schema.org/affiliation",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "affiliation",
+      "sameAs": {
+        "nestedName": "attributes.institution",
+        "isPartOf": {
+          "@id": "clinepidb"
+        },
+        "name": "institution"
+      }
+    },
+    {
+      "nestedName": "distribution.name",
+      "owl:cardinality": "one",
+      "marginality": "unspecified",
+      "domainIncludes": [
+        {
+          "@id": "nde:DataDownload"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/name",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "name",
+      "sameAs": {
+        "nestedName": "tables.DownloadVersion.dataset_name",
+        "isPartOf": {
+          "@id": "clinepidb"
+        },
+        "name": "dataset_name"
+      }
+    },
+    {
+      "nestedName": "healthCondition",
+      "owl:cardinality": "many",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "nde:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        }
+      ],
+      "url": "https://discovery.biothings.io/view/niaid/healthCondition",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "healthCondition",
+      "sameAs": {
+        "nestedName": "attributes.disease",
+        "isPartOf": {
+          "@id": "clinepidb"
+        },
+        "name": "disease"
+      }
+    },
+    {
+      "nestedName": "temporalCoverage",
+      "owl:cardinality": "many",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "nde:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:TemporalInterval"
+        }
+      ],
+      "url": "https://schema.org/temporalCoverage",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "temporalCoverage",
+      "sameAs": {
+        "nestedName": "attributes.Years",
+        "isPartOf": {
+          "@id": "clinepidb"
+        },
+        "name": "Years"
+      }
+    },
+    {
+      "nestedName": "spatialCoverage",
+      "owl:cardinality": "many",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "nde:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:AdministraiveArea"
+        }
+      ],
+      "url": "https://schema.org/spatialCoverage",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "spatialCoverage",
+      "sameAs": {
+        "nestedName": "attributes.Country",
+        "isPartOf": {
+          "@id": "clinepidb"
+        },
+        "name": "Country"
+      }
+    },
+    {
+      "nestedName": "distribution.dateModified",
+      "owl:cardinality": "unspecified",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "nde:DataDownload"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Date"
+        }
+      ],
+      "url": "https://schema.org/dateModified",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "dateModified",
+      "sameAs": {
+        "nestedName": "tables.DownloadVersion.release_date",
+        "isPartOf": {
+          "@id": "clinepidb"
+        },
+        "name": "release_date"
+      }
+    },
+    {
+      "nestedName": "citation.name",
+      "owl:cardinality": "one",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "nde:ScholarlyArticle"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/citation.name",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "name",
+      "sameAs": {
+        "nestedName": "tables.Publications.pubmed_link.displayText",
+        "isPartOf": {
+          "@id": "clinepidb"
+        },
+        "name": "displayText"
+      }
+    },
+    {
+      "nestedName": "citation.url",
+      "owl:cardinality": "one",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "nde:ScholarlyArticle"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        }
+      ],
+      "url": "https://schema.org/url",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "url",
+      "sameAs": {
+        "nestedName": "tables.Publications.pubmed_link.url",
+        "isPartOf": {
+          "@id": "clinepidb"
+        },
+        "name": "url"
+      }
+    },
+    {
+      "nestedName": "author.name",
+      "owl:cardinality": "one",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "schema:Person"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/name",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "name",
+      "sameAs": {
+        "nestedName": "tables.Contacts.contact_name",
+        "isPartOf": {
+          "@id": "clinepidb"
+        },
+        "name": "contact_name"
+      }
+    },
+    {
+      "nestedName": "isBasedOn.url",
+      "owl:cardinality": "unspecified",
+      "marginality": "unspecified",
+      "domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        }
+      ],
+      "url": "https://schema.org/url",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "url",
+      "sameAs": {
+        "nestedName": "tables.HyperLinks.url",
+        "isPartOf": {
+          "@id": "clinepidb"
+        },
+        "name": "url"
+      }
+    },
+    {
+      "nestedName": "isBasedOn.url",
+      "owl:cardinality": "unspecified",
+      "marginality": "unspecified",
+      "domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        }
+      ],
+      "url": "https://schema.org/url",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "url",
+      "sameAs": {
+        "nestedName": "tables.HyperLinks.hyper_link.url",
+        "isPartOf": {
+          "@id": "clinepidb"
+        },
+        "name": "url"
+      }
+    },
+    {
+      "nestedName": "keywords",
+      "owl:cardinality": "many",
+      "marginality": "unspecified",
+      "domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/keyworhttps://schema.org/keywords",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "keywords",
+      "sameAs": {
+        "nestedName": "attributes.WHO",
+        "isPartOf": {
+          "@id": "clinepidb"
+        },
+        "name": "WHO"
+      }
+    },
+    {
+      "nestedName": "identifier",
+      "owl:cardinality": "many",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "nde:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/identifier",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "identifier",
+      "sameAs": {
+        "nestedName": "id.value",
+        "isPartOf": {
+          "@id": "clinepidb"
+        },
+        "name": "value"
+      }
+    },
+    {
+      "nestedName": "identifier",
+      "owl:cardinality": "many",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "nde:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/identifier",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "identifier",
+      "sameAs": {
+        "nestedName": "tables.Publications.dataset_id",
+        "isPartOf": {
+          "@id": "clinepidb"
+        },
+        "name": "dataset_id"
+      }
+    },
+    {
+      "nestedName": "identifier",
+      "owl:cardinality": "many",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "nde:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/identifier",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "identifier",
+      "sameAs": {
+        "nestedName": "tables.DownloadVersion.dataset_id",
+        "isPartOf": {
+          "@id": "clinepidb"
+        },
+        "name": "dataset_id"
+      }
+    },
+    {
+      "nestedName": "identifier",
+      "owl:cardinality": "many",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "nde:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/identifier",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "identifier",
+      "sameAs": {
+        "nestedName": "tables.Contacts.dataset_id",
+        "isPartOf": {
+          "@id": "clinepidb"
+        },
+        "name": "dataset_id"
+      }
+    }
+  ],
+  "hasPart": [
+    {
+      "@type": "CreativeWork",
+      "identifier": "clinepidb",
+      "name": "Clinical Epidemiology Resources",
+      "alternateName": "clinepidb",
+      "url": "https://clinepidb.org/ce/app/",
+      "version": "ClinEpiDB 23",
+      "citation": {
+        "@type": "ScholarlyArticle",
+        "name": "ClinEpiDB: an open-access clinical epidemiology database resource encouraging online exploration of complex studies.",
+        "url": "https://gatesopenresearch.org/articles/3-1661/v2"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "identifier": "nde:Dataset",
+      "name": "NIAID Data Ecosystem (NDE) Dataset Schema",
+      "alternateName": "nde:Dataset",
+      "url": "https://discovery.biothings.io/view/nde/Dataset/",
+      "version": "2022-06-09",
+      "citation": {
+        "@type": "WebSite",
+        "name": "NIAID Data Ecosystem (NDE) schema",
+        "url": "https://discovery.biothings.io/view/nde/Dataset"
+      }
+    }
+  ],
+  "isPartOf": [],
+  "isBasedOn": [
+    {
+      "@type": "WebAPI",
+      "name": "Clinical Epidemiology Resources",
+      "url": "https://clinepidb.org/ce/app/",
+      "documentation": "https://clinepidb.org/ce/app/static-content/ClinEpiDB/tutorials.html"
+    }
+  ],
+  "isBasisFor": [
+    {
+      "@type": "WebAPI",
+      "name": "NIAID Data Ecosystem",
+      "url": "https://docs.niaiddata.org/",
+      "documentation": "https://docs.niaiddata.org/reference/new-1"
+    }
+  ],
+  "funding": [
+    {
+      "@type": "schema:MonetaryGrant",
+      "identifier": "U19 AI135995",
+      "funder": {
+        "@type": "schema:Organization",
+        "name": "National Institute of Allergy and Infectious Diseases"
+      }
+    }
+  ],
+  "datePublished": "2022-07-07",
+  "dateModified": "2022-07-25",
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}

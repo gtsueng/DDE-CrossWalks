@@ -1,0 +1,1141 @@
+{
+  "@type": "crosswalks:MetadataCrosswalk",
+  "@context": {
+    "nde": "https://discovery.biothings.io/view/nde/",
+    "schema": "https://schema.org/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "identifier": "inverted_niaid_xref_vivli_dataset",
+  "name": "NIAID Dataset Ecosystem Vivli crosswalk",
+  "description": "This crosswalk maps Vivli API field names to the NIAID Data Ecosystem Dataset schema properties. A few properties from the NIAID Data Ecosystem schema were derived rather than being directly mapped. This includes the \"name\" (derived by concatenation of of the studyTitle with text to distinguish that this is the dataset of the study), the \"@type\" which was set as \"Dataset\", and the \"includedInDataCatalog.name\" which was set as \"Vivli\". Some properties in Vivli mapped to a single property in the NIAID:Dataset schema, so the values may be conditionally aggregated.",
+  "sameAs": "https://docs.google.com/spreadsheets/d/1c7Iv2PrZPfs_QXIu5IWQfLKp0hc0HGK0Kl5Vqd9Dcpw/edit#gid=0",
+  "author": [
+    {
+      "@type": "schema:Person",
+      "name": "Laura D. Hughes",
+      "familyName": "Hughes",
+      "givenName": "Laura",
+      "affiliation": "Scripps Research"
+    },
+    {
+      "@type": "schema:Person",
+      "name": "Jason Lin",
+      "familyName": "Lin",
+      "givenName": "Jason",
+      "affiliation": "Scripps Research"
+    },
+    {
+      "@type": "schema:Person",
+      "name": "Ginger Tsueng",
+      "familyName": "Tsueng",
+      "givenName": "Ginger",
+      "affiliation": "Scripps Research"
+    }
+  ],
+  "includesProperty": [
+    {
+      "nestedName": "name",
+      "owl:cardinality": "one",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "niaid:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/name",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "name",
+      "sameAs": {
+        "nestedName": "studyTitle",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "studyTitle"
+      }
+    },
+    {
+      "nestedName": "description",
+      "owl:cardinality": "one",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "niaid:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/description",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "description",
+      "sameAs": {
+        "nestedName": "description",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "description"
+      }
+    },
+    {
+      "nestedName": "measurementTechnique",
+      "owl:cardinality": "many",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "niaid:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        }
+      ],
+      "url": "https://schema.org/measurementTechnique",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "measurementTechnique",
+      "sameAs": {
+        "nestedName": "outcomes.specificMetric",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "specificMetric"
+      }
+    },
+    {
+      "nestedName": "conditionOfAccess",
+      "owl:cardinality": "unspecified",
+      "marginality": "unspecified",
+      "domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/conditionOfAccess",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "conditionOfAccess",
+      "sameAs": {
+        "nestedName": "additionalInformation",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "additionalInformation"
+      }
+    },
+    {
+      "nestedName": "identifier",
+      "owl:cardinality": "many",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "niaid:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/identifier",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "identifier",
+      "sameAs": {
+        "nestedName": "secondaryIds",
+        "owl:cardinality": "many",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "secondaryIds"
+      }
+    },
+    {
+      "nestedName": "author.name",
+      "owl:cardinality": "one",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "schema:Person"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/name",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "name",
+      "sameAs": {
+        "nestedName": "principalInvestigator.firstName",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "firstName"
+      }
+    },
+    {
+      "nestedName": "author.name",
+      "owl:cardinality": "one",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "schema:Person"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/name",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "name",
+      "sameAs": {
+        "nestedName": "principalInvestigator.lastName",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "lastName"
+      }
+    },
+    {
+      "nestedName": "author.identifier",
+      "owl:cardinality": "unspecified",
+      "marginality": "unspecified",
+      "domainIncludes": [
+        {
+          "@id": "schema:Person"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/identifier",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "identifier",
+      "sameAs": {
+        "nestedName": "principalInvestigator.orcidId",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "orcidId"
+      }
+    },
+    {
+      "nestedName": "datePublished",
+      "owl:cardinality": "unspecified",
+      "marginality": "unspecified",
+      "domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/datePublished",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "datePublished",
+      "sameAs": {
+        "nestedName": "postedDate",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "postedDate"
+      }
+    },
+    {
+      "nestedName": "variableMeasured",
+      "owl:cardinality": "unspecified",
+      "marginality": "unspecified",
+      "domainIncludes": [
+        {
+          "@id": "schema:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PropertyValue"
+        }
+      ],
+      "url": "https://schema.org/variableMeasured",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "variableMeasured",
+      "sameAs": {
+        "nestedName": "outcomeNames",
+        "owl:cardinality": "many",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "outcomeNames"
+      }
+    },
+    {
+      "nestedName": "variableMeasured",
+      "owl:cardinality": "unspecified",
+      "marginality": "unspecified",
+      "domainIncludes": [
+        {
+          "@id": "schema:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PropertyValue"
+        }
+      ],
+      "url": "https://schema.org/variableMeasured",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "variableMeasured",
+      "sameAs": {
+        "nestedName": "outcomes.specificMeasurement",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "specificMeasurement"
+      }
+    },
+    {
+      "nestedName": "variableMeasured",
+      "owl:cardinality": "unspecified",
+      "marginality": "unspecified",
+      "domainIncludes": [
+        {
+          "@id": "schema:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PropertyValue"
+        }
+      ],
+      "url": "https://schema.org/variableMeasured",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "variableMeasured",
+      "sameAs": {
+        "nestedName": "outcomes.outcomeOrMeasurement",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "outcomeOrMeasurement"
+      }
+    },
+    {
+      "nestedName": "spatialCoverage",
+      "owl:cardinality": "many",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "niaid:AdministrativeArea"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/spatialCoverage",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "spatialCoverage",
+      "sameAs": {
+        "nestedName": "locationsOfStudySites",
+        "owl:cardinality": "many",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "locationsOfStudySites"
+      }
+    },
+    {
+      "nestedName": "spatialCoverage.name",
+      "owl:cardinality": "one",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "niaid:AdministrativeArea"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/name",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "name",
+      "sameAs": {
+        "nestedName": "locationsOfStudySites.name",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "name"
+      }
+    },
+    {
+      "nestedName": "spatialCoverage.identifier",
+      "owl:cardinality": "one",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "niaid:AdministrativeArea"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/identifier",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "identifier",
+      "sameAs": {
+        "nestedName": "locationsOfStudySites.code",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "code"
+      }
+    },
+    {
+      "nestedName": "keywords",
+      "owl:cardinality": "unspecified",
+      "marginality": "unspecified",
+      "domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/keywords",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "keywords",
+      "sameAs": {
+        "nestedName": "arms.interventions.interventionName",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "interventionName"
+      }
+    },
+    {
+      "nestedName": "healthCondition",
+      "owl:cardinality": "many",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "niaid:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        }
+      ],
+      "url": "https://discovery.biothings.io/view/niaid/healthCondition",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "healthCondition",
+      "sameAs": {
+        "nestedName": "conditions",
+        "owl:cardinality": "many",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "conditions"
+      }
+    },
+    {
+      "nestedName": "keywords",
+      "owl:cardinality": "unspecified",
+      "marginality": "unspecified",
+      "domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/keywords",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "keywords",
+      "sameAs": {
+        "nestedName": "populationVocabularyItems.term",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "term"
+      }
+    },
+    {
+      "nestedName": "keywords",
+      "owl:cardinality": "unspecified",
+      "marginality": "unspecified",
+      "domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/keywords",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "keywords",
+      "sameAs": {
+        "nestedName": "interventionVocabularyItems.term",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "term"
+      }
+    },
+    {
+      "nestedName": "identifier",
+      "owl:cardinality": "many",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "niaid:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/identifier",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "identifier",
+      "sameAs": {
+        "nestedName": "nctId",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "nctId"
+      }
+    },
+    {
+      "nestedName": "dateCreated",
+      "owl:cardinality": "unspecified",
+      "marginality": "unspecified",
+      "domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Date"
+        }
+      ],
+      "url": "https://schema.org/dateCreated",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "dateCreated",
+      "sameAs": {
+        "nestedName": "draftCreatedDate",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "draftCreatedDate"
+      }
+    },
+    {
+      "nestedName": "dateCreated",
+      "owl:cardinality": "unspecified",
+      "marginality": "unspecified",
+      "domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Date"
+        }
+      ],
+      "url": "https://schema.org/dateCreated",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "dateCreated",
+      "sameAs": {
+        "nestedName": "submittedDate",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "submittedDate"
+      }
+    },
+    {
+      "nestedName": "keywords",
+      "owl:cardinality": "unspecified",
+      "marginality": "unspecified",
+      "domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/keywords",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "keywords",
+      "sameAs": {
+        "nestedName": "extractedInterventions",
+        "owl:cardinality": "many",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "extractedInterventions"
+      }
+    },
+    {
+      "nestedName": "healthCondition",
+      "owl:cardinality": "many",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "niaid:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        }
+      ],
+      "url": "https://discovery.biothings.io/view/niaid/healthCondition",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "healthCondition",
+      "sameAs": {
+        "nestedName": "extractedConditions",
+        "owl:cardinality": "many",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "extractedConditions"
+      }
+    },
+    {
+      "nestedName": "keywords",
+      "owl:cardinality": "unspecified",
+      "marginality": "unspecified",
+      "domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/keywords",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "keywords",
+      "sameAs": {
+        "nestedName": "tag",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "tag"
+      }
+    },
+    {
+      "nestedName": "funding.identifier",
+      "owl:cardinality": "one",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "niaid:MonetaryGrant"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/identifier",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "identifier",
+      "sameAs": {
+        "nestedName": "grant",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "grant"
+      }
+    },
+    {
+      "nestedName": "funding.funder",
+      "owl:cardinality": "many",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "niaid:MonetaryGrant"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "niaid:Organization"
+        }
+      ],
+      "url": "https://schema.org/funder",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "funder",
+      "sameAs": {
+        "nestedName": "funder",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "funder"
+      }
+    },
+    {
+      "nestedName": "doi",
+      "owl:cardinality": "one",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "niaid:ScholarlyArticle"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://discovery.biothings.io/view/niaid/doi",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "doi",
+      "sameAs": {
+        "nestedName": "studyMetadataDoi",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "studyMetadataDoi"
+      }
+    },
+    {
+      "nestedName": "doi",
+      "owl:cardinality": "one",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "niaid:ScholarlyArticle"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://discovery.biothings.io/view/niaid/doi",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "doi",
+      "sameAs": {
+        "nestedName": "digitalObjectId",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "digitalObjectId"
+      }
+    },
+    {
+      "nestedName": "temporalCoverage.startDate",
+      "owl:cardinality": "one",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "niaid:TemporalInterval"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Date"
+        }
+      ],
+      "url": "https://schema.org/startDate",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "startDate",
+      "sameAs": {
+        "nestedName": "studyStartDateString",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "studyStartDateString"
+      }
+    },
+    {
+      "nestedName": "temporalCoverage.endDate",
+      "owl:cardinality": "one",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "niaid:TemporalInterval"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Date"
+        }
+      ],
+      "url": "https://schema.org/endDate",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "endDate",
+      "sameAs": {
+        "nestedName": "studyEndDateString",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "studyEndDateString"
+      }
+    },
+    {
+      "nestedName": "temporalCoverage.startDate",
+      "owl:cardinality": "one",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "niaid:TemporalInterval"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Date"
+        }
+      ],
+      "url": "https://schema.org/startDate",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "startDate",
+      "sameAs": {
+        "nestedName": "studyStartDate",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "studyStartDate"
+      }
+    },
+    {
+      "nestedName": "temporalCoverage.endDate",
+      "owl:cardinality": "one",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "niaid:TemporalInterval"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Date"
+        }
+      ],
+      "url": "https://schema.org/endDate",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "endDate",
+      "sameAs": {
+        "nestedName": "actualStudyCompletionDate",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "actualStudyCompletionDate"
+      }
+    },
+    {
+      "nestedName": "temporalCoverage.startDate",
+      "owl:cardinality": "one",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "niaid:TemporalInterval"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Date"
+        }
+      ],
+      "url": "https://schema.org/startDate",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "startDate",
+      "sameAs": {
+        "nestedName": "startDate",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "startDate"
+      }
+    },
+    {
+      "nestedName": "temporalCoverage.endDate",
+      "owl:cardinality": "one",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "niaid:TemporalInterval"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Date"
+        }
+      ],
+      "url": "https://schema.org/endDate",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "endDate",
+      "sameAs": {
+        "nestedName": "endDate",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "endDate"
+      }
+    },
+    {
+      "nestedName": "funding.funder.name",
+      "owl:cardinality": "one",
+      "marginality": "required",
+      "domainIncludes": [
+        {
+          "@id": "niaid:MonetaryGrant"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/name",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "name",
+      "sameAs": {
+        "nestedName": "leadSponsor.agency",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "agency"
+      }
+    },
+    {
+      "nestedName": "funding.funder.name",
+      "owl:cardinality": "one",
+      "marginality": "required",
+      "domainIncludes": [
+        {
+          "@id": "niaid:MonetaryGrant"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/name",
+      "isPartOf": {
+        "@id": "nde:Dataset"
+      },
+      "name": "name",
+      "sameAs": {
+        "nestedName": "collaborators.agency",
+        "owl:cardinality": "unspecified",
+        "isPartOf": {
+          "@id": "vivli"
+        },
+        "name": "agency"
+      }
+    }
+  ],
+  "hasPart": [
+    {
+      "@type": "CreativeWork",
+      "identifier": "vivli",
+      "name": "Vivli - Center for Global Clinical Research Data",
+      "alternateName": "Vivli",
+      "url": "https://prod-api.vivli.org/api/",
+      "version": "1.0.0",
+      "citation": {
+        "@type": "VideoObject",
+        "name": "How Vivli Promotes Discoverability of Partner Platforms and Repositories",
+        "url": "https://youtu.be/YsX_EfdMR1Q"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "identifier": "nde:Dataset",
+      "name": "NIAID Data Ecosystem (NDE) Dataset Schema",
+      "alternateName": "nde:Dataset",
+      "url": "https://discovery.biothings.io/view/nde/Dataset/",
+      "version": "2022-06-09",
+      "citation": {
+        "@type": "WebSite",
+        "name": "NIAID Data Ecosystem (NDE) schema",
+        "url": "https://discovery.biothings.io/view/nde/Dataset"
+      }
+    }
+  ],
+  "isPartOf": [],
+  "isBasedOn": [
+    {
+      "@type": "WebAPI",
+      "name": "Vivli API",
+      "url": "https://prod-api.vivli.org/api/"
+    }
+  ],
+  "isBasisFor": [
+    {
+      "@type": "WebAPI",
+      "name": "NIAID Data Ecosystem",
+      "url": "https://docs.niaiddata.org/",
+      "documentation": "https://docs.niaiddata.org/reference/new-1"
+    }
+  ],
+  "funding": [
+    {
+      "@type": "schema:MonetaryGrant",
+      "identifier": "U19 AI135995",
+      "funder": {
+        "@type": "schema:Organization",
+        "name": "National Institute of Allergy and Infectious Diseases"
+      }
+    }
+  ],
+  "datePublished": "2022-06-21",
+  "dateModified": "2022-07-22",
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
