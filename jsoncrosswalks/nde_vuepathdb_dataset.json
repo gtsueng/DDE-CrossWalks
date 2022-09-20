@@ -1,15 +1,15 @@
 {
   "@type": "crosswalks:MetadataCrosswalk",
   "@context": {
-    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "nde": "https://discovery.biothings.io/view/nde/",
     "schema": "https://schema.org/",
     "owl": "http://www.w3.org/2002/07/owl#",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
   },
-  "identifier": "niaid_xref_veupathdb",
-  "name": "NIAID Dataset veupathdb crosswalk",
-  "description": "This crosswalk maps veupathdb API field names to the NIAID Dataset schema properties. A few properties from the NIAID Dataset schema were derived rather than being directly mapped. These include 'url' (derived by concatenation of 'https://veupathdb.org/veupathdb/app/record/dataset/' with the identifier {records.id.value}, the '@type' which was set as 'Dataset', and the 'includedInDataCatalog.name' which was set as 'VEuPathDB'",
+  "identifier": "nde_xref_veupathdb_dataset",
+  "name": "NIAID Data Ecosystem (NDE) Dataset veupathdb crosswalk",
+  "description": "This crosswalk maps veupathdb API field names to the NIAID Data Ecosystem (NDE) Dataset schema properties. A few properties from the NDE Dataset schema were derived rather than being directly mapped. These include 'url' (derived by concatenation of 'https://veupathdb.org/veupathdb/app/record/dataset/' with the identifier {records.id.value}, the '@type' which was set as 'Dataset', and the 'includedInDataCatalog.name' which was set as 'VEuPathDB'",
   "sameAs": "https://docs.google.com/spreadsheets/d/1xDAH-0F6HxzQNtpYOeH5NWfLlP-fUxmIJFS8nyqPv2Y/edit#gid=1425490157",
   "author": [
     {
@@ -54,7 +54,7 @@
         "marginality": "minimal or required",
         "domainIncludes": [
           {
-            "@id": "niaid:Dataset"
+            "@id": "nde:Dataset"
           }
         ],
         "rangeIncludes": [
@@ -64,7 +64,7 @@
         ],
         "url": "https://schema.org/name",
         "isPartOf": {
-          "@id": "niaid:Dataset"
+          "@id": "nde:Dataset"
         },
         "name": "name"
       }
@@ -81,7 +81,7 @@
         "marginality": "minimal or required",
         "domainIncludes": [
           {
-            "@id": "niaid:Dataset"
+            "@id": "nde:Dataset"
           }
         ],
         "rangeIncludes": [
@@ -91,7 +91,7 @@
         ],
         "url": "https://schema.org/description",
         "isPartOf": {
-          "@id": "niaid:Dataset"
+          "@id": "nde:Dataset"
         },
         "name": "description"
       }
@@ -108,7 +108,7 @@
         "marginality": "minimal or required",
         "domainIncludes": [
           {
-            "@id": "niaid:Dataset"
+            "@id": "nde:Dataset"
           }
         ],
         "rangeIncludes": [
@@ -118,7 +118,7 @@
         ],
         "url": "https://schema.org/measurementTechnique",
         "isPartOf": {
-          "@id": "niaid:Dataset"
+          "@id": "nde:Dataset"
         },
         "name": "measurementTechnique"
       }
@@ -145,7 +145,7 @@
         ],
         "url": "https://schema.org/dateModified",
         "isPartOf": {
-          "@id": "niaid:Dataset"
+          "@id": "nde:Dataset"
         },
         "name": "dateModified"
       }
@@ -172,7 +172,7 @@
         ],
         "url": "https://schema.org/conditionOfAccess",
         "isPartOf": {
-          "@id": "niaid:Dataset"
+          "@id": "nde:Dataset"
         },
         "name": "conditionOfAccess"
       }
@@ -199,7 +199,7 @@
         ],
         "url": "https://schema.org/sdPublisher.name",
         "isPartOf": {
-          "@id": "niaid:Dataset"
+          "@id": "nde:Dataset"
         },
         "name": "name"
       }
@@ -226,7 +226,7 @@
         ],
         "url": "https://schema.org/creditText",
         "isPartOf": {
-          "@id": "niaid:Dataset"
+          "@id": "nde:Dataset"
         },
         "name": "creditText"
       }
@@ -243,7 +243,7 @@
         "marginality": "minimal or required",
         "domainIncludes": [
           {
-            "@id": "niaid:Dataset"
+            "@id": "nde:Dataset"
           }
         ],
         "rangeIncludes": [
@@ -253,7 +253,7 @@
         ],
         "url": "https://schema.org/identifier",
         "isPartOf": {
-          "@id": "niaid:Dataset"
+          "@id": "nde:Dataset"
         },
         "name": "identifier"
       }
@@ -280,7 +280,7 @@
         ],
         "url": "https://schema.org/version",
         "isPartOf": {
-          "@id": "niaid:Dataset"
+          "@id": "nde:Dataset"
         },
         "name": "version"
       }
@@ -307,7 +307,7 @@
         ],
         "url": "https://schema.org/dateModified",
         "isPartOf": {
-          "@id": "niaid:Dataset"
+          "@id": "nde:Dataset"
         },
         "name": "dateModified"
       }
@@ -324,7 +324,7 @@
         "marginality": "minimal or required",
         "domainIncludes": [
           {
-            "@id": "niaid:Dataset"
+            "@id": "nde:Dataset"
           }
         ],
         "rangeIncludes": [
@@ -334,7 +334,7 @@
         ],
         "url": "https://schema.org/identifier",
         "isPartOf": {
-          "@id": "niaid:Dataset"
+          "@id": "nde:Dataset"
         },
         "name": "identifier"
       }
@@ -351,7 +351,7 @@
         "marginality": "recommended",
         "domainIncludes": [
           {
-            "@id": "niaid:ScholarlyArticle"
+            "@id": "nde:ScholarlyArticle"
           }
         ],
         "rangeIncludes": [
@@ -359,9 +359,9 @@
             "@id": "schema:Text"
           }
         ],
-        "url": "https://discovery.biothings.io/view/niaid/pmid",
+        "url": "https://discovery.biothings.io/view/nde/pmid",
         "isPartOf": {
-          "@id": "niaid:Dataset"
+          "@id": "nde:Dataset"
         },
         "name": "pmid"
       }
@@ -378,7 +378,7 @@
         "marginality": "minimal or required",
         "domainIncludes": [
           {
-            "@id": "niaid:ScholarlyArticle"
+            "@id": "nde:ScholarlyArticle"
           }
         ],
         "rangeIncludes": [
@@ -388,7 +388,7 @@
         ],
         "url": "https://schema.org/url",
         "isPartOf": {
-          "@id": "niaid:Dataset"
+          "@id": "nde:Dataset"
         },
         "name": "url"
       }
@@ -415,7 +415,7 @@
         ],
         "url": "https://schema.org/name",
         "isPartOf": {
-          "@id": "niaid:Dataset"
+          "@id": "nde:Dataset"
         },
         "name": "name"
       }
@@ -442,7 +442,7 @@
         ],
         "url": "https://schema.org/affiliation",
         "isPartOf": {
-          "@id": "niaid:Dataset"
+          "@id": "nde:Dataset"
         },
         "name": "affiliation"
       }
@@ -459,7 +459,7 @@
         "marginality": "recommended",
         "domainIncludes": [
           {
-            "@id": "niaid:Dataset"
+            "@id": "nde:Dataset"
           }
         ],
         "rangeIncludes": [
@@ -467,9 +467,9 @@
             "@id": "schema:DefinedTerm"
           }
         ],
-        "url": "https://discovery.biothings.io/view/niaid/species",
+        "url": "https://discovery.biothings.io/view/nde/species",
         "isPartOf": {
-          "@id": "niaid:Dataset"
+          "@id": "nde:Dataset"
         },
         "name": "species"
       }
@@ -496,7 +496,7 @@
         ],
         "url": "https://schema.org/datePublished",
         "isPartOf": {
-          "@id": "niaid:Dataset"
+          "@id": "nde:Dataset"
         },
         "name": "datePublished"
       }
@@ -523,7 +523,7 @@
         ],
         "url": "https://schema.org/name",
         "isPartOf": {
-          "@id": "niaid:Dataset"
+          "@id": "nde:Dataset"
         },
         "name": "name"
       }
@@ -550,7 +550,7 @@
         ],
         "url": "https://schema.org/identifier",
         "isPartOf": {
-          "@id": "niaid:Dataset"
+          "@id": "nde:Dataset"
         },
         "name": "identifier"
       }
@@ -567,7 +567,7 @@
         "marginality": "unspecified",
         "domainIncludes": [
           {
-            "@id": "niaid:DataDownload"
+            "@id": "nde:DataDownload"
           }
         ],
         "rangeIncludes": [
@@ -577,7 +577,7 @@
         ],
         "url": "https://schema.org/name",
         "isPartOf": {
-          "@id": "niaid:Dataset"
+          "@id": "nde:Dataset"
         },
         "name": "name"
       }
@@ -594,7 +594,7 @@
         "marginality": "minimal or required",
         "domainIncludes": [
           {
-            "@id": "niaid:DataDownload"
+            "@id": "nde:DataDownload"
           }
         ],
         "rangeIncludes": [
@@ -604,7 +604,7 @@
         ],
         "url": "https://schema.org/url",
         "isPartOf": {
-          "@id": "niaid:Dataset"
+          "@id": "nde:Dataset"
         },
         "name": "url"
       }
@@ -626,15 +626,15 @@
     },
     {
       "@type": "CreativeWork",
-      "identifier": "niaid:Dataset",
-      "name": "NIAID Dataset Schema",
-      "alternateName": "niaid:Dataset",
-      "url": "https://discovery.biothings.io/view/niaid/Dataset/",
+      "identifier": "nde:Dataset",
+      "name": "NIAID Data Ecosystem (NDE) Dataset Schema",
+      "alternateName": "nde:Dataset",
+      "url": "https://discovery.biothings.io/view/nde/Dataset/",
       "version": "2022-06-09",
       "citation": {
         "@type": "WebSite",
-        "name": "NIAID Data Portal schema",
-        "url": "https://discovery.biothings.io/view/niaid/Dataset"
+        "name": "NIAID Data Ecosystem (NDE) schema",
+        "url": "https://discovery.biothings.io/view/nde/Dataset"
       }
     }
   ],
@@ -649,9 +649,10 @@
   ],
   "isBasisFor": [
     {
-      "@type": "WebSite",
-      "name": "NIAID Data Portal",
-      "url": "https://discovery.biothings.io/portal/niaid"
+      "@type": "WebAPI",
+      "name": "NIAID Data Ecosystem",
+      "url": "https://docs.niaiddata.org/",
+      "documentation": "https://docs.niaiddata.org/reference/new-1"
     }
   ],
   "funding": [

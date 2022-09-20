@@ -1,0 +1,791 @@
+{
+  "@type": "crosswalks:MetadataCrosswalk",
+  "@context": {
+    "niaid": "https://discovery.biothings.io/view/niaid/",
+    "nde": "https://discovery.biothings.io/view/nde",
+    "schema": "https://schema.org/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "identifier": "niaid_xref_nde_dataset",
+  "name": "NIAID Dataset NDE Dataset crosswalk",
+  "description": "This crosswalk maps NIAID SysBio Dataset schema properties to the NDE Dataset schema. Since the NDE Dataset schema is derived from the NIAID Dataset schema, inherited properties will generally map perfectly (with a few exceptions), and the NDE schema will have additional properties that don't exist/cannot be mapped to the NIAID schema",
+  "author": [
+    {
+      "@type": "schema:Person",
+      "name": "Laura D. Hughes",
+      "familyName": "Hughes",
+      "givenName": "Laura",
+      "affiliation": "Scripps Research"
+    },
+    {
+      "@type": "schema:Person",
+      "name": "Nichollette Acosta",
+      "familyName": "Acosta",
+      "givenName": "Nicholette",
+      "affiliation": "Scripps Research"
+    },
+    {
+      "@type": "schema:Person",
+      "name": "Jason Lin",
+      "familyName": "Lin",
+      "givenName": "Jason",
+      "affiliation": "Scripps Research"
+    },
+    {
+      "@type": "schema:Person",
+      "name": "Ginger Tsueng",
+      "familyName": "Tsueng",
+      "givenName": "Ginger",
+      "affiliation": "Scripps Research"
+    },
+    {
+      "@type": "schema:Person",
+      "name": "Dylan Welzel",
+      "familyName": "Welzel",
+      "givenName": "Dylan",
+      "affiliation": "Scripps Research"
+    }
+  ],
+  "includesProperty": [
+    {
+      "nestedName": "name",
+      "owl:cardinality": "one",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "niaid:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "isPartOf": {
+        "@id": "niaid:Dataset"
+      },
+      "name": "name",
+      "sameAs": {
+        "nestedName": "name",
+        "owl:cardinality": "one",
+        "marginality": "minimal or required",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ],
+        "url": "https://schema.org/name",
+        "isPartOf": {
+          "@id": "nde:Dataset"
+        },
+        "name": "name"
+      }
+    },
+    {
+      "nestedName": "description",
+      "owl:cardinality": "one",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "niaid:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "isPartOf": {
+        "@id": "niaid:Dataset"
+      },
+      "name": "description",
+      "sameAs": {
+        "nestedName": "description",
+        "owl:cardinality": "one",
+        "marginality": "minimal or required",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ],
+        "url": "https://schema.org/description",
+        "isPartOf": {
+          "@id": "nde:Dataset"
+        },
+        "name": "description"
+      }
+    },
+    {
+      "nestedName": "measurementTechnique",
+      "owl:cardinality": "many",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "niaid:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        }
+      ],
+      "isPartOf": {
+        "@id": "niaid:Dataset"
+      },
+      "name": "measurementTechnique",
+      "sameAs": {
+        "nestedName": "measurementTechnique",
+        "owl:cardinality": "many",
+        "marginality": "minimal or required",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:DefinedTerm"
+          }
+        ],
+        "url": "https://schema.org/measurementTechnique",
+        "isPartOf": {
+          "@id": "nde:Dataset"
+        },
+        "name": "measurementTechnique"
+      }
+    },
+    {
+      "nestedName": "identifier",
+      "owl:cardinality": "many",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "niaid:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "isPartOf": {
+        "@id": "niaid:Dataset"
+      },
+      "name": "identifier",
+      "sameAs": {
+        "nestedName": "identifier",
+        "owl:cardinality": "many",
+        "marginality": "minimal or required",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ],
+        "url": "https://schema.org/identifier",
+        "isPartOf": {
+          "@id": "nde:Dataset"
+        },
+        "name": "identifier"
+      }
+    },
+    {
+      "nestedName": "creator",
+      "owl:cardinality": "many",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "niaid:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "niaid:Organization"
+        }
+      ],
+      "isPartOf": {
+        "@id": "niaid:Dataset"
+      },
+      "name": "creator",
+      "sameAs": {
+        "nestedName": "author",
+        "owl:cardinality": "many",
+        "marginality": "minimal or required",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Person"
+          },
+          {
+            "@id": "niaid:Organization"
+          }
+        ],
+        "url": "https://schema.org/author",
+        "isPartOf": {
+          "@id": "nde:Dataset"
+        },
+        "name": "author"
+      }
+    },
+    {
+      "nestedName": "creator",
+      "owl:cardinality": "many",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "niaid:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "niaid:Organization"
+        }
+      ],
+      "isPartOf": {
+        "@id": "niaid:Dataset"
+      },
+      "name": "creator",
+      "sameAs": {
+        "nestedName": "creator",
+        "owl:cardinality": "many",
+        "marginality": "optional",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Person"
+          },
+          {
+            "@id": "niaid:Organization"
+          }
+        ],
+        "url": "https://schema.org/creator",
+        "isPartOf": {
+          "@id": "nde:Dataset"
+        },
+        "name": "creator"
+      }
+    },
+    {
+      "nestedName": "distribution",
+      "owl:cardinality": "many",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "niaid:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "niaid:DataDownload"
+        }
+      ],
+      "isPartOf": {
+        "@id": "niaid:Dataset"
+      },
+      "name": "distribution",
+      "sameAs": {
+        "nestedName": "distribution",
+        "owl:cardinality": "many",
+        "marginality": "minimal or required",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "niaid:DataDownload"
+          }
+        ],
+        "url": "https://schema.org/distribution",
+        "isPartOf": {
+          "@id": "nde:Dataset"
+        },
+        "name": "distribution"
+      }
+    },
+    {
+      "nestedName": "funding",
+      "owl:cardinality": "many",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "niaid:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "niaid:MonetaryGrant"
+        }
+      ],
+      "isPartOf": {
+        "@id": "niaid:Dataset"
+      },
+      "name": "funding",
+      "sameAs": {
+        "nestedName": "funding",
+        "owl:cardinality": "many",
+        "marginality": "minimal or required",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "niaid:MonetaryGrant"
+          }
+        ],
+        "url": "https://discovery.biothings.io/view/niaid/funding",
+        "isPartOf": {
+          "@id": "nde:Dataset"
+        },
+        "name": "funding"
+      }
+    },
+    {
+      "nestedName": "citation",
+      "owl:cardinality": "many",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "niaid:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "niaid:ScholarlyArticle"
+        }
+      ],
+      "isPartOf": {
+        "@id": "niaid:Dataset"
+      },
+      "name": "citation",
+      "sameAs": {
+        "nestedName": "citation",
+        "owl:cardinality": "many",
+        "marginality": "recommended",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "niaid:ScholarlyArticle"
+          }
+        ],
+        "url": "https://schema.org/citation",
+        "isPartOf": {
+          "@id": "nde:Dataset"
+        },
+        "name": "citation"
+      }
+    },
+    {
+      "nestedName": "license",
+      "owl:cardinality": "one",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "niaid:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ],
+      "isPartOf": {
+        "@id": "niaid:Dataset"
+      },
+      "name": "license",
+      "sameAs": {
+        "nestedName": "license",
+        "owl:cardinality": "one",
+        "marginality": "recommended",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          },
+          {
+            "@id": "schema:URL"
+          }
+        ],
+        "url": "https://schema.org/license",
+        "isPartOf": {
+          "@id": "nde:Dataset"
+        },
+        "name": "license"
+      }
+    },
+    {
+      "nestedName": "species",
+      "owl:cardinality": "many",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "niaid:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        }
+      ],
+      "isPartOf": {
+        "@id": "niaid:Dataset"
+      },
+      "name": "species",
+      "sameAs": {
+        "nestedName": "species",
+        "owl:cardinality": "many",
+        "marginality": "recommended",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:DefinedTerm"
+          }
+        ],
+        "url": "https://discovery.biothings.io/view/niaid/species",
+        "isPartOf": {
+          "@id": "nde:Dataset"
+        },
+        "name": "species"
+      }
+    },
+    {
+      "nestedName": "infectiousAgent",
+      "owl:cardinality": "many",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "niaid:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        }
+      ],
+      "isPartOf": {
+        "@id": "niaid:Dataset"
+      },
+      "name": "infectiousAgent",
+      "sameAs": {
+        "nestedName": "infectiousAgent",
+        "owl:cardinality": "many",
+        "marginality": "recommended",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:DefinedTerm"
+          }
+        ],
+        "url": "https://discovery.biothings.io/view/niaid/infectiousAgent",
+        "isPartOf": {
+          "@id": "nde:Dataset"
+        },
+        "name": "infectiousAgent"
+      }
+    },
+    {
+      "nestedName": "healthCondition",
+      "owl:cardinality": "many",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "niaid:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        }
+      ],
+      "isPartOf": {
+        "@id": "niaid:Dataset"
+      },
+      "name": "healthCondition",
+      "sameAs": {
+        "nestedName": "healthCondition",
+        "owl:cardinality": "many",
+        "marginality": "recommended",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:DefinedTerm"
+          }
+        ],
+        "url": "https://discovery.biothings.io/view/niaid/healthCondition",
+        "isPartOf": {
+          "@id": "nde:Dataset"
+        },
+        "name": "healthCondition"
+      }
+    },
+    {
+      "nestedName": "spatialCoverage",
+      "owl:cardinality": "many",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "niaid:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "niaid:AdministrativeArea"
+        }
+      ],
+      "isPartOf": {
+        "@id": "niaid:Dataset"
+      },
+      "name": "spatialCoverage",
+      "sameAs": {
+        "nestedName": "spatialCoverage",
+        "owl:cardinality": "many",
+        "marginality": "recommended",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "niaid:AdministrativeArea"
+          }
+        ],
+        "url": "https://schema.org/spatialCoverage",
+        "isPartOf": {
+          "@id": "nde:Dataset"
+        },
+        "name": "spatialCoverage"
+      }
+    },
+    {
+      "nestedName": "temporalCoverage",
+      "owl:cardinality": "many",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "niaid:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "niaid:TemporalInterval"
+        }
+      ],
+      "isPartOf": {
+        "@id": "niaid:Dataset"
+      },
+      "name": "temporalCoverage",
+      "sameAs": {
+        "nestedName": "temporalCoverage",
+        "owl:cardinality": "many",
+        "marginality": "recommended",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "niaid:TemporalInterval"
+          }
+        ],
+        "url": "https://schema.org/temporalCoverage",
+        "isPartOf": {
+          "@id": "nde:Dataset"
+        },
+        "name": "temporalCoverage"
+      }
+    },
+    {
+      "nestedName": "sdPublisher",
+      "owl:cardinality": "many",
+      "marginality": "optional",
+      "domainIncludes": [
+        {
+          "@id": "niaid:Dataset"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "niaid:Organization"
+        }
+      ],
+      "isPartOf": {
+        "@id": "niaid:Dataset"
+      },
+      "name": "sdPublisher",
+      "sameAs": {
+        "nestedName": "sdPublisher",
+        "owl:cardinality": "many",
+        "marginality": "recommended",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Person"
+          },
+          {
+            "@id": "niaid:Organization"
+          }
+        ],
+        "url": "https://schema.org/sdPublisher",
+        "isPartOf": {
+          "@id": "nde:Dataset"
+        },
+        "name": "sdPublisher"
+      }
+    },
+    {
+      "nestedName": "citation.doi",
+      "owl:cardinality": "one",
+      "marginality": "optional",
+      "domainIncludes": [
+        {
+          "@id": "niaid:ScholarlyArticle"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "isPartOf": {
+        "@id": "niaid:Dataset"
+      },
+      "name": "doi",
+      "sameAs": {
+        "nestedName": "doi",
+        "owl:cardinality": "one",
+        "marginality": "recommended",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ],
+        "url": "https://discovery.biothings.io/view/nde/doi",
+        "isPartOf": {
+          "@id": "nde:Dataset"
+        },
+        "name": "doi"
+      }
+    }
+  ],
+  "hasPart": [
+    {
+      "@type": "CreativeWork",
+      "identifier": "niaid:Dataset",
+      "name": "NIAID Division of Microbiology and Infectious Diseases (DMID) Systems Biology (NIAID SysBio) Dataset Schema",
+      "alternateName": "niaid:Dataset",
+      "url": "https://discovery.biothings.io/view/niaid/Dataset/",
+      "version": "2022-06-09",
+      "citation": {
+        "@type": "WebSite",
+        "name": "NIAID Data Portal",
+        "url": "https://discovery.biothings.io/portal/niaid"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "identifier": "nde:Dataset",
+      "name": "NIAID Data Ecosystem (NDE) Dataset Schema",
+      "alternateName": "nde:Dataset",
+      "url": "https://discovery.biothings.io/view/nde/Dataset/",
+      "version": "2022-09-20",
+      "citation": {
+        "@type": "WebSite",
+        "name": "NIAID Data Ecosystem",
+        "url": "https://docs.niaiddata.org/"
+      }
+    }
+  ],
+  "isPartOf": [],
+  "isBasedOn": "nestedProps:isBasedOn",
+  "isBasisFor": [
+    {
+      "@type": "WebAPI",
+      "name": "NIAID Data Ecosystem",
+      "url": "https://docs.niaiddata.org/",
+      "documentation": "https://docs.niaiddata.org/reference/new-1"
+    }
+  ],
+  "funding": [
+    {
+      "@type": "schema:MonetaryGrant",
+      "identifier": "U19 AI135995",
+      "funder": {
+        "@type": "schema:Organization",
+        "name": "National Institute of Allergy and Infectious Diseases"
+      }
+    }
+  ],
+  "datePublished": "2022-09-20",
+  "dateModified": "2022-09-20",
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
