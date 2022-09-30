@@ -1,0 +1,1411 @@
+{
+  "@type": "crosswalks:MetadataCrosswalk",
+  "@context": {
+    "nde": "https://discovery.biothings.io/view/nde/",
+    "outbreak": "https://discovery.biothings.io/view/outbreak/",
+    "schema": "https://schema.org/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "identifier": "inverted_nde_xref_outbreak",
+  "name": "NIAID Data Ecosystem (NDE) and Outbreak.info Crosswalk",
+  "description": "This crosswalk maps properties found in multiple classes of the NIAID Data Ecosystem (NDE) and Outbreak.info schemas. For example such as 'name' in nde:Dataset and nde:Computational tool are unchanged in terms of marginality, cardinality, and expected type. Similarly the 'name' property is unchanged in outbreak:Dataset, outbreak:ComputationalTool, etc. This crosswalk maps only properties shared between all classes of the NDE schema and properties shared across multiple classes of the outbreak schema. If a property is in all but one outbreak class, the domainIncludes information will reveal which classes are relevant. A few properties from the NDE Dataset schema may have the same name as Outbreak.info, but the values are not expected to map over. These properties include: 'topicCategory' which in NDE is used to classify a resource based on the projects it should be piped into; while in Outbreak.info, it classifies a resource based on topics of interest within the COVID19 research community.",
+  "sameAs": "https://github.com/gtsueng/DDE-CrossWalks/crosswalks/nde_outbreak_dataset.xls",
+  "author": [
+    {
+      "@type": "schema:Person",
+      "name": "Ginger Tsueng",
+      "familyName": "Tsueng",
+      "givenName": "Ginger",
+      "affiliation": "Scripps Research"
+    }
+  ],
+  "includesProperty": [
+    {
+      "nestedName": "evaluations.aggregateRating",
+      "owl:cardinality": NaN,
+      "marginality": "optional",
+      "domainIncludes": [
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:ComputationalTool"
+        },
+        {
+          "@id": "outbreak:Publication"
+        },
+        {
+          "@id": "outbreak:Protocol"
+        },
+        {
+          "@id": "outbreak:ClinicalTrial"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:AggregateRating"
+        }
+      ],
+      "url": "https://schema.org/aggregateRating",
+      "isPartOf": {
+        "@id": "outbreak"
+      },
+      "name": "aggregateRating",
+      "sameAs": {
+        "nestedName": "aggregateRating",
+        "owl:cardinality": "many",
+        "marginality": "optional",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          },
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:AggregateRating"
+          }
+        ],
+        "url": "https://schema.org/aggregateRating",
+        "isPartOf": {
+          "@id": "nde"
+        },
+        "name": "aggregateRating"
+      }
+    },
+    {
+      "nestedName": "author",
+      "owl:cardinality": "many",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:ComputationalTool"
+        },
+        {
+          "@id": "outbreak:Publication"
+        },
+        {
+          "@id": "outbreak:Protocol"
+        },
+        {
+          "@id": "outbreak:ClinicalTrial"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "outbreak:Person"
+        },
+        {
+          "@id": "outbreak:Organization"
+        }
+      ],
+      "url": "https://schema.org/author",
+      "isPartOf": {
+        "@id": "outbreak"
+      },
+      "name": "author",
+      "sameAs": {
+        "nestedName": "author",
+        "owl:cardinality": "many",
+        "marginality": "minimal or required",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          },
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Person"
+          },
+          {
+            "@id": "niaid:Organization"
+          }
+        ],
+        "url": "https://schema.org/author",
+        "isPartOf": {
+          "@id": "nde"
+        },
+        "name": "author"
+      }
+    },
+    {
+      "nestedName": "citedBy",
+      "owl:cardinality": "many",
+      "marginality": "optional",
+      "domainIncludes": [
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:ComputationalTool"
+        },
+        {
+          "@id": "outbreak:Publication"
+        },
+        {
+          "@id": "outbreak:Protocol"
+        },
+        {
+          "@id": "outbreak:ClinicalTrial"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "outbreak:CitationObject"
+        }
+      ],
+      "url": "https://discovery.biothings.io/view/outbreak/citedBy",
+      "isPartOf": {
+        "@id": "outbreak"
+      },
+      "name": "citedBy",
+      "sameAs": {
+        "nestedName": "citedBy",
+        "owl:cardinality": "many",
+        "marginality": "recommended",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          },
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:CreativeWork"
+          },
+          {
+            "@id": "schema:ScholarlyArticle"
+          }
+        ],
+        "url": "https://discovery.biothings.io/view/nde/citedBy",
+        "isPartOf": {
+          "@id": "nde"
+        },
+        "name": "citedBy"
+      }
+    },
+    {
+      "nestedName": "author",
+      "owl:cardinality": "many",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:ComputationalTool"
+        },
+        {
+          "@id": "outbreak:Publication"
+        },
+        {
+          "@id": "outbreak:Protocol"
+        },
+        {
+          "@id": "outbreak:ClinicalTrial"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "outbreak:Person"
+        },
+        {
+          "@id": "outbreak:Organization"
+        }
+      ],
+      "url": "https://schema.org/author",
+      "isPartOf": {
+        "@id": "outbreak"
+      },
+      "name": "author",
+      "sameAs": {
+        "nestedName": "creator",
+        "owl:cardinality": "many",
+        "marginality": "optional",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          },
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Person"
+          },
+          {
+            "@id": "niaid:Organization"
+          }
+        ],
+        "url": "https://schema.org/creator",
+        "isPartOf": {
+          "@id": "nde"
+        },
+        "name": "creator"
+      }
+    },
+    {
+      "nestedName": "dateModified",
+      "owl:cardinality": "one",
+      "marginality": "varies",
+      "domainIncludes": [
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:ComputationalTool"
+        },
+        {
+          "@id": "outbreak:Publication"
+        },
+        {
+          "@id": "outbreak:Protocol"
+        },
+        {
+          "@id": "outbreak:ClinicalTrial"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Date"
+        }
+      ],
+      "url": "https://schema.org/dateModified",
+      "isPartOf": {
+        "@id": "outbreak"
+      },
+      "name": "dateModified",
+      "sameAs": {
+        "nestedName": "dateModified",
+        "owl:cardinality": "one",
+        "marginality": "recommended",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          },
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Date"
+          }
+        ],
+        "url": "https://schema.org/dateModified",
+        "isPartOf": {
+          "@id": "nde"
+        },
+        "name": "dateModified"
+      }
+    },
+    {
+      "nestedName": "description",
+      "owl:cardinality": "one",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:ComputationalTool"
+        },
+        {
+          "@id": "outbreak:Publication"
+        },
+        {
+          "@id": "outbreak:Protocol"
+        },
+        {
+          "@id": "outbreak:ClinicalTrial"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/description",
+      "isPartOf": {
+        "@id": "outbreak"
+      },
+      "name": "description",
+      "sameAs": {
+        "nestedName": "description",
+        "owl:cardinality": "one",
+        "marginality": "minimal or required",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          },
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ],
+        "url": "https://schema.org/description",
+        "isPartOf": {
+          "@id": "nde"
+        },
+        "name": "description"
+      }
+    },
+    {
+      "nestedName": "doi",
+      "owl:cardinality": "one",
+      "marginality": "varies",
+      "domainIncludes": [
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:ComputationalTool"
+        },
+        {
+          "@id": "outbreak:Publication"
+        },
+        {
+          "@id": "outbreak:Protocol"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://discovery.biothings.io/view/outbreak/doi",
+      "isPartOf": {
+        "@id": "outbreak"
+      },
+      "name": "doi",
+      "sameAs": {
+        "nestedName": "doi",
+        "owl:cardinality": "one",
+        "marginality": "recommended",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          },
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ],
+        "url": "https://discovery.biothings.io/view/nde/doi",
+        "isPartOf": {
+          "@id": "nde"
+        },
+        "name": "doi"
+      }
+    },
+    {
+      "nestedName": "funding",
+      "owl:cardinality": "many",
+      "marginality": "varies",
+      "domainIncludes": [
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:ComputationalTool"
+        },
+        {
+          "@id": "outbreak:Publication"
+        },
+        {
+          "@id": "outbreak:Protocol"
+        },
+        {
+          "@id": "outbreak:ClinicalTrial"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "outbreak:MonetaryGrant"
+        }
+      ],
+      "url": "https://discovery.biothings.io/view/outbreak/funding",
+      "isPartOf": {
+        "@id": "outbreak"
+      },
+      "name": "funding",
+      "sameAs": {
+        "nestedName": "funding",
+        "owl:cardinality": "many",
+        "marginality": "minimal or required",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          },
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "niaid:MonetaryGrant"
+          }
+        ],
+        "url": "https://discovery.biothings.io/view/niaid/funding",
+        "isPartOf": {
+          "@id": "nde"
+        },
+        "name": "funding"
+      }
+    },
+    {
+      "nestedName": "infectiousDisease",
+      "owl:cardinality": "many",
+      "marginality": "varies",
+      "domainIncludes": [
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:ComputationalTool"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        }
+      ],
+      "url": "https://discovery.biothings.io/view/outbreak/infectiousDisease",
+      "isPartOf": {
+        "@id": "outbreak"
+      },
+      "name": "infectiousDisease",
+      "sameAs": {
+        "nestedName": "healthCondition",
+        "owl:cardinality": "many",
+        "marginality": "varies",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          },
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:DefinedTerm"
+          }
+        ],
+        "url": "https://discovery.biothings.io/view/niaid/healthCondition",
+        "isPartOf": {
+          "@id": "nde"
+        },
+        "name": "healthCondition"
+      }
+    },
+    {
+      "nestedName": "identifier",
+      "owl:cardinality": "one",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:ComputationalTool"
+        },
+        {
+          "@id": "outbreak:Publication"
+        },
+        {
+          "@id": "outbreak:Protocol"
+        },
+        {
+          "@id": "outbreak:ClinicalTrial"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/identifier",
+      "isPartOf": {
+        "@id": "outbreak"
+      },
+      "name": "identifier",
+      "sameAs": {
+        "nestedName": "identifier",
+        "owl:cardinality": "many",
+        "marginality": "recommended",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          },
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ],
+        "url": "https://schema.org/identifier",
+        "isPartOf": {
+          "@id": "nde"
+        },
+        "name": "identifier"
+      }
+    },
+    {
+      "nestedName": "curatedBy",
+      "owl:cardinality": "many",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:ComputationalTool"
+        },
+        {
+          "@id": "outbreak:Publication"
+        },
+        {
+          "@id": "outbreak:Protocol"
+        },
+        {
+          "@id": "outbreak:ClinicalTrial"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "outbreak:Person"
+        },
+        {
+          "@id": "outbreak:Organization"
+        },
+        {
+          "@id": "outbreak:CitationObject"
+        }
+      ],
+      "url": "https://discovery.biothings.io/view/outbreak/curatedBy",
+      "isPartOf": {
+        "@id": "outbreak"
+      },
+      "name": "curatedBy",
+      "sameAs": {
+        "nestedName": "includedInDataCatalog",
+        "owl:cardinality": "many",
+        "marginality": "minimal or required",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          },
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:DataCatalog"
+          }
+        ],
+        "url": "https://schema.org/includedInDataCatalog",
+        "isPartOf": {
+          "@id": "nde"
+        },
+        "name": "includedInDataCatalog"
+      }
+    },
+    {
+      "nestedName": "infectiousAgent",
+      "owl:cardinality": "many",
+      "marginality": "varies",
+      "domainIncludes": [
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:ComputationalTool"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        }
+      ],
+      "url": "https://discovery.biothings.io/view/outbreak/infectiousAgent",
+      "isPartOf": {
+        "@id": "outbreak"
+      },
+      "name": "infectiousAgent",
+      "sameAs": {
+        "nestedName": "infectiousAgent",
+        "owl:cardinality": "many",
+        "marginality": "varies",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          },
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:DefinedTerm"
+          }
+        ],
+        "url": "https://discovery.biothings.io/view/niaid/infectiousAgent",
+        "isPartOf": {
+          "@id": "nde"
+        },
+        "name": "infectiousAgent"
+      }
+    },
+    {
+      "nestedName": "isBasedOn",
+      "owl:cardinality": "many",
+      "marginality": "optional",
+      "domainIncludes": [
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:ComputationalTool"
+        },
+        {
+          "@id": "outbreak:Publication"
+        },
+        {
+          "@id": "outbreak:Protocol"
+        },
+        {
+          "@id": "outbreak:ClinicalTrial"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "outbreak:CitationObject"
+        }
+      ],
+      "url": "https://discovery.biothings.io/view/outbreak/isBasedOn",
+      "isPartOf": {
+        "@id": "outbreak"
+      },
+      "name": "isBasedOn",
+      "sameAs": {
+        "nestedName": "isBasedOn",
+        "owl:cardinality": "many",
+        "marginality": "varies",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          },
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:CreativeWork"
+          },
+          {
+            "@id": "schema:CreativeWork"
+          }
+        ],
+        "url": "https://schema.org/isBasedOn",
+        "isPartOf": {
+          "@id": "nde"
+        },
+        "name": "isBasedOn"
+      }
+    },
+    {
+      "nestedName": "citedBy",
+      "owl:cardinality": "many",
+      "marginality": "optional",
+      "domainIncludes": [
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:ComputationalTool"
+        },
+        {
+          "@id": "outbreak:Publication"
+        },
+        {
+          "@id": "outbreak:Protocol"
+        },
+        {
+          "@id": "outbreak:ClinicalTrial"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "outbreak:CitationObject"
+        }
+      ],
+      "url": "https://discovery.biothings.io/view/outbreak/citedBy",
+      "isPartOf": {
+        "@id": "outbreak"
+      },
+      "name": "citedBy",
+      "sameAs": {
+        "nestedName": "isBasisFor",
+        "owl:cardinality": "many",
+        "marginality": "optional",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          },
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:CreativeWork"
+          }
+        ],
+        "url": "https://discovery.biothings.io/view/nde/isBasisFor",
+        "isPartOf": {
+          "@id": "nde"
+        },
+        "name": "isBasisFor"
+      }
+    },
+    {
+      "nestedName": "isRelatedTo",
+      "owl:cardinality": "many",
+      "marginality": "optional",
+      "domainIncludes": [
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:ComputationalTool"
+        },
+        {
+          "@id": "outbreak:Publication"
+        },
+        {
+          "@id": "outbreak:Protocol"
+        },
+        {
+          "@id": "outbreak:ClinicalTrial"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "outbreak:CitationObject"
+        }
+      ],
+      "url": "https://discovery.biothings.io/view/outbreak/isRelatedTo",
+      "isPartOf": {
+        "@id": "outbreak"
+      },
+      "name": "isRelatedTo",
+      "sameAs": {
+        "nestedName": "isRelatedTo",
+        "owl:cardinality": "many",
+        "marginality": "optional",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          },
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:CreativeWork"
+          }
+        ],
+        "url": "https://discovery.biothings.io/view/nde/isRelatedTo",
+        "isPartOf": {
+          "@id": "nde"
+        },
+        "name": "isRelatedTo"
+      }
+    },
+    {
+      "nestedName": "isRelatedTo",
+      "owl:cardinality": "many",
+      "marginality": "optional",
+      "domainIncludes": [
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:ComputationalTool"
+        },
+        {
+          "@id": "outbreak:Publication"
+        },
+        {
+          "@id": "outbreak:Protocol"
+        },
+        {
+          "@id": "outbreak:ClinicalTrial"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "outbreak:CitationObject"
+        }
+      ],
+      "url": "https://discovery.biothings.io/view/outbreak/isRelatedTo",
+      "isPartOf": {
+        "@id": "outbreak"
+      },
+      "name": "isRelatedTo",
+      "sameAs": {
+        "nestedName": "isSimilarTo",
+        "owl:cardinality": "many",
+        "marginality": "optional",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          },
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:CreativeWork"
+          }
+        ],
+        "url": "https://discovery.biothings.io/view/nde/isSimilarTo",
+        "isPartOf": {
+          "@id": "nde"
+        },
+        "name": "isSimilarTo"
+      }
+    },
+    {
+      "nestedName": "keywords",
+      "owl:cardinality": "many",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:ComputationalTool"
+        },
+        {
+          "@id": "outbreak:Publication"
+        },
+        {
+          "@id": "outbreak:Protocol"
+        },
+        {
+          "@id": "outbreak:ClinicalTrial"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/keywords",
+      "isPartOf": {
+        "@id": "outbreak"
+      },
+      "name": "keywords",
+      "sameAs": {
+        "nestedName": "keywords",
+        "owl:cardinality": "many",
+        "marginality": "varies",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          },
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ],
+        "url": "https://schema.org/keywords",
+        "isPartOf": {
+          "@id": "nde"
+        },
+        "name": "keywords"
+      }
+    },
+    {
+      "nestedName": "license",
+      "owl:cardinality": "one",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:ComputationalTool"
+        },
+        {
+          "@id": "outbreak:Publication"
+        },
+        {
+          "@id": "outbreak:Protocol"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/license",
+      "isPartOf": {
+        "@id": "outbreak"
+      },
+      "name": "license",
+      "sameAs": {
+        "nestedName": "license",
+        "owl:cardinality": "one",
+        "marginality": "recommended",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          },
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ],
+        "url": "https://schema.org/license",
+        "isPartOf": {
+          "@id": "nde"
+        },
+        "name": "license"
+      }
+    },
+    {
+      "nestedName": "name",
+      "owl:cardinality": "required",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:ComputationalTool"
+        },
+        {
+          "@id": "outbreak:Publication"
+        },
+        {
+          "@id": "outbreak:Protocol"
+        },
+        {
+          "@id": "outbreak:ClinicalTrial"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/name",
+      "isPartOf": {
+        "@id": "outbreak"
+      },
+      "name": "name",
+      "sameAs": {
+        "nestedName": "name",
+        "owl:cardinality": "one",
+        "marginality": "minimal or required",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          },
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ],
+        "url": "https://schema.org/name",
+        "isPartOf": {
+          "@id": "nde"
+        },
+        "name": "name"
+      }
+    },
+    {
+      "nestedName": "curatedBy",
+      "owl:cardinality": "many",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:ComputationalTool"
+        },
+        {
+          "@id": "outbreak:Publication"
+        },
+        {
+          "@id": "outbreak:Protocol"
+        },
+        {
+          "@id": "outbreak:ClinicalTrial"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "outbreak:Person"
+        },
+        {
+          "@id": "outbreak:Organization"
+        },
+        {
+          "@id": "outbreak:CitationObject"
+        }
+      ],
+      "url": "https://discovery.biothings.io/view/outbreak/curatedBy",
+      "isPartOf": {
+        "@id": "outbreak"
+      },
+      "name": "curatedBy",
+      "sameAs": {
+        "nestedName": "sdPublisher",
+        "owl:cardinality": "many",
+        "marginality": "varies",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          },
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:DataCatalog"
+          }
+        ],
+        "url": "https://schema.org/sdPublisher",
+        "isPartOf": {
+          "@id": "nde"
+        },
+        "name": "sdPublisher"
+      }
+    },
+    {
+      "nestedName": "species",
+      "owl:cardinality": "many",
+      "marginality": "varies",
+      "domainIncludes": [
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:ComputationalTool"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        }
+      ],
+      "url": "https://discovery.biothings.io/view/outbreak/species",
+      "isPartOf": {
+        "@id": "outbreak"
+      },
+      "name": "species",
+      "sameAs": {
+        "nestedName": "species",
+        "owl:cardinality": "many",
+        "marginality": "varies",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          },
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:DefinedTerm"
+          }
+        ],
+        "url": "https://discovery.biothings.io/view/niaid/species",
+        "isPartOf": {
+          "@id": "nde"
+        },
+        "name": "species"
+      }
+    },
+    {
+      "nestedName": "curatedBy",
+      "owl:cardinality": "many",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "outbreak:Dataset"
+        },
+        {
+          "@id": "outbreak:ComputationalTool"
+        },
+        {
+          "@id": "outbreak:Publication"
+        },
+        {
+          "@id": "outbreak:Protocol"
+        },
+        {
+          "@id": "outbreak:ClinicalTrial"
+        },
+        {
+          "@id": "outbreak:Analysis"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "outbreak:Person"
+        },
+        {
+          "@id": "outbreak:Organization"
+        },
+        {
+          "@id": "outbreak:CitationObject"
+        }
+      ],
+      "url": "https://discovery.biothings.io/view/outbreak/curatedBy",
+      "isPartOf": {
+        "@id": "outbreak"
+      },
+      "name": "curatedBy",
+      "sameAs": {
+        "nestedName": "topicCategory.curatedBy",
+        "owl:cardinality": "many",
+        "marginality": "recommended",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          },
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Person"
+          },
+          {
+            "@id": "niaid:Organization"
+          },
+          {
+            "@id": "schema:DataCatalog"
+          }
+        ],
+        "url": "https://discovery.biothings.io/view/nde/topicCategory",
+        "isPartOf": {
+          "@id": "nde"
+        },
+        "name": "curatedBy"
+      }
+    },
+    {
+      "nestedName": "infectiousDisease.name",
+      "owl:cardinality": "many",
+      "marginality": "varies",
+      "domainIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/name",
+      "isPartOf": {
+        "@id": "outbreak"
+      },
+      "name": "name",
+      "sameAs": {
+        "nestedName": "topicCategory.name",
+        "owl:cardinality": "many",
+        "marginality": "recommended",
+        "domainIncludes": [
+          {
+            "@id": "nde:Dataset"
+          },
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": [
+          {
+            "@id": "schema:Text"
+          }
+        ],
+        "url": "https://discovery.biothings.io/view/nde/topicCategory",
+        "isPartOf": {
+          "@id": "nde"
+        },
+        "name": "name"
+      }
+    }
+  ],
+  "hasPart": [
+    {
+      "@type": "CreativeWork",
+      "identifier": "nde",
+      "name": "NIAID Data Ecosystem (NDE) Schema",
+      "alternateName": "nde",
+      "url": "https://discovery.biothings.io/view/nde/",
+      "version": "2022-09-21",
+      "citation": {
+        "@type": "WebSite",
+        "name": "NIAID Data Ecosystem (NDE) schema",
+        "url": "https://discovery.biothings.io/view/nde/"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "identifier": "outbreak",
+      "name": "Outbreak.info schema",
+      "alternateName": "outbreak",
+      "url": "https://discovery.biothings.io/view/outbreak/",
+      "version": "2022-09-21",
+      "citation": {
+        "@type": "WebSite",
+        "name": "Outbreak.info Dataset schema",
+        "url": "https://discovery.biothings.io/view/outbreak/"
+      }
+    }
+  ],
+  "isPartOf": [],
+  "isBasedOn": [
+    {
+      "@type": "Website",
+      "name": "NIAID Data Ecosystem",
+      "url": "https://docs.niaiddata.org/",
+      "documentation": "https://docs.niaiddata.org/reference/new-1"
+    }
+  ],
+  "isBasisFor": [
+    {
+      "@type": "WebAPI",
+      "name": "Outbreak.info research library API",
+      "url": "https://api.outbreak.info/try/resources"
+    }
+  ],
+  "funding": [
+    {
+      "@type": "schema:MonetaryGrant",
+      "identifier": "U19 AI135995",
+      "funder": {
+        "@type": "schema:Organization",
+        "name": "National Institute of Allergy and Infectious Diseases"
+      }
+    }
+  ],
+  "datePublished": "2022-09-21",
+  "dateModified": "2022-09-21",
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
