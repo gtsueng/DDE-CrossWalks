@@ -209,7 +209,7 @@
       ]
     },
     {
-      "@id": "owl:cardinality",
+      "@id": "crosswalks:owl:cardinality",
       "@type": "rdf:Property",
       "rdfs:comment": "The cardinality of this property within the schema.",
       "rdfs:label": "owl:cardinality",
