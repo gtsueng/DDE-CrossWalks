@@ -99,7 +99,7 @@
               }
             ]
           },
-          "cardinality": {
+          "owl:cardinality": {
             "description": "The cardinality of this property if available as defined in its respective schema. Note, that a schema may have multiple classes and the cardinality of the property may vary based on class, if this is the case the cardinality should be considered 'variable'. If it is not defined in a schema (like in schema.org), it should be considered 'unspecified.",
             "type": "string",
             "enum": [
@@ -128,7 +128,7 @@
         ],
         "recommended": [
           "marginality",
-          "cardinality",
+          "owl:cardinality",
           "rangeIncludes",
           "domainIncludes",
           "url"
