@@ -209,6 +209,34 @@
       ]
     },
     {
+      "@id": "owl:cardinality",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The cardinality of this property within the schema.",
+      "rdfs:label": "owl:cardinality",
+      "schema:domainIncludes": {
+        "@id": "crosswalks:Property"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
+    },
+    {
+      "@id": "crosswalks:isPartOf",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A schema to which this particular property belongs.",
+      "rdfs:label": "isPartOf",
+      "schema:domainIncludes": {
+        "@id": "crosswalks:Property"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
+    },
+    {
       "@id": "crosswalks:sameAs",
       "@type": "rdf:Property",
       "rdfs:comment": "A URL or metadata object that unambiguously identifies the item.",
