@@ -99,7 +99,7 @@
               }
             ]
           },
-          "owl:cardinality": {
+          "cardinality": {
             "description": "The cardinality of this property if available as defined in its respective schema. Note, that a schema may have multiple classes and the cardinality of the property may vary based on class, if this is the case the cardinality should be considered 'variable'. If it is not defined in a schema (like in schema.org), it should be considered 'unspecified.",
             "type": "string",
             "enum": [
@@ -128,7 +128,7 @@
         ],
         "recommended": [
           "marginality",
-          "owl:cardinality",
+          "cardinality",
           "rangeIncludes",
           "domainIncludes",
           "url"
@@ -156,28 +156,28 @@
                     }
                   }
                 ],
-                "owl:cardinality": "many"
+                "cardinality": "many"
               },
               "version": {
                 "description": "version of the normalizer, converter, or transformation script",
                 "type": "string",
-                "owl:cardinality": "one"
+                "cardinality": "one"
               },
               "description": {
                 "description": "A description of the item.",
                 "type": "string",
-                "owl:cardinality": "one"
+                "cardinality": "one"
               },
               "name": {
                 "description": "Name of the normalizer, converter, or transformation specification",
                 "type": "string",
-                "owl:cardinality": "one"
+                "cardinality": "one"
               },
               "url": {
                 "description": "URL of the transformation script if available",
                 "type": "string",
                 "format": "uri",
-                "owl:cardinality": "one"
+                "cardinality": "one"
               }
             },
             "required": []
@@ -209,10 +209,10 @@
       ]
     },
     {
-      "@id": "crosswalks:owl:cardinality",
+      "@id": "owl:cardinality",
       "@type": "rdf:Property",
       "rdfs:comment": "The cardinality of this property within the schema.",
-      "rdfs:label": "owl:cardinality",
+      "rdfs:label": "cardinality",
       "schema:domainIncludes": {
         "@id": "crosswalks:Property"
       },
