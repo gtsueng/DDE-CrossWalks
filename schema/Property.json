@@ -1,0 +1,257 @@
+{
+  "@context": {
+    "schema": "http://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "crosswalks": "https://discovery.biothings.io/view/crosswalks/"
+  },
+  "@graph": [
+    {
+      "@id": "crosswalks:Property",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "This is the schema for defining a Property.",
+      "rdfs:label": "Property",
+      "rdfs:subClassOf": {
+        "@id": "schema:Property"
+      },
+      "$validation": {
+        "$schema": "http://json-schema.org/draft-07/schema#",
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "Name of the property. Note that a property may be heavily nested in one schema, and relatively unnested in another. If a property is heavily nested, use just the unnested property name for this field, and include the hierarchy using the dot notation under 'nestedName'.",
+            "type": "string"
+          },
+          "nestedName": {
+            "description": "The nested name of the property. Note that a property may be heavily nested in one schema, and relatively unnested in another. If a property is heavily nested, include the hierarchy using the dot notation for this property, and the unnested property name for 'name'.",
+            "type": "string"
+          },
+          "domainIncludes": {
+            "description": "Relates a property to a class that is (one of) the type(s) the property is expected to be used on.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/classObject"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/classObject"
+                }
+              }
+            ]
+          },
+          "rangeIncludes": {
+            "description": "Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/classObject"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/classObject"
+                }
+              }
+            ]
+          },
+          "includesTransform": {
+            "oneOf": [
+                {
+                  "$ref": "#/definitions/transformSpec"
+                },
+                {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/definitions/transformSpec"
+                }    
+                }
+            ]
+          },
+          "sameAs": {
+            "description": "Equivalent properties in other schemas",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/sameAsObject"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/sameAsObject"
+                }
+              }
+            ]
+          },
+          "url": {
+              "description": "The url to the property in its respective schema. Example, for something like 'owl:cardinality', it the url would be 'https://www.w3.org/TR/owl-ref/#cardinality-def'."
+          },
+          "isPartOf": {
+            "description": "The schema or Data Element set (if it is a mix and match instead of concept set-based) to which this property belongs.",
+            "oneOf": [
+              {
+                "$ref": "#/definitions/schemaObject"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/schemaObject"
+                }
+              }
+            ]
+          },
+          "owl:cardinality": {
+            "description": "The cardinality of this property if available as defined in its respective schema. Note, that a schema may have multiple classes and the cardinality of the property may vary based on class, if this is the case the cardinality should be considered 'variable'. If it is not defined in a schema (like in schema.org), it should be considered 'unspecified.",
+            "type": "string",
+            "enum": [
+              "one",
+              "many",
+              "variable",
+              "unspecified"
+            ]
+          },
+          "marginality": {
+            "description": "The marginality of the property as defined in its respective schema. Note that a schema may include multiple classes and the marginality for the same property may vary between classes within the same schema. If this is the case, use: 'variable'. Otherwise, if the marginality is not specified like in schema.org, use 'unspecified'.",
+            "type": "string",
+            "enum": [
+              "minimal or required",
+              "recommended",
+              "optional",
+              "variable",
+              "unspecified"
+            ]
+          }
+        },
+        "required": [
+          "name",
+          "isPartOf",
+          "nestedName"
+        ],
+        "recommended": [
+          "marginality",
+          "owl:cardinality",
+          "rangeIncludes",
+          "domainIncludes",
+          "url"
+        ],
+        "optional": [
+          "sameAs",
+          "includesTransform"
+        ],
+        "definitions": {
+          "transformSpec": {
+            "description": "A property that is mapped across (a) different schema(s). ",
+            "@type": "crosswalks:DataTransformSpecification",
+            "type": "object",
+            "properties": {
+              "pattern": {
+                "description": "The regular expression or regex pattern used for text transformations if used in lieu or in combination with a normalization, conversion, or transformation script",
+                "oneOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                ],
+                "owl:cardinality": "many"
+              },
+              "version": {
+                "description": "version of the normalizer, converter, or transformation script",
+                "type": "string",
+                "owl:cardinality": "one"
+              },
+              "description": {
+                "description": "A description of the item.",
+                "type": "string",
+                "owl:cardinality": "one"
+              },
+              "name": {
+                "description": "Name of the normalizer, converter, or transformation specification",
+                "type": "string",
+                "owl:cardinality": "one"
+              },
+              "url": {
+                "description": "URL of the transformation script if available",
+                "type": "string",
+                "format": "uri",
+                "owl:cardinality": "one"
+              }
+            },
+            "required": []
+          }
+        }
+      }
+    },
+    {
+      "@id": "crosswalks:DataTransformSpecification",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "This is the schema for defining a data transformation needed for converting the value of one property to be suitable for the corresponding mapped property.",
+      "rdfs:label": "DataTransformSpecification",
+      "rdfs:subClassOf": {
+        "@id": "schema:CreativeWork"
+      }
+    },
+    {
+      "@id": "crosswalks:includesTransform",
+      "@type": "rdf:Property",
+      "rdfs:comment": "One or more transformation(s) or conversion(s) needed to ensure that the value of the property is suitable for the corresponding, mapped property. The value of this property should be either unique for each direction of a property mapping, or none (for when no conversion is needed).",
+      "rdfs:label": "includesTransform",
+      "schema:domainIncludes": {
+        "@id": "crosswalks:Property"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "crosswalks:DataTransformSpecification"
+        }
+      ]
+    },
+    {
+      "@id": "crosswalks:sameAs",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A URL or metadata object that unambiguously identifies the item.",
+      "rdfs:label": "sameAs",
+      "schema:domainIncludes": {
+        "@id": "crosswalks:Property"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "crosswalks:Property"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "crosswalks:marginality",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The marginality (minimal/required, recommended, optional) of a property.",
+      "rdfs:label": "marginality",
+      "schema:domainIncludes": {
+        "@id": "schema:Property"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "crosswalks:nestedName",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The nested name of a property using dot notation. If a property is heavily nested, its hierarchy may be captured using the dot notation for inclusion as the nested name. For example the name of the property 'distribution.url' should be 'url' for consistency with schema.org, but the nestedName will be 'distribution.url' for improved interpretability and interoperability.",
+      "rdfs:label": "nestedName",
+      "schema:domainIncludes": {
+        "@id": "crosswalks:Property"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    }
+  ]
+}
