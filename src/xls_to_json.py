@@ -261,6 +261,6 @@ def convert_crosswalks(script_path):
             with open(inverted_export_file,'w') as outfile:
                 jsonfile = json.dumps(invertedxwalk, indent=2)
                 outfile.write(jsonfile)
-    except:
-        print("failed to convert: ",filename)    
+        except:
+            print("failed to convert: ",filename)    
 
