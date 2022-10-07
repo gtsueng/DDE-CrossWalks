@@ -17,7 +17,7 @@ def generate_context_list(contextdf):
     if "schema" not in list(clean_context.keys()):
         clean_context["schema"] = "https://schema.org/"
     if "owl" not in list(clean_context.keys()):
-        clean_context["owl"] = "http://www.w3.org/2002/07/owl#"
+        clean_context["owl"] = "http://www.w3.org/2002/07/owl/"
     if "rdf" not in list(clean_context.keys()):
         clean_context["rdf"] = "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     if "rdfs" not in list(clean_context.keys()):
@@ -242,24 +242,25 @@ def generate_inverted_crosswalk(xwalkclean):
     invertedxwalk['includesProperty']=inverted_props
     return(invertedxwalk)
 
-## Main
-script_path = pathlib.Path(__file__).parent.absolute()
-data_path = os.path.join(script_path,'crosswalks')
-export_path = os.path.join(script_path,'jsoncrosswalks')
-data_files = os.listdir(data_path)
 
-for filename in data_files:
-    data_file = os.path.join(data_path,filename)
-    export_file = os.path.join(export_path,filename.replace('xls','json'))
-    inverted_export_file = os.path.join(export_path,filename.replace('.xls','_inverted.json'))
-    try:
-        xwalkjson = convert_xls_xwalk(data_file)
-        with open(export_file,'w') as outfile:
-            jsonfile = json.dumps(xwalkjson, indent=2)
-            outfile.write(jsonfile)
-        invertedxwalk = generate_inverted_crosswalk(xwalkjson)
-        with open(inverted_export_file,'w') as outfile:
-            jsonfile = json.dumps(invertedxwalk, indent=2)
-            outfile.write(jsonfile)
+def convert_crosswalks(script_path):
+    data_path = os.path.join(script_path,'crosswalks')
+    export_path = os.path.join(script_path,'jsoncrosswalks')
+    data_files = os.listdir(data_path)
+
+    for filename in data_files:
+        data_file = os.path.join(data_path,filename)
+        export_file = os.path.join(export_path,filename.replace('xls','json'))
+        inverted_export_file = os.path.join(export_path,filename.replace('.xls','_inverted.json'))
+        try:
+            xwalkjson = convert_xls_xwalk(data_file)
+            with open(export_file,'w') as outfile:
+                jsonfile = json.dumps(xwalkjson, indent=2)
+                outfile.write(jsonfile)
+            invertedxwalk = generate_inverted_crosswalk(xwalkjson)
+            with open(inverted_export_file,'w') as outfile:
+                jsonfile = json.dumps(invertedxwalk, indent=2)
+                outfile.write(jsonfile)
     except:
-        print("failed to convert: ",filename)
+        print("failed to convert: ",filename)    
+
