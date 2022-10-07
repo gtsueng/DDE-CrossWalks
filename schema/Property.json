@@ -474,7 +474,7 @@
       "rdfs:comment": "The marginality (minimal/required, recommended, optional) of a property.",
       "rdfs:label": "marginality",
       "schema:domainIncludes": {
-        "@id": "schema:Property"
+        "@id": "crosswalks:Property"
       },
       "schema:rangeIncludes": [
         {
