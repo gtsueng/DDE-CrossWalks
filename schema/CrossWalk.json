@@ -629,7 +629,7 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Property"
+          "@id": "crosswalks:Property"
         }
       ]
     },
@@ -643,7 +643,7 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Property"
+          "@id": "crosswalks:Property"
         },
         {
           "@id": "schema:URL"
@@ -676,12 +676,26 @@
       ]
     },
     {
+      "@id": "crosswalks:isPartOf",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A schema to which this item belongs.",
+      "rdfs:label": "isPartOf",
+      "schema:domainIncludes": {
+        "@id": "crosswalks:MetadataCrosswalk"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
+    },
+    {
       "@id": "crosswalks:marginality",
       "@type": "rdf:Property",
       "rdfs:comment": "The marginality (minimal/required, recommended, optional) of a property.",
       "rdfs:label": "marginality",
       "schema:domainIncludes": {
-        "@id": "schema:Property"
+        "@id": "crosswalks:Property"
       },
       "schema:rangeIncludes": [
         {
@@ -723,7 +737,7 @@
       "rdfs:comment": "The nested name of a property using dot notation. If a property is heavily nested, its hierarchy may be captured using the dot notation for inclusion as the nested name. For example the name of the property 'distribution.url' should be 'url' for consistency with schema.org, but the nestedName will be 'distribution.url' for improved interpretability and interoperability.",
       "rdfs:label": "nestedName",
       "schema:domainIncludes": {
-        "@id": "schema:Property"
+        "@id": "crosswalks:Property"
       },
       "schema:rangeIncludes": [
         {
