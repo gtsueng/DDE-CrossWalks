@@ -4,7 +4,7 @@
     "nde": "https://discovery.biothings.io/view/nde/",
     "outbreak": "https://discovery.biothings.io/view/outbreak/",
     "schema": "https://schema.org/",
-    "owl": "http://www.w3.org/2002/07/owl#",
+    "owl": "http://www.w3.org/2002/07/owl/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
   },
@@ -24,7 +24,7 @@
   "includesProperty": [
     {
       "nestedName": "evaluations.aggregateRating",
-      "owl:cardinality": NaN,
+      "cardinality": NaN,
       "marginality": "optional",
       "domainIncludes": [
         {
@@ -82,7 +82,7 @@
     },
     {
       "nestedName": "author",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "minimal or required",
       "domainIncludes": [
         {
@@ -146,7 +146,7 @@
     },
     {
       "nestedName": "citedBy",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "optional",
       "domainIncludes": [
         {
@@ -207,7 +207,7 @@
     },
     {
       "nestedName": "author",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "minimal or required",
       "domainIncludes": [
         {
@@ -271,7 +271,7 @@
     },
     {
       "nestedName": "dateModified",
-      "owl:cardinality": "one",
+      "cardinality": "one",
       "marginality": "varies",
       "domainIncludes": [
         {
@@ -329,7 +329,7 @@
     },
     {
       "nestedName": "description",
-      "owl:cardinality": "one",
+      "cardinality": "one",
       "marginality": "minimal or required",
       "domainIncludes": [
         {
@@ -387,7 +387,7 @@
     },
     {
       "nestedName": "doi",
-      "owl:cardinality": "one",
+      "cardinality": "one",
       "marginality": "varies",
       "domainIncludes": [
         {
@@ -442,7 +442,7 @@
     },
     {
       "nestedName": "funding",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "varies",
       "domainIncludes": [
         {
@@ -500,7 +500,7 @@
     },
     {
       "nestedName": "infectiousDisease",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "varies",
       "domainIncludes": [
         {
@@ -549,7 +549,7 @@
     },
     {
       "nestedName": "identifier",
-      "owl:cardinality": "one",
+      "cardinality": "one",
       "marginality": "minimal or required",
       "domainIncludes": [
         {
@@ -607,7 +607,7 @@
     },
     {
       "nestedName": "curatedBy",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "recommended",
       "domainIncludes": [
         {
@@ -671,7 +671,7 @@
     },
     {
       "nestedName": "infectiousAgent",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "varies",
       "domainIncludes": [
         {
@@ -720,7 +720,7 @@
     },
     {
       "nestedName": "isBasedOn",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "optional",
       "domainIncludes": [
         {
@@ -781,7 +781,7 @@
     },
     {
       "nestedName": "citedBy",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "optional",
       "domainIncludes": [
         {
@@ -839,7 +839,7 @@
     },
     {
       "nestedName": "isRelatedTo",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "optional",
       "domainIncludes": [
         {
@@ -897,7 +897,7 @@
     },
     {
       "nestedName": "isRelatedTo",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "optional",
       "domainIncludes": [
         {
@@ -955,7 +955,7 @@
     },
     {
       "nestedName": "keywords",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "recommended",
       "domainIncludes": [
         {
@@ -1013,7 +1013,7 @@
     },
     {
       "nestedName": "license",
-      "owl:cardinality": "one",
+      "cardinality": "one",
       "marginality": "recommended",
       "domainIncludes": [
         {
@@ -1068,7 +1068,7 @@
     },
     {
       "nestedName": "name",
-      "owl:cardinality": "required",
+      "cardinality": "required",
       "marginality": "minimal or required",
       "domainIncludes": [
         {
@@ -1126,7 +1126,7 @@
     },
     {
       "nestedName": "curatedBy",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "recommended",
       "domainIncludes": [
         {
@@ -1190,7 +1190,7 @@
     },
     {
       "nestedName": "species",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "varies",
       "domainIncludes": [
         {
@@ -1239,7 +1239,7 @@
     },
     {
       "nestedName": "curatedBy",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "recommended",
       "domainIncludes": [
         {
@@ -1309,7 +1309,7 @@
     },
     {
       "nestedName": "infectiousDisease.name",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "varies",
       "domainIncludes": [
         {

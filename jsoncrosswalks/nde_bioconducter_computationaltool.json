@@ -1,0 +1,754 @@
+{
+  "@type": "crosswalks:MetadataCrosswalk",
+  "@context": {
+    "nde": "https://discovery.biothings.io/view/nde/",
+    "schema": "https://schema.org/",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "identifier": "nde_xref_bioconductor_ComputationalTools",
+  "name": "NIAID Data Ecosystem (NDE) ComputationalTool and Bioconductor Crosswalk",
+  "description": "This crosswalk maps bioconductor field names to the NIAID Data Ecosystem (NDE) ComputationalTool schema properties. A few properties from the NDE ComputationalTool schema were derived rather than being directly mapped. These include 'includedInDataCatalog', 'interactionStatistic.interactionType'",
+  "sameAs": "https://docs.google.com/spreadsheets/d/1G_kXAPbBySCqy2hX1vTw9IVfTEXo8-g8pJQ0AYqdmbQ/edit#gid=1131892684",
+  "author": [
+    {
+      "@type": "schema:Person",
+      "name": "Laura D. Hughes",
+      "familyName": "Hughes",
+      "givenName": "Laura",
+      "affiliation": "Scripps Research"
+    },
+    {
+      "@type": "schema:Person",
+      "name": "Dylan Welzel",
+      "familyName": "Welzel",
+      "givenName": "Dylan",
+      "affiliation": "Scripps Research"
+    },
+    {
+      "@type": "schema:Person",
+      "name": "Ginger Tsueng",
+      "familyName": "Tsueng",
+      "givenName": "Ginger",
+      "affiliation": "Scripps Research"
+    }
+  ],
+  "includesProperty": [
+    {
+      "nestedName": "Title",
+      "cardinality": "one",
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "Title",
+      "sameAs": {
+        "nestedName": "name",
+        "cardinality": "one",
+        "marginality": "minimal or required",
+        "domainIncludes": [
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": "schema:Text",
+        "url": "https://schema.org/name",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "name"
+      }
+    },
+    {
+      "nestedName": "Description",
+      "cardinality": "one",
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "Description",
+      "sameAs": {
+        "nestedName": "description",
+        "cardinality": "one",
+        "marginality": "minimal or required",
+        "domainIncludes": [
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": "schema:Text",
+        "url": "https://schema.org/description",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "description"
+      }
+    },
+    {
+      "nestedName": "Package",
+      "cardinality": "one",
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "Package",
+      "sameAs": {
+        "nestedName": "identifier",
+        "cardinality": "many",
+        "marginality": "minimal or required",
+        "domainIncludes": [
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": "schema:Text",
+        "url": "https://schema.org/identifier",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "identifier"
+      }
+    },
+    {
+      "nestedName": "git_last_commit_date",
+      "cardinality": NaN,
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "git_last_commit_date",
+      "sameAs": {
+        "nestedName": "dateModified",
+        "cardinality": "unspecified",
+        "marginality": "recommended",
+        "domainIncludes": [
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": "schema:Text",
+        "url": "https://schema.org/dateModified",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "dateModified"
+      }
+    },
+    {
+      "nestedName": "Author",
+      "cardinality": NaN,
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "Author",
+      "sameAs": {
+        "nestedName": "author.name",
+        "cardinality": "one",
+        "marginality": "minimal or required",
+        "domainIncludes": [
+          {
+            "@id": "schema:Person"
+          }
+        ],
+        "rangeIncludes": "schema:Text",
+        "url": "https://schema.org/name",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "name"
+      }
+    },
+    {
+      "nestedName": "Maintainer",
+      "cardinality": NaN,
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "Maintainer",
+      "sameAs": {
+        "nestedName": "author.name",
+        "cardinality": "one",
+        "marginality": "minimal or required",
+        "domainIncludes": [
+          {
+            "@id": "schema:Person"
+          }
+        ],
+        "rangeIncludes": "schema:Text",
+        "url": "https://schema.org/name",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "name"
+      }
+    },
+    {
+      "nestedName": "Date.Publication",
+      "cardinality": NaN,
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "Publication",
+      "sameAs": {
+        "nestedName": "datePublished",
+        "cardinality": "unspecified",
+        "marginality": "optional",
+        "domainIncludes": [
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": "schema:Text",
+        "url": "https://schema.org/datePublished",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "datePublished"
+      }
+    },
+    {
+      "nestedName": "Version",
+      "cardinality": NaN,
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "Version",
+      "sameAs": {
+        "nestedName": "softwareVersion",
+        "cardinality": "one",
+        "marginality": "recommended",
+        "domainIncludes": [
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": "schema:Text",
+        "url": "https://schema.org/softwareVersion",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "softwareVersion"
+      }
+    },
+    {
+      "nestedName": "Depends",
+      "cardinality": NaN,
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "Depends",
+      "sameAs": {
+        "nestedName": "softwareRequirements",
+        "cardinality": "many",
+        "marginality": "recommended",
+        "domainIncludes": [
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": "schema:Text",
+        "url": "https://schema.org/softwareRequirements",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "softwareRequirements"
+      }
+    },
+    {
+      "nestedName": "Suggests",
+      "cardinality": NaN,
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "Suggests",
+      "sameAs": {
+        "nestedName": "isRelatedTo.identifier",
+        "cardinality": "one",
+        "marginality": "optional",
+        "domainIncludes": [
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": "schema:Text",
+        "url": "https://schema.org/identifier",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "identifier"
+      }
+    },
+    {
+      "nestedName": "License",
+      "cardinality": "one",
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "License",
+      "sameAs": {
+        "nestedName": "license",
+        "cardinality": "one",
+        "marginality": "recommended",
+        "domainIncludes": [
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": "schema:Text",
+        "url": "https://schema.org/license",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "license"
+      }
+    },
+    {
+      "nestedName": "biocViews",
+      "cardinality": "many",
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "biocViews",
+      "sameAs": {
+        "nestedName": "keywords",
+        "cardinality": "many",
+        "marginality": "optional",
+        "domainIncludes": [
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": "schema:Text",
+        "url": "https://schema.org/keywords",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "keywords"
+      }
+    },
+    {
+      "nestedName": "source.ver",
+      "cardinality": NaN,
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "ver",
+      "sameAs": {
+        "nestedName": "downloadUrl.name",
+        "cardinality": NaN,
+        "marginality": NaN,
+        "domainIncludes": [
+          {
+            "@id": "schema:CreativeWork"
+          }
+        ],
+        "rangeIncludes": NaN,
+        "url": "https://schema.org/name",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "name"
+      }
+    },
+    {
+      "nestedName": "win.binary.ver",
+      "cardinality": NaN,
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "ver",
+      "sameAs": {
+        "nestedName": "downloadUrl.name",
+        "cardinality": NaN,
+        "marginality": NaN,
+        "domainIncludes": [
+          {
+            "@id": "schema:CreativeWork"
+          }
+        ],
+        "rangeIncludes": NaN,
+        "url": "https://schema.org/name",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "name"
+      }
+    },
+    {
+      "nestedName": "mac.binary.ver",
+      "cardinality": NaN,
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "ver",
+      "sameAs": {
+        "nestedName": "downloadUrl.name",
+        "cardinality": NaN,
+        "marginality": NaN,
+        "domainIncludes": [
+          {
+            "@id": "schema:CreativeWork"
+          }
+        ],
+        "rangeIncludes": NaN,
+        "url": "https://schema.org/name",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "name"
+      }
+    },
+    {
+      "nestedName": "vignettes",
+      "cardinality": NaN,
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "vignettes",
+      "sameAs": {
+        "nestedName": "softwareHelp.url",
+        "cardinality": "one",
+        "marginality": "optional",
+        "domainIncludes": [
+          {
+            "@id": "schema:CreativeWork"
+          }
+        ],
+        "rangeIncludes": "schema:Text",
+        "url": "https://schema.org/url",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "url"
+      }
+    },
+    {
+      "nestedName": "vignetteTitles",
+      "cardinality": NaN,
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "vignetteTitles",
+      "sameAs": {
+        "nestedName": "softwareHelp.name",
+        "cardinality": "one",
+        "marginality": "optional",
+        "domainIncludes": [
+          {
+            "@id": "schema:CreativeWork"
+          }
+        ],
+        "rangeIncludes": "schema:Text",
+        "url": "https://schema.org/name",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "name"
+      }
+    },
+    {
+      "nestedName": "Imports",
+      "cardinality": "many",
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "Imports",
+      "sameAs": {
+        "nestedName": "isBasedOn.identifier",
+        "cardinality": "one",
+        "marginality": "optional",
+        "domainIncludes": [
+          {
+            "@id": "schema:CreativeWork"
+          },
+          {
+            "@id": "schema:ScholarlyArticle"
+          }
+        ],
+        "rangeIncludes": "schema:Text",
+        "url": "https://schema.org/identifier",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "identifier"
+      }
+    },
+    {
+      "nestedName": "Enhances",
+      "cardinality": "many",
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "Enhances",
+      "sameAs": {
+        "nestedName": "softwareAddOn.identifier",
+        "cardinality": "one",
+        "marginality": "optional",
+        "domainIncludes": [
+          {
+            "@id": "schema:CreativeWork"
+          },
+          {
+            "@id": "schema:ScholarlyArticle"
+          }
+        ],
+        "rangeIncludes": "schema:Text",
+        "url": "https://schema.org/identifier",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "identifier"
+      }
+    },
+    {
+      "nestedName": "dependsOnMe",
+      "cardinality": "many",
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "dependsOnMe",
+      "sameAs": {
+        "nestedName": "isBasisFor",
+        "cardinality": "many",
+        "marginality": "optional",
+        "domainIncludes": [
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": "schema:CreativeWork",
+        "url": "https://schema.org/isBasisFor",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "isBasisFor"
+      }
+    },
+    {
+      "nestedName": "URL",
+      "cardinality": NaN,
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "URL",
+      "sameAs": {
+        "nestedName": "codeRepository",
+        "cardinality": "many",
+        "marginality": "recommended",
+        "domainIncludes": [
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": "schema:URL",
+        "url": "https://schema.org/codeRepository",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "codeRepository"
+      }
+    },
+    {
+      "nestedName": "BugReports",
+      "cardinality": NaN,
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "BugReports",
+      "sameAs": {
+        "nestedName": "discussionUrl",
+        "cardinality": "one",
+        "marginality": "optional",
+        "domainIncludes": [
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": "schema:URL",
+        "url": "https://schema.org/discussionUrl",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "discussionUrl"
+      }
+    },
+    {
+      "nestedName": "importsMe",
+      "cardinality": "many",
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "importsMe",
+      "sameAs": {
+        "nestedName": "isBasisFor",
+        "cardinality": "many",
+        "marginality": "optional",
+        "domainIncludes": [
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": "schema:CreativeWork",
+        "url": "https://schema.org/isBasisFor",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "isBasisFor"
+      }
+    },
+    {
+      "nestedName": "Archs",
+      "cardinality": NaN,
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "Archs",
+      "sameAs": {
+        "nestedName": "processorRequirements",
+        "cardinality": "many",
+        "marginality": "optional",
+        "domainIncludes": [
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": "schema:Text",
+        "url": "https://schema.org/processorRequirements",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "processorRequirements"
+      }
+    },
+    {
+      "nestedName": "LinkingTo",
+      "cardinality": "many",
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "LinkingTo",
+      "sameAs": {
+        "nestedName": "isRelatedTo.identifier",
+        "cardinality": "one",
+        "marginality": "optional",
+        "domainIncludes": [
+          {
+            "@id": "schema:CreativeWork"
+          },
+          {
+            "@id": "schema:ScholarlyArticle"
+          }
+        ],
+        "rangeIncludes": "schema:Text",
+        "url": "https://schema.org/identifier",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "identifier"
+      }
+    },
+    {
+      "nestedName": "packages.stats",
+      "cardinality": "many",
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "stats",
+      "sameAs": {
+        "nestedName": "interactionStatistic",
+        "cardinality": "many",
+        "marginality": "recommended",
+        "domainIncludes": [
+          {
+            "@id": "nde:ComputationalTool"
+          }
+        ],
+        "rangeIncludes": "schema:InteractionCounter",
+        "url": "https://schema.org/interactionStatistic",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "interactionStatistic"
+      }
+    },
+    {
+      "nestedName": "Nb_of_downloads",
+      "cardinality": "one",
+      "isPartOf": {
+        "@id": "bioconductor"
+      },
+      "name": "Nb_of_downloads",
+      "sameAs": {
+        "nestedName": "interactionStatistic.userInteractionCount",
+        "cardinality": "one",
+        "marginality": "recommended",
+        "domainIncludes": [
+          {
+            "@id": "schema:InteractionCounter"
+          }
+        ],
+        "rangeIncludes": "schema:Integer",
+        "url": "https://schema.org/userInteractionCount",
+        "isPartOf": {
+          "@id": "nde:ComputationalTool"
+        },
+        "name": "userInteractionCount"
+      }
+    }
+  ],
+  "hasPart": [
+    {
+      "@type": "CreativeWork",
+      "identifier": "bioconductor",
+      "name": "Bioconductor",
+      "alternateName": "bioconductor.org",
+      "url": "https://www.bioconductor.org/",
+      "version": "Bioc 3.15",
+      "citation": {
+        "@type": "ScholarlyArticle",
+        "name": "Bioconductor: open software development for computational biology and bioinformatics",
+        "url": "https://genomebiology.biomedcentral.com/articles/10.1186/gb-2004-5-10-r80"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "identifier": "nde:ComputationalTool",
+      "name": "NIAID Data Ecosystem (NDE) ComputationalTool Schema",
+      "alternateName": "nde:ComputationalTool",
+      "url": "https://discovery.biothings.io/view/niaid/Dataset/",
+      "version": "2022-08-14",
+      "citation": {
+        "@type": "WebSite",
+        "name": "NIAID Data Ecosystem (NDE) schema",
+        "url": "https://discovery.biothings.io/view/nde/ComputationalTool"
+      }
+    }
+  ],
+  "isPartOf": [],
+  "isBasedOn": [
+    {
+      "@type": "Website",
+      "name": "Bioconductor",
+      "url": "https://www.bioconductor.org/packages/release/BiocViews.html#___Software",
+      "documentation": "https://contributions.bioconductor.org/"
+    }
+  ],
+  "isBasisFor": [
+    {
+      "@type": "WebAPI",
+      "name": "NIAID Data Ecosystem",
+      "url": "https://docs.niaiddata.org/",
+      "documentation": "https://docs.niaiddata.org/reference/new-1"
+    }
+  ],
+  "funding": [
+    {
+      "@type": "schema:MonetaryGrant",
+      "identifier": "U19 AI135995",
+      "funder": {
+        "@type": "schema:Organization",
+        "name": "National Institute of Allergy and Infectious Diseases"
+      }
+    }
+  ],
+  "datePublished": "2022-08-11",
+  "dateModified": "2022-08-14",
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}

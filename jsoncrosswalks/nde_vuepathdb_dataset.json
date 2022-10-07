@@ -3,7 +3,7 @@
   "@context": {
     "nde": "https://discovery.biothings.io/view/nde/",
     "schema": "https://schema.org/",
-    "owl": "http://www.w3.org/2002/07/owl#",
+    "owl": "http://www.w3.org/2002/07/owl/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
   },
@@ -50,7 +50,7 @@
       "name": "displayName",
       "sameAs": {
         "nestedName": "name",
-        "owl:cardinality": "one",
+        "cardinality": "one",
         "marginality": "minimal or required",
         "domainIncludes": [
           {
@@ -77,7 +77,7 @@
       "name": "summary",
       "sameAs": {
         "nestedName": "description",
-        "owl:cardinality": "one",
+        "cardinality": "one",
         "marginality": "minimal or required",
         "domainIncludes": [
           {
@@ -104,7 +104,7 @@
       "name": "type",
       "sameAs": {
         "nestedName": "measurementTechnique",
-        "owl:cardinality": "many",
+        "cardinality": "many",
         "marginality": "minimal or required",
         "domainIncludes": [
           {
@@ -131,7 +131,7 @@
       "name": "version",
       "sameAs": {
         "nestedName": "dateModified",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "marginality": "unspecified",
         "domainIncludes": [
           {
@@ -158,7 +158,7 @@
       "name": "release_policy",
       "sameAs": {
         "nestedName": "conditionOfAccess",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "marginality": "unspecified",
         "domainIncludes": [
           {
@@ -185,7 +185,7 @@
       "name": "project_id",
       "sameAs": {
         "nestedName": "sdPublisher.name",
-        "owl:cardinality": "one",
+        "cardinality": "one",
         "marginality": "minimal or required",
         "domainIncludes": [
           {
@@ -212,7 +212,7 @@
       "name": "short_attribution",
       "sameAs": {
         "nestedName": "creditText",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "marginality": "unspecified",
         "domainIncludes": [
           {
@@ -239,7 +239,7 @@
       "name": "value",
       "sameAs": {
         "nestedName": "identifier",
-        "owl:cardinality": "many",
+        "cardinality": "many",
         "marginality": "minimal or required",
         "domainIncludes": [
           {
@@ -266,7 +266,7 @@
       "name": "release_number",
       "sameAs": {
         "nestedName": "version",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "marginality": "unspecified",
         "domainIncludes": [
           {
@@ -293,7 +293,7 @@
       "name": "release_date",
       "sameAs": {
         "nestedName": "dateModified",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "marginality": "unspecified",
         "domainIncludes": [
           {
@@ -320,7 +320,7 @@
       "name": "datasest_id",
       "sameAs": {
         "nestedName": "identifier",
-        "owl:cardinality": "many",
+        "cardinality": "many",
         "marginality": "minimal or required",
         "domainIncludes": [
           {
@@ -347,7 +347,7 @@
       "name": "pmid",
       "sameAs": {
         "nestedName": "citation.pmid",
-        "owl:cardinality": "one",
+        "cardinality": "one",
         "marginality": "recommended",
         "domainIncludes": [
           {
@@ -374,7 +374,7 @@
       "name": "url",
       "sameAs": {
         "nestedName": "citation.url",
-        "owl:cardinality": "one",
+        "cardinality": "one",
         "marginality": "minimal or required",
         "domainIncludes": [
           {
@@ -401,7 +401,7 @@
       "name": "contact_name",
       "sameAs": {
         "nestedName": "author.name",
-        "owl:cardinality": "one",
+        "cardinality": "one",
         "marginality": "minimal or required",
         "domainIncludes": [
           {
@@ -428,7 +428,7 @@
       "name": "affiliation",
       "sameAs": {
         "nestedName": "author.affiliation",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "marginality": "unspecified",
         "domainIncludes": [
           {
@@ -455,7 +455,7 @@
       "name": "organism",
       "sameAs": {
         "nestedName": "species",
-        "owl:cardinality": "many",
+        "cardinality": "many",
         "marginality": "recommended",
         "domainIncludes": [
           {
@@ -482,7 +482,7 @@
       "name": "version",
       "sameAs": {
         "nestedName": "datePublished",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "marginality": "unspecified",
         "domainIncludes": [
           {
@@ -509,7 +509,7 @@
       "name": "gene_type",
       "sameAs": {
         "nestedName": "variableMeasured.name",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "marginality": "unspecified",
         "domainIncludes": [
           {
@@ -536,7 +536,7 @@
       "name": "gene_count",
       "sameAs": {
         "nestedName": "variableMeasured.identifier",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "marginality": "unspecified",
         "domainIncludes": [
           {
@@ -563,7 +563,7 @@
       "name": "text",
       "sameAs": {
         "nestedName": "distribution.name",
-        "owl:cardinality": "one",
+        "cardinality": "one",
         "marginality": "unspecified",
         "domainIncludes": [
           {
@@ -590,7 +590,7 @@
       "name": "url",
       "sameAs": {
         "nestedName": "distribution.url",
-        "owl:cardinality": "one",
+        "cardinality": "one",
         "marginality": "minimal or required",
         "domainIncludes": [
           {

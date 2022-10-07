@@ -3,7 +3,7 @@
   "@context": {
     "nde": "https://discovery.biothings.io/view/nde/",
     "schema": "https://schema.org/",
-    "owl": "http://www.w3.org/2002/07/owl#",
+    "owl": "http://www.w3.org/2002/07/owl/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
   },
@@ -37,7 +37,7 @@
   "includesProperty": [
     {
       "nestedName": "name",
-      "owl:cardinality": "one",
+      "cardinality": "one",
       "marginality": "minimal or required",
       "domainIncludes": [
         {
@@ -56,7 +56,7 @@
       "name": "name",
       "sameAs": {
         "nestedName": "studyTitle",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -65,7 +65,7 @@
     },
     {
       "nestedName": "description",
-      "owl:cardinality": "one",
+      "cardinality": "one",
       "marginality": "minimal or required",
       "domainIncludes": [
         {
@@ -84,7 +84,7 @@
       "name": "description",
       "sameAs": {
         "nestedName": "description",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -93,7 +93,7 @@
     },
     {
       "nestedName": "measurementTechnique",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "minimal or required",
       "domainIncludes": [
         {
@@ -112,7 +112,7 @@
       "name": "measurementTechnique",
       "sameAs": {
         "nestedName": "outcomes.specificMetric",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -121,7 +121,7 @@
     },
     {
       "nestedName": "conditionOfAccess",
-      "owl:cardinality": "unspecified",
+      "cardinality": "unspecified",
       "marginality": "unspecified",
       "domainIncludes": [
         {
@@ -140,7 +140,7 @@
       "name": "conditionOfAccess",
       "sameAs": {
         "nestedName": "additionalInformation",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -149,7 +149,7 @@
     },
     {
       "nestedName": "identifier",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "minimal or required",
       "domainIncludes": [
         {
@@ -168,7 +168,7 @@
       "name": "identifier",
       "sameAs": {
         "nestedName": "secondaryIds",
-        "owl:cardinality": "many",
+        "cardinality": "many",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -177,7 +177,7 @@
     },
     {
       "nestedName": "author.name",
-      "owl:cardinality": "one",
+      "cardinality": "one",
       "marginality": "minimal or required",
       "domainIncludes": [
         {
@@ -196,7 +196,7 @@
       "name": "name",
       "sameAs": {
         "nestedName": "principalInvestigator.firstName",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -205,7 +205,7 @@
     },
     {
       "nestedName": "author.name",
-      "owl:cardinality": "one",
+      "cardinality": "one",
       "marginality": "minimal or required",
       "domainIncludes": [
         {
@@ -224,7 +224,7 @@
       "name": "name",
       "sameAs": {
         "nestedName": "principalInvestigator.lastName",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -233,7 +233,7 @@
     },
     {
       "nestedName": "author.identifier",
-      "owl:cardinality": "unspecified",
+      "cardinality": "unspecified",
       "marginality": "unspecified",
       "domainIncludes": [
         {
@@ -252,7 +252,7 @@
       "name": "identifier",
       "sameAs": {
         "nestedName": "principalInvestigator.orcidId",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -261,7 +261,7 @@
     },
     {
       "nestedName": "datePublished",
-      "owl:cardinality": "unspecified",
+      "cardinality": "unspecified",
       "marginality": "unspecified",
       "domainIncludes": [
         {
@@ -280,7 +280,7 @@
       "name": "datePublished",
       "sameAs": {
         "nestedName": "postedDate",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -289,7 +289,7 @@
     },
     {
       "nestedName": "variableMeasured",
-      "owl:cardinality": "unspecified",
+      "cardinality": "unspecified",
       "marginality": "unspecified",
       "domainIncludes": [
         {
@@ -311,7 +311,7 @@
       "name": "variableMeasured",
       "sameAs": {
         "nestedName": "outcomeNames",
-        "owl:cardinality": "many",
+        "cardinality": "many",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -320,7 +320,7 @@
     },
     {
       "nestedName": "variableMeasured",
-      "owl:cardinality": "unspecified",
+      "cardinality": "unspecified",
       "marginality": "unspecified",
       "domainIncludes": [
         {
@@ -342,7 +342,7 @@
       "name": "variableMeasured",
       "sameAs": {
         "nestedName": "outcomes.specificMeasurement",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -351,7 +351,7 @@
     },
     {
       "nestedName": "variableMeasured",
-      "owl:cardinality": "unspecified",
+      "cardinality": "unspecified",
       "marginality": "unspecified",
       "domainIncludes": [
         {
@@ -373,7 +373,7 @@
       "name": "variableMeasured",
       "sameAs": {
         "nestedName": "outcomes.outcomeOrMeasurement",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -382,7 +382,7 @@
     },
     {
       "nestedName": "spatialCoverage",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "recommended",
       "domainIncludes": [
         {
@@ -401,7 +401,7 @@
       "name": "spatialCoverage",
       "sameAs": {
         "nestedName": "locationsOfStudySites",
-        "owl:cardinality": "many",
+        "cardinality": "many",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -410,7 +410,7 @@
     },
     {
       "nestedName": "spatialCoverage.name",
-      "owl:cardinality": "one",
+      "cardinality": "one",
       "marginality": "recommended",
       "domainIncludes": [
         {
@@ -429,7 +429,7 @@
       "name": "name",
       "sameAs": {
         "nestedName": "locationsOfStudySites.name",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -438,7 +438,7 @@
     },
     {
       "nestedName": "spatialCoverage.identifier",
-      "owl:cardinality": "one",
+      "cardinality": "one",
       "marginality": "recommended",
       "domainIncludes": [
         {
@@ -457,7 +457,7 @@
       "name": "identifier",
       "sameAs": {
         "nestedName": "locationsOfStudySites.code",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -466,7 +466,7 @@
     },
     {
       "nestedName": "keywords",
-      "owl:cardinality": "unspecified",
+      "cardinality": "unspecified",
       "marginality": "unspecified",
       "domainIncludes": [
         {
@@ -485,7 +485,7 @@
       "name": "keywords",
       "sameAs": {
         "nestedName": "arms.interventions.interventionName",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -494,7 +494,7 @@
     },
     {
       "nestedName": "healthCondition",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "recommended",
       "domainIncludes": [
         {
@@ -513,7 +513,7 @@
       "name": "healthCondition",
       "sameAs": {
         "nestedName": "conditions",
-        "owl:cardinality": "many",
+        "cardinality": "many",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -522,7 +522,7 @@
     },
     {
       "nestedName": "keywords",
-      "owl:cardinality": "unspecified",
+      "cardinality": "unspecified",
       "marginality": "unspecified",
       "domainIncludes": [
         {
@@ -541,7 +541,7 @@
       "name": "keywords",
       "sameAs": {
         "nestedName": "populationVocabularyItems.term",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -550,7 +550,7 @@
     },
     {
       "nestedName": "keywords",
-      "owl:cardinality": "unspecified",
+      "cardinality": "unspecified",
       "marginality": "unspecified",
       "domainIncludes": [
         {
@@ -569,7 +569,7 @@
       "name": "keywords",
       "sameAs": {
         "nestedName": "interventionVocabularyItems.term",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -578,7 +578,7 @@
     },
     {
       "nestedName": "identifier",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "minimal or required",
       "domainIncludes": [
         {
@@ -597,7 +597,7 @@
       "name": "identifier",
       "sameAs": {
         "nestedName": "nctId",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -606,7 +606,7 @@
     },
     {
       "nestedName": "dateCreated",
-      "owl:cardinality": "unspecified",
+      "cardinality": "unspecified",
       "marginality": "unspecified",
       "domainIncludes": [
         {
@@ -625,7 +625,7 @@
       "name": "dateCreated",
       "sameAs": {
         "nestedName": "draftCreatedDate",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -634,7 +634,7 @@
     },
     {
       "nestedName": "dateCreated",
-      "owl:cardinality": "unspecified",
+      "cardinality": "unspecified",
       "marginality": "unspecified",
       "domainIncludes": [
         {
@@ -653,7 +653,7 @@
       "name": "dateCreated",
       "sameAs": {
         "nestedName": "submittedDate",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -662,7 +662,7 @@
     },
     {
       "nestedName": "keywords",
-      "owl:cardinality": "unspecified",
+      "cardinality": "unspecified",
       "marginality": "unspecified",
       "domainIncludes": [
         {
@@ -681,7 +681,7 @@
       "name": "keywords",
       "sameAs": {
         "nestedName": "extractedInterventions",
-        "owl:cardinality": "many",
+        "cardinality": "many",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -690,7 +690,7 @@
     },
     {
       "nestedName": "healthCondition",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "recommended",
       "domainIncludes": [
         {
@@ -709,7 +709,7 @@
       "name": "healthCondition",
       "sameAs": {
         "nestedName": "extractedConditions",
-        "owl:cardinality": "many",
+        "cardinality": "many",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -718,7 +718,7 @@
     },
     {
       "nestedName": "keywords",
-      "owl:cardinality": "unspecified",
+      "cardinality": "unspecified",
       "marginality": "unspecified",
       "domainIncludes": [
         {
@@ -737,7 +737,7 @@
       "name": "keywords",
       "sameAs": {
         "nestedName": "tag",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -746,7 +746,7 @@
     },
     {
       "nestedName": "funding.identifier",
-      "owl:cardinality": "one",
+      "cardinality": "one",
       "marginality": "minimal or required",
       "domainIncludes": [
         {
@@ -765,7 +765,7 @@
       "name": "identifier",
       "sameAs": {
         "nestedName": "grant",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -774,7 +774,7 @@
     },
     {
       "nestedName": "funding.funder",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "minimal or required",
       "domainIncludes": [
         {
@@ -793,7 +793,7 @@
       "name": "funder",
       "sameAs": {
         "nestedName": "funder",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -802,7 +802,7 @@
     },
     {
       "nestedName": "doi",
-      "owl:cardinality": "one",
+      "cardinality": "one",
       "marginality": "recommended",
       "domainIncludes": [
         {
@@ -821,7 +821,7 @@
       "name": "doi",
       "sameAs": {
         "nestedName": "studyMetadataDoi",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -830,7 +830,7 @@
     },
     {
       "nestedName": "doi",
-      "owl:cardinality": "one",
+      "cardinality": "one",
       "marginality": "recommended",
       "domainIncludes": [
         {
@@ -849,7 +849,7 @@
       "name": "doi",
       "sameAs": {
         "nestedName": "digitalObjectId",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -858,7 +858,7 @@
     },
     {
       "nestedName": "temporalCoverage.startDate",
-      "owl:cardinality": "one",
+      "cardinality": "one",
       "marginality": "recommended",
       "domainIncludes": [
         {
@@ -877,7 +877,7 @@
       "name": "startDate",
       "sameAs": {
         "nestedName": "studyStartDateString",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -886,7 +886,7 @@
     },
     {
       "nestedName": "temporalCoverage.endDate",
-      "owl:cardinality": "one",
+      "cardinality": "one",
       "marginality": "recommended",
       "domainIncludes": [
         {
@@ -905,7 +905,7 @@
       "name": "endDate",
       "sameAs": {
         "nestedName": "studyEndDateString",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -914,7 +914,7 @@
     },
     {
       "nestedName": "temporalCoverage.startDate",
-      "owl:cardinality": "one",
+      "cardinality": "one",
       "marginality": "recommended",
       "domainIncludes": [
         {
@@ -933,7 +933,7 @@
       "name": "startDate",
       "sameAs": {
         "nestedName": "studyStartDate",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -942,7 +942,7 @@
     },
     {
       "nestedName": "temporalCoverage.endDate",
-      "owl:cardinality": "one",
+      "cardinality": "one",
       "marginality": "recommended",
       "domainIncludes": [
         {
@@ -961,7 +961,7 @@
       "name": "endDate",
       "sameAs": {
         "nestedName": "actualStudyCompletionDate",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -970,7 +970,7 @@
     },
     {
       "nestedName": "temporalCoverage.startDate",
-      "owl:cardinality": "one",
+      "cardinality": "one",
       "marginality": "recommended",
       "domainIncludes": [
         {
@@ -989,7 +989,7 @@
       "name": "startDate",
       "sameAs": {
         "nestedName": "startDate",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -998,7 +998,7 @@
     },
     {
       "nestedName": "temporalCoverage.endDate",
-      "owl:cardinality": "one",
+      "cardinality": "one",
       "marginality": "recommended",
       "domainIncludes": [
         {
@@ -1017,7 +1017,7 @@
       "name": "endDate",
       "sameAs": {
         "nestedName": "endDate",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -1026,7 +1026,7 @@
     },
     {
       "nestedName": "funding.funder.name",
-      "owl:cardinality": "one",
+      "cardinality": "one",
       "marginality": "required",
       "domainIncludes": [
         {
@@ -1045,7 +1045,7 @@
       "name": "name",
       "sameAs": {
         "nestedName": "leadSponsor.agency",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },
@@ -1054,7 +1054,7 @@
     },
     {
       "nestedName": "funding.funder.name",
-      "owl:cardinality": "one",
+      "cardinality": "one",
       "marginality": "required",
       "domainIncludes": [
         {
@@ -1073,7 +1073,7 @@
       "name": "name",
       "sameAs": {
         "nestedName": "collaborators.agency",
-        "owl:cardinality": "unspecified",
+        "cardinality": "unspecified",
         "isPartOf": {
           "@id": "vivli"
         },

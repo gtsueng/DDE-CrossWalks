@@ -4,7 +4,7 @@
     "niaid": "https://discovery.biothings.io/view/niaid/",
     "nde": "https://discovery.biothings.io/view/nde",
     "schema": "https://schema.org/",
-    "owl": "http://www.w3.org/2002/07/owl#",
+    "owl": "http://www.w3.org/2002/07/owl/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
   },
@@ -51,7 +51,7 @@
   "includesProperty": [
     {
       "nestedName": "name",
-      "owl:cardinality": "one",
+      "cardinality": "one",
       "marginality": "minimal or required",
       "domainIncludes": [
         {
@@ -69,7 +69,7 @@
       "name": "name",
       "sameAs": {
         "nestedName": "name",
-        "owl:cardinality": "one",
+        "cardinality": "one",
         "marginality": "minimal or required",
         "domainIncludes": [
           {
@@ -90,7 +90,7 @@
     },
     {
       "nestedName": "description",
-      "owl:cardinality": "one",
+      "cardinality": "one",
       "marginality": "minimal or required",
       "domainIncludes": [
         {
@@ -108,7 +108,7 @@
       "name": "description",
       "sameAs": {
         "nestedName": "description",
-        "owl:cardinality": "one",
+        "cardinality": "one",
         "marginality": "minimal or required",
         "domainIncludes": [
           {
@@ -129,7 +129,7 @@
     },
     {
       "nestedName": "measurementTechnique",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "minimal or required",
       "domainIncludes": [
         {
@@ -147,7 +147,7 @@
       "name": "measurementTechnique",
       "sameAs": {
         "nestedName": "measurementTechnique",
-        "owl:cardinality": "many",
+        "cardinality": "many",
         "marginality": "minimal or required",
         "domainIncludes": [
           {
@@ -168,7 +168,7 @@
     },
     {
       "nestedName": "identifier",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "minimal or required",
       "domainIncludes": [
         {
@@ -186,7 +186,7 @@
       "name": "identifier",
       "sameAs": {
         "nestedName": "identifier",
-        "owl:cardinality": "many",
+        "cardinality": "many",
         "marginality": "minimal or required",
         "domainIncludes": [
           {
@@ -207,7 +207,7 @@
     },
     {
       "nestedName": "creator",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "minimal or required",
       "domainIncludes": [
         {
@@ -228,7 +228,7 @@
       "name": "creator",
       "sameAs": {
         "nestedName": "author",
-        "owl:cardinality": "many",
+        "cardinality": "many",
         "marginality": "minimal or required",
         "domainIncludes": [
           {
@@ -252,7 +252,7 @@
     },
     {
       "nestedName": "creator",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "minimal or required",
       "domainIncludes": [
         {
@@ -273,7 +273,7 @@
       "name": "creator",
       "sameAs": {
         "nestedName": "creator",
-        "owl:cardinality": "many",
+        "cardinality": "many",
         "marginality": "optional",
         "domainIncludes": [
           {
@@ -297,7 +297,7 @@
     },
     {
       "nestedName": "distribution",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "minimal or required",
       "domainIncludes": [
         {
@@ -315,7 +315,7 @@
       "name": "distribution",
       "sameAs": {
         "nestedName": "distribution",
-        "owl:cardinality": "many",
+        "cardinality": "many",
         "marginality": "minimal or required",
         "domainIncludes": [
           {
@@ -336,7 +336,7 @@
     },
     {
       "nestedName": "funding",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "minimal or required",
       "domainIncludes": [
         {
@@ -354,7 +354,7 @@
       "name": "funding",
       "sameAs": {
         "nestedName": "funding",
-        "owl:cardinality": "many",
+        "cardinality": "many",
         "marginality": "minimal or required",
         "domainIncludes": [
           {
@@ -375,7 +375,7 @@
     },
     {
       "nestedName": "citation",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "recommended",
       "domainIncludes": [
         {
@@ -393,7 +393,7 @@
       "name": "citation",
       "sameAs": {
         "nestedName": "citation",
-        "owl:cardinality": "many",
+        "cardinality": "many",
         "marginality": "recommended",
         "domainIncludes": [
           {
@@ -414,7 +414,7 @@
     },
     {
       "nestedName": "license",
-      "owl:cardinality": "one",
+      "cardinality": "one",
       "marginality": "recommended",
       "domainIncludes": [
         {
@@ -435,7 +435,7 @@
       "name": "license",
       "sameAs": {
         "nestedName": "license",
-        "owl:cardinality": "one",
+        "cardinality": "one",
         "marginality": "recommended",
         "domainIncludes": [
           {
@@ -459,7 +459,7 @@
     },
     {
       "nestedName": "species",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "recommended",
       "domainIncludes": [
         {
@@ -477,7 +477,7 @@
       "name": "species",
       "sameAs": {
         "nestedName": "species",
-        "owl:cardinality": "many",
+        "cardinality": "many",
         "marginality": "recommended",
         "domainIncludes": [
           {
@@ -498,7 +498,7 @@
     },
     {
       "nestedName": "infectiousAgent",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "recommended",
       "domainIncludes": [
         {
@@ -516,7 +516,7 @@
       "name": "infectiousAgent",
       "sameAs": {
         "nestedName": "infectiousAgent",
-        "owl:cardinality": "many",
+        "cardinality": "many",
         "marginality": "recommended",
         "domainIncludes": [
           {
@@ -537,7 +537,7 @@
     },
     {
       "nestedName": "healthCondition",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "recommended",
       "domainIncludes": [
         {
@@ -555,7 +555,7 @@
       "name": "healthCondition",
       "sameAs": {
         "nestedName": "healthCondition",
-        "owl:cardinality": "many",
+        "cardinality": "many",
         "marginality": "recommended",
         "domainIncludes": [
           {
@@ -576,7 +576,7 @@
     },
     {
       "nestedName": "spatialCoverage",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "recommended",
       "domainIncludes": [
         {
@@ -594,7 +594,7 @@
       "name": "spatialCoverage",
       "sameAs": {
         "nestedName": "spatialCoverage",
-        "owl:cardinality": "many",
+        "cardinality": "many",
         "marginality": "recommended",
         "domainIncludes": [
           {
@@ -615,7 +615,7 @@
     },
     {
       "nestedName": "temporalCoverage",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "recommended",
       "domainIncludes": [
         {
@@ -633,7 +633,7 @@
       "name": "temporalCoverage",
       "sameAs": {
         "nestedName": "temporalCoverage",
-        "owl:cardinality": "many",
+        "cardinality": "many",
         "marginality": "recommended",
         "domainIncludes": [
           {
@@ -654,7 +654,7 @@
     },
     {
       "nestedName": "sdPublisher",
-      "owl:cardinality": "many",
+      "cardinality": "many",
       "marginality": "optional",
       "domainIncludes": [
         {
@@ -675,7 +675,7 @@
       "name": "sdPublisher",
       "sameAs": {
         "nestedName": "sdPublisher",
-        "owl:cardinality": "many",
+        "cardinality": "many",
         "marginality": "recommended",
         "domainIncludes": [
           {
@@ -699,7 +699,7 @@
     },
     {
       "nestedName": "citation.doi",
-      "owl:cardinality": "one",
+      "cardinality": "one",
       "marginality": "optional",
       "domainIncludes": [
         {
@@ -717,7 +717,7 @@
       "name": "doi",
       "sameAs": {
         "nestedName": "doi",
-        "owl:cardinality": "one",
+        "cardinality": "one",
         "marginality": "recommended",
         "domainIncludes": [
           {

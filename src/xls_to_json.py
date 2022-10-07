@@ -5,6 +5,7 @@ import os
 from datetime import datetime
 from collections import OrderedDict
 import pathlib
+from copy import deepcopy
 
 def generate_context_list(contextdf):
     context_dict = {}
@@ -243,11 +244,11 @@ def generate_inverted_crosswalk(xwalkclean):
     return(invertedxwalk)
 
 
+
 def convert_crosswalks(script_path):
     data_path = os.path.join(script_path,'crosswalks')
     export_path = os.path.join(script_path,'jsoncrosswalks')
     data_files = os.listdir(data_path)
-
     for filename in data_files:
         data_file = os.path.join(data_path,filename)
         export_file = os.path.join(export_path,filename.replace('xls','json'))
@@ -262,5 +263,5 @@ def convert_crosswalks(script_path):
                 jsonfile = json.dumps(invertedxwalk, indent=2)
                 outfile.write(jsonfile)
         except:
-            print("failed to convert: ",filename)    
+            print("failed to convert: ",filename)   
 

@@ -1,0 +1,747 @@
+{
+  "@type": "crosswalks:MetadataCrosswalk",
+  "@context": {
+    "nde": "https://discovery.biothings.io/view/nde/",
+    "schema": "https://schema.org/",
+    "owl": "http://www.w3.org/2002/07/owl/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+  },
+  "identifier": "inverted_nde_xref_biotools_ComputationalTools",
+  "name": "NIAID Data Ecosystem (NDE) ComputationalTool and ELIXIR Biotools Crosswalk",
+  "description": "This crosswalk maps ELIXIR Biotools field names to the NIAID Data Ecosystem (NDE) ComputationalTool schema properties. A few properties from the NDE ComputationalTool schema were derived rather than being directly mapped. These include 'includedInDataCatalog', 'interactionStatistic.interactionType'",
+  "sameAs": "https://github.com/NIAID-Data-Ecosystem/nde-crawlers/blob/main/biothings-hub/files/nde-hub/hub/dataload/sources/biotools/biotools.csv",
+  "author": [
+    {
+      "@type": "schema:Person",
+      "name": "Laura D. Hughes",
+      "familyName": "Hughes",
+      "givenName": "Laura",
+      "affiliation": "Scripps Research"
+    },
+    {
+      "@type": "schema:Person",
+      "name": "Dylan Welzel",
+      "familyName": "Welzel",
+      "givenName": "Dylan",
+      "affiliation": "Scripps Research"
+    },
+    {
+      "@type": "schema:Person",
+      "name": "Ginger Tsueng",
+      "familyName": "Tsueng",
+      "givenName": "Ginger",
+      "affiliation": "Scripps Research"
+    }
+  ],
+  "includesProperty": [
+    {
+      "nestedName": "name",
+      "cardinality": "one",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "nde:ComputationalTool"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/name",
+      "isPartOf": {
+        "@id": "nde:ComputationalTool"
+      },
+      "name": "name",
+      "sameAs": {
+        "nestedName": "name",
+        "isPartOf": {
+          "@id": "biotools"
+        },
+        "name": "name"
+      }
+    },
+    {
+      "nestedName": "url",
+      "cardinality": "one",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "nde:ComputationalTool"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        }
+      ],
+      "url": "https://schema.org/URL",
+      "isPartOf": {
+        "@id": "nde:ComputationalTool"
+      },
+      "name": "url",
+      "sameAs": {
+        "nestedName": "uri ",
+        "isPartOf": {
+          "@id": "biotools"
+        },
+        "name": "uri "
+      }
+    },
+    {
+      "nestedName": "description",
+      "cardinality": "one",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "nde:ComputationalTool"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/description",
+      "isPartOf": {
+        "@id": "nde:ComputationalTool"
+      },
+      "name": "description",
+      "sameAs": {
+        "nestedName": "description ",
+        "isPartOf": {
+          "@id": "biotools"
+        },
+        "name": "description "
+      }
+    },
+    {
+      "nestedName": "identifier",
+      "cardinality": "many",
+      "marginality": "minimal or required",
+      "domainIncludes": [
+        {
+          "@id": "nde:ComputationalTool"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/identifier",
+      "isPartOf": {
+        "@id": "nde:ComputationalTool"
+      },
+      "name": "identifier",
+      "sameAs": {
+        "nestedName": "biotoolsID",
+        "isPartOf": {
+          "@id": "biotools"
+        },
+        "name": "biotoolsID"
+      }
+    },
+    {
+      "nestedName": "codeRepository",
+      "cardinality": "many",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "nde:ComputationalTool"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        }
+      ],
+      "url": "https://schema.org/codeRepository",
+      "isPartOf": {
+        "@id": "nde:ComputationalTool"
+      },
+      "name": "codeRepository",
+      "sameAs": {
+        "nestedName": "homepage ",
+        "isPartOf": {
+          "@id": "biotools"
+        },
+        "name": "homepage "
+      }
+    },
+    {
+      "nestedName": "mainEntityOfPage",
+      "cardinality": "many",
+      "marginality": "optional",
+      "domainIncludes": [
+        {
+          "@id": "nde:ComputationalTool"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        }
+      ],
+      "url": "https://schema.org/mainEntityOfPage",
+      "isPartOf": {
+        "@id": "nde:ComputationalTool"
+      },
+      "name": "mainEntityOfPage",
+      "sameAs": {
+        "nestedName": "homepage ",
+        "isPartOf": {
+          "@id": "biotools"
+        },
+        "name": "homepage "
+      }
+    },
+    {
+      "nestedName": "softwareVersion",
+      "cardinality": "one",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "nde:ComputationalTool"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/softwareVersion",
+      "isPartOf": {
+        "@id": "nde:ComputationalTool"
+      },
+      "name": "softwareVersion",
+      "sameAs": {
+        "nestedName": "version ",
+        "isPartOf": {
+          "@id": "biotools"
+        },
+        "name": "version "
+      }
+    },
+    {
+      "nestedName": "applicationCategory",
+      "cardinality": "many",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "nde:ComputationalTool"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/applicationCategory",
+      "isPartOf": {
+        "@id": "nde:ComputationalTool"
+      },
+      "name": "applicationCategory",
+      "sameAs": {
+        "nestedName": "toolType ",
+        "isPartOf": {
+          "@id": "biotools"
+        },
+        "name": "toolType "
+      }
+    },
+    {
+      "nestedName": "license",
+      "cardinality": "one",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "nde:ComputationalTool"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/license",
+      "isPartOf": {
+        "@id": "nde:ComputationalTool"
+      },
+      "name": "license",
+      "sameAs": {
+        "nestedName": "license ",
+        "isPartOf": {
+          "@id": "biotools"
+        },
+        "name": "license "
+      }
+    },
+    {
+      "nestedName": "programmingLanguage",
+      "cardinality": "many",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "nde:ComputationalTool"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/programmingLanguage",
+      "isPartOf": {
+        "@id": "nde:ComputationalTool"
+      },
+      "name": "programmingLanguage",
+      "sameAs": {
+        "nestedName": "language ",
+        "isPartOf": {
+          "@id": "biotools"
+        },
+        "name": "language "
+      }
+    },
+    {
+      "nestedName": "conditionsOfAccess",
+      "cardinality": "many",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "nde:ComputationalTool"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/conditionsOfAccess",
+      "isPartOf": {
+        "@id": "nde:ComputationalTool"
+      },
+      "name": "conditionsOfAccess",
+      "sameAs": {
+        "nestedName": "accessibility ",
+        "isPartOf": {
+          "@id": "biotools"
+        },
+        "name": "accessibility "
+      }
+    },
+    {
+      "nestedName": "conditionsOfAccess",
+      "cardinality": "many",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "nde:ComputationalTool"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        }
+      ],
+      "url": "https://schema.org/conditionsOfAccess",
+      "isPartOf": {
+        "@id": "nde:ComputationalTool"
+      },
+      "name": "conditionsOfAccess",
+      "sameAs": {
+        "nestedName": "cost ",
+        "isPartOf": {
+          "@id": "biotools"
+        },
+        "name": "cost "
+      }
+    },
+    {
+      "nestedName": "dateModified",
+      "cardinality": "one",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "nde:ComputationalTool"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Date"
+        }
+      ],
+      "url": "https://schema.org/dateModified",
+      "isPartOf": {
+        "@id": "nde:ComputationalTool"
+      },
+      "name": "dateModified",
+      "sameAs": {
+        "nestedName": "lastUpdate ",
+        "isPartOf": {
+          "@id": "biotools"
+        },
+        "name": "lastUpdate "
+      }
+    },
+    {
+      "nestedName": "dateCreated",
+      "cardinality": "one",
+      "marginality": "optional",
+      "domainIncludes": [
+        {
+          "@id": "nde:ComputationalTool"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Date"
+        }
+      ],
+      "url": "https://schema.org/dateCreated",
+      "isPartOf": {
+        "@id": "nde:ComputationalTool"
+      },
+      "name": "dateCreated",
+      "sameAs": {
+        "nestedName": "additionDate ",
+        "isPartOf": {
+          "@id": "biotools"
+        },
+        "name": "additionDate "
+      }
+    },
+    {
+      "nestedName": "applicationSubCategory",
+      "cardinality": "many",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "nde:ComputationalTool"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        }
+      ],
+      "url": "https://schema.org/applicationSubCategory",
+      "isPartOf": {
+        "@id": "nde:ComputationalTool"
+      },
+      "name": "applicationSubCategory",
+      "sameAs": {
+        "nestedName": "topic ",
+        "isPartOf": {
+          "@id": "biotools"
+        },
+        "name": "topic "
+      }
+    },
+    {
+      "nestedName": "featureList",
+      "cardinality": "many",
+      "marginality": "optional",
+      "domainIncludes": [
+        {
+          "@id": "nde:ComputationalTool"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:DefinedTerm"
+        }
+      ],
+      "url": "https://schema.org/featureList",
+      "isPartOf": {
+        "@id": "nde:ComputationalTool"
+      },
+      "name": "featureList",
+      "sameAs": {
+        "nestedName": "operation ",
+        "isPartOf": {
+          "@id": "biotools"
+        },
+        "name": "operation "
+      }
+    },
+    {
+      "nestedName": "input",
+      "cardinality": "many",
+      "marginality": "optional",
+      "domainIncludes": [
+        {
+          "@id": "nde:ComputationalTool"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "bioschemas:FormalParameter"
+        }
+      ],
+      "url": "https://discovery.biothings.io/view/bioschemas/input",
+      "isPartOf": {
+        "@id": "nde:ComputationalTool"
+      },
+      "name": "input",
+      "sameAs": {
+        "nestedName": "input ",
+        "isPartOf": {
+          "@id": "biotools"
+        },
+        "name": "input "
+      }
+    },
+    {
+      "nestedName": "output",
+      "cardinality": "many",
+      "marginality": "optional",
+      "domainIncludes": [
+        {
+          "@id": "nde:ComputationalTool"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "bioschemas:FormalParameter"
+        }
+      ],
+      "url": "https://discovery.biothings.io/view/bioschemas/output",
+      "isPartOf": {
+        "@id": "nde:ComputationalTool"
+      },
+      "name": "output",
+      "sameAs": {
+        "nestedName": "output ",
+        "isPartOf": {
+          "@id": "biotools"
+        },
+        "name": "output "
+      }
+    },
+    {
+      "nestedName": "discussionUrl",
+      "cardinality": "one",
+      "marginality": "optional",
+      "domainIncludes": [
+        {
+          "@id": "nde:ComputationalTool"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        }
+      ],
+      "url": "https://schema.org/discussionUrl",
+      "isPartOf": {
+        "@id": "nde:ComputationalTool"
+      },
+      "name": "discussionUrl",
+      "sameAs": {
+        "nestedName": "link ",
+        "isPartOf": {
+          "@id": "biotools"
+        },
+        "name": "link "
+      }
+    },
+    {
+      "nestedName": "codeRepository",
+      "cardinality": "many",
+      "marginality": "recommended",
+      "domainIncludes": [
+        {
+          "@id": "nde:ComputationalTool"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        }
+      ],
+      "url": "https://schema.org/codeRepository",
+      "isPartOf": {
+        "@id": "nde:ComputationalTool"
+      },
+      "name": "codeRepository",
+      "sameAs": {
+        "nestedName": "link ",
+        "isPartOf": {
+          "@id": "biotools"
+        },
+        "name": "link "
+      }
+    },
+    {
+      "nestedName": "downloadUrl",
+      "cardinality": "many",
+      "marginality": "optional",
+      "domainIncludes": [
+        {
+          "@id": "nde:ComputationalTool"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        }
+      ],
+      "url": "https://schema.org/downloadUrl",
+      "isPartOf": {
+        "@id": "nde:ComputationalTool"
+      },
+      "name": "downloadUrl",
+      "sameAs": {
+        "nestedName": "download ",
+        "isPartOf": {
+          "@id": "biotools"
+        },
+        "name": "download "
+      }
+    },
+    {
+      "nestedName": "softwareHelp.url",
+      "cardinality": "one",
+      "marginality": "optional",
+      "domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        }
+      ],
+      "url": "https://schema.org/URL",
+      "isPartOf": {
+        "@id": "nde:ComputationalTool"
+      },
+      "name": "url",
+      "sameAs": {
+        "nestedName": "documentation ",
+        "isPartOf": {
+          "@id": "biotools"
+        },
+        "name": "documentation "
+      }
+    },
+    {
+      "nestedName": "author",
+      "cardinality": "many",
+      "marginality": "required",
+      "domainIncludes": [
+        {
+          "@id": "nde:ComputationalTool"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ],
+      "url": "https://schema.org/author",
+      "isPartOf": {
+        "@id": "nde:ComputationalTool"
+      },
+      "name": "author",
+      "sameAs": {
+        "nestedName": "credit ",
+        "isPartOf": {
+          "@id": "biotools"
+        },
+        "name": "credit "
+      }
+    },
+    {
+      "nestedName": "isBasisFor",
+      "cardinality": "many",
+      "marginality": "optional",
+      "domainIncludes": [
+        {
+          "@id": "nde:ComputationalTool"
+        }
+      ],
+      "rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ],
+      "url": "https://schema.org/isBasisFor",
+      "isPartOf": {
+        "@id": "nde:ComputationalTool"
+      },
+      "name": "isBasisFor",
+      "sameAs": {
+        "nestedName": "publication ",
+        "isPartOf": {
+          "@id": "biotools"
+        },
+        "name": "publication "
+      }
+    }
+  ],
+  "hasPart": [
+    {
+      "@type": "CreativeWork",
+      "identifier": "biotools",
+      "name": "bio.tools",
+      "alternateName": "ELIXIR bio.tools",
+      "url": "https://bio.tools",
+      "version": NaN,
+      "citation": {
+        "@type": "ScholarlyArticle",
+        "name": "The bio.tools registry of software tools and data resources for the life sciences",
+        "url": "https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1772-6"
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "identifier": "nde:ComputationalTool",
+      "name": "NIAID Data Ecosystem (NDE) ComputationalTool Schema",
+      "alternateName": "nde:ComputationalTool",
+      "url": "https://discovery.biothings.io/view/niaid/Dataset/",
+      "version": "2022-08-14",
+      "citation": {
+        "@type": "WebSite",
+        "name": "NIAID Data Ecosystem (NDE) schema",
+        "url": "https://discovery.biothings.io/view/nde/ComputationalTool"
+      }
+    }
+  ],
+  "isPartOf": [],
+  "isBasedOn": [
+    {
+      "@type": "WebSite",
+      "name": "Curator's Guide",
+      "url": "https://biotools.readthedocs.io/en/latest/curators_guide.html"
+    }
+  ],
+  "isBasisFor": [
+    {
+      "@type": "WebAPI",
+      "name": "NIAID Data Ecosystem",
+      "url": "https://docs.niaiddata.org/",
+      "documentation": "https://docs.niaiddata.org/reference/new-1"
+    }
+  ],
+  "funding": [
+    {
+      "@type": "schema:MonetaryGrant",
+      "identifier": "U19 AI135995",
+      "funder": {
+        "@type": "schema:Organization",
+        "name": "National Institute of Allergy and Infectious Diseases"
+      }
+    }
+  ],
+  "datePublished": "2022-08-11",
+  "dateModified": "2022-09-28",
+  "license": "https://creativecommons.org/licenses/by/4.0/"
+}
