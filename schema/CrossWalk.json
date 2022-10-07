@@ -21,15 +21,18 @@
         "properties": {
           "name": {
             "description": "The name of the metadata crosswalk or mapping.",
-            "type": "string"
+            "type": "string",
+            "owl:cardinality": "one"
           },
           "description": {
             "description": "A description of the metadata crosswalk or mapping.",
-            "type": "string"
+            "type": "string",
+            "owl:cardinality": "one"
           },
           "identifier": {
             "description": "An identifier for the crosswalk itself.",
-            "type": "string"
+            "type": "string",
+            "owl:cardinality": "one"
           },
           "author": {
             "description": "The author of this metadata crosswalk or mapping. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.",
@@ -52,7 +55,8 @@
                   "$ref": "#/definitions/person"
                 }
               }
-            ]
+            ],
+            "owl:cardinality": "many"
           },
           "includesProperty": {
             "description": "Properties that are included in this metadata crosswalk or mapping (ie - properties that are mapped to different schemas).",
@@ -66,11 +70,13 @@
                   "$ref": "#/definitions/propertyObject"
                 }
               }
-            ]
+            ],
+            "owl:cardinality": "many"
           },
           "creditText": {
             "description": "Text that can be used to credit person(s) and/or organization(s) associated with this metadata crosswalk or mapping.",
-            "type": "string"
+            "type": "string",
+            "owl:cardinality": "one"
           },
           "funding": {
             "description": "A person or organization that supported (sponsored) this metadata crosswalk or mapping through some kind of financial contribution.",
@@ -84,7 +90,8 @@
                   "$ref": "#/definitions/funding"
                 }
               }
-            ]
+            ],
+            "owl:cardinality": "many"
           },
           "hasPart": {
             "description": "Any schemas that have been included in this metadata crosswalk or mapping. For publications, creative works or anything other than a schema, use 'isBasedOn'.",
@@ -98,7 +105,8 @@
                   "$ref": "#/definitions/schemaObject"
                 }
               }
-            ]
+            ],
+            "owl:cardinality": "many"
           },
           "isPartOf": {
             "description": "Any Schemas or crosswalks which include this metadata crosswalk or mapping. For publications, creative works, or anything other than schemas, use 'isBasisFor'.",
@@ -112,7 +120,8 @@
                   "$ref": "#/definitions/schemaObject"
                 }
               }
-            ]
+            ],
+            "owl:cardinality": "many"
           },
           "isBasedOn": {
             "description": "Citations of publications, schemas, or other creative works that were the basis for this metadata crosswalk or mapping.",
@@ -126,7 +135,8 @@
                   "$ref": "#/definitions/citation"
                 }
               }
-            ]
+            ],
+            "owl:cardinality": "many"
           },
           "isBasisFor": {
             "description": "Citations of publications, schemas, or other creative works that were based on this metadata crosswalk or mapping. Eg- citations of websites, resources etc. that used this crosswalk.",
@@ -140,24 +150,41 @@
                   "$ref": "#/definitions/citation"
                 }
               }
-            ]
+            ],
+            "owl:cardinality": "many"
           },
           "sdPublisher": {
             "description": "Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The\n[[sdPublisher]] property helps make such practices more explicit.",
-            "@type": "Person",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
+            "anyOf": [
+              {
+                "$ref": "#/definitions/person"
               },
-              "url": {
-                "type": "string",
-                "format": "uri"
-              }
-            },
-            "required": [
-              "name"
-            ]
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/person"
+                }
+              },
+              {
+                "$ref": "#/definitions/organization"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/organization"
+                }
+              },
+              {
+                "$ref": "#/definitions/citation"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "$ref": "#/definitions/citation"
+                }
+              } 
+            ],
+            "owl:cardinality": "many"
           },
           "license": {
             "description": "A license document that applies to this metadata crosswalk or mapping, typically indicated by URL.",
@@ -171,15 +198,20 @@
                   "type": "string"
                 }
               }
-            ]
+            ],
+            "owl:cardinality": "many"
           },
           "datePublished": {
             "description": "Date of first broadcast/publication of this metadata crosswalk or mapping.",
             "format": "date",
-            "type": "string"
+            "type": "string",
+            "owl:cardinality": "one"
           },
           "dateModified": {
-            "description": "Date the metadata crosswalk or mapping was last updated."
+            "description": "Date the metadata crosswalk or mapping was last updated.",
+            "type": "string",
+            "format": "date",
+            "owl:cardinality": "one"
           },
           "citation": {
             "description": "Citations for any publications, proceedings, working group documents describing the metadata crosswalk or mapping itself.",
@@ -193,12 +225,14 @@
                   "$ref": "#/definitions/citation"
                 }
               }
-            ]
+            ],
+            "owl:cardinality": "many"
           },
           "sameAs": {
             "description": "URL of a reference Web page that unambiguously indicates the identity of this metadata crosswalk or mapping. E.g. the URL of the CrossWalk from an official site or published link.",
             "type": "string",
-            "format": "uri"
+            "format": "uri",
+            "owl:cardinality": "one"
           }
         },
         "required": [
@@ -617,6 +651,15 @@
             "required": []
           }
         }
+      }
+    },
+    {
+      "@id": "crosswalks:Property",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "This is the schema for defining a Property.",
+      "rdfs:label": "Property",
+      "rdfs:subClassOf": {
+        "@id": "schema:Property"
       }
     },
     {

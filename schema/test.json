@@ -21,15 +21,18 @@
         "properties": {
           "name": {
             "description": "The name of the metadata crosswalk or mapping.",
-            "type": "string"
+            "type": "string",
+            "owl:cardinality": "one"
           },
           "description": {
             "description": "A description of the metadata crosswalk or mapping.",
-            "type": "string"
+            "type": "string",
+            "owl:cardinality": "one"
           },
           "identifier": {
             "description": "An identifier for the crosswalk itself.",
-            "type": "string"
+            "type": "string",
+            "owl:cardinality": "one"
           },
           "author": {
             "description": "The author of this metadata crosswalk or mapping. Please note that author is special in that HTML 5 provides a special mechanism for indicating authorship via the rel tag. That is equivalent to this and may be used interchangeably.",
@@ -178,7 +181,8 @@
                   ]
                 }
               }
-            ]
+            ],
+            "owl:cardinality": "many"
           },
           "includesProperty": {
             "description": "Properties that are included in this metadata crosswalk or mapping (ie - properties that are mapped to different schemas).",
@@ -2610,11 +2614,13 @@
                   ]
                 }
               }
-            ]
+            ],
+            "owl:cardinality": "many"
           },
           "creditText": {
             "description": "Text that can be used to credit person(s) and/or organization(s) associated with this metadata crosswalk or mapping.",
-            "type": "string"
+            "type": "string",
+            "owl:cardinality": "one"
           },
           "funding": {
             "description": "A person or organization that supported (sponsored) this metadata crosswalk or mapping through some kind of financial contribution.",
@@ -2736,7 +2742,8 @@
                   ]
                 }
               }
-            ]
+            ],
+            "owl:cardinality": "many"
           },
           "hasPart": {
             "description": "Any schemas that have been included in this metadata crosswalk or mapping. For publications, creative works or anything other than a schema, use 'isBasedOn'.",
@@ -2992,7 +2999,8 @@
                   "required": []
                 }
               }
-            ]
+            ],
+            "owl:cardinality": "many"
           },
           "isPartOf": {
             "description": "Any Schemas or crosswalks which include this metadata crosswalk or mapping. For publications, creative works, or anything other than schemas, use 'isBasisFor'.",
@@ -3248,7 +3256,8 @@
                   "required": []
                 }
               }
-            ]
+            ],
+            "owl:cardinality": "many"
           },
           "isBasedOn": {
             "description": "Citations of publications, schemas, or other creative works that were the basis for this metadata crosswalk or mapping.",
@@ -3322,7 +3331,8 @@
                   "required": []
                 }
               }
-            ]
+            ],
+            "owl:cardinality": "many"
           },
           "isBasisFor": {
             "description": "Citations of publications, schemas, or other creative works that were based on this metadata crosswalk or mapping. Eg- citations of websites, resources etc. that used this crosswalk.",
@@ -3396,24 +3406,227 @@
                   "required": []
                 }
               }
-            ]
+            ],
+            "owl:cardinality": "many"
           },
           "sdPublisher": {
             "description": "Indicates the party responsible for generating and publishing the current structured data markup, typically in cases where the structured data is derived automatically from existing published content but published on a different site. For example, student projects and open data initiatives often re-publish existing content with more explicitly structured metadata. The\n[[sdPublisher]] property helps make such practices more explicit.",
-            "@type": "Person",
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
+            "anyOf": [
+              {
+                "description": "Reusable person definition",
+                "@type": "schema:Person",
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "givenName": {
+                    "type": "string"
+                  },
+                  "familyName": {
+                    "type": "string"
+                  },
+                  "identifier": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "affiliation": {
+                    "oneOf": [
+                      {
+                        "description": "Reusable organization definition",
+                        "@type": "schema:Organization",
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string"
+                          },
+                          "alternateName": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      {
+                        "type": "array",
+                        "items": {
+                          "description": "Reusable organization definition",
+                          "@type": "schema:Organization",
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "alternateName": {
+                              "type": "string"
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "name"
+                ]
               },
-              "url": {
-                "type": "string",
-                "format": "uri"
+              {
+                "type": "array",
+                "items": {
+                  "description": "Reusable person definition",
+                  "@type": "schema:Person",
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "givenName": {
+                      "type": "string"
+                    },
+                    "familyName": {
+                      "type": "string"
+                    },
+                    "identifier": {
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "affiliation": {
+                      "oneOf": [
+                        {
+                          "description": "Reusable organization definition",
+                          "@type": "schema:Organization",
+                          "type": "object",
+                          "properties": {
+                            "name": {
+                              "type": "string"
+                            },
+                            "alternateName": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        {
+                          "type": "array",
+                          "items": {
+                            "description": "Reusable organization definition",
+                            "@type": "schema:Organization",
+                            "type": "object",
+                            "properties": {
+                              "name": {
+                                "type": "string"
+                              },
+                              "alternateName": {
+                                "type": "string"
+                              }
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ]
+                }
+              },
+              {
+                "description": "Reusable organization definition",
+                "@type": "schema:Organization",
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "alternateName": {
+                    "type": "string"
+                  }
+                }
+              },
+              {
+                "type": "array",
+                "items": {
+                  "description": "Reusable organization definition",
+                  "@type": "schema:Organization",
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "alternateName": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              {
+                "description": "A citation object.",
+                "@type": "schema:CreativeWork",
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "description": "Name of or title of the citation",
+                    "type": "string"
+                  },
+                  "identifier": {
+                    "description": "An identifier associated with the citation",
+                    "type": "string"
+                  },
+                  "pmid": {
+                    "description": "A pubmed identifier if available",
+                    "type": "string"
+                  },
+                  "doi": {
+                    "description": "A doi if available",
+                    "type": "string"
+                  },
+                  "url": {
+                    "description": "The url of the resource cited",
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "citeText": {
+                    "description": "The bibliographic citation for the referenced resource as is provided",
+                    "type": "string"
+                  }
+                },
+                "required": []
+              },
+              {
+                "type": "array",
+                "items": {
+                  "description": "A citation object.",
+                  "@type": "schema:CreativeWork",
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "description": "Name of or title of the citation",
+                      "type": "string"
+                    },
+                    "identifier": {
+                      "description": "An identifier associated with the citation",
+                      "type": "string"
+                    },
+                    "pmid": {
+                      "description": "A pubmed identifier if available",
+                      "type": "string"
+                    },
+                    "doi": {
+                      "description": "A doi if available",
+                      "type": "string"
+                    },
+                    "url": {
+                      "description": "The url of the resource cited",
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "citeText": {
+                      "description": "The bibliographic citation for the referenced resource as is provided",
+                      "type": "string"
+                    }
+                  },
+                  "required": []
+                }
               }
-            },
-            "required": [
-              "name"
-            ]
+            ],
+            "owl:cardinality": "many"
           },
           "license": {
             "description": "A license document that applies to this metadata crosswalk or mapping, typically indicated by URL.",
@@ -3427,15 +3640,20 @@
                   "type": "string"
                 }
               }
-            ]
+            ],
+            "owl:cardinality": "many"
           },
           "datePublished": {
             "description": "Date of first broadcast/publication of this metadata crosswalk or mapping.",
             "format": "date",
-            "type": "string"
+            "type": "string",
+            "owl:cardinality": "one"
           },
           "dateModified": {
-            "description": "Date the metadata crosswalk or mapping was last updated."
+            "description": "Date the metadata crosswalk or mapping was last updated.",
+            "type": "string",
+            "format": "date",
+            "owl:cardinality": "one"
           },
           "citation": {
             "description": "Citations for any publications, proceedings, working group documents describing the metadata crosswalk or mapping itself.",
@@ -3509,12 +3727,14 @@
                   "required": []
                 }
               }
-            ]
+            ],
+            "owl:cardinality": "many"
           },
           "sameAs": {
             "description": "URL of a reference Web page that unambiguously indicates the identity of this metadata crosswalk or mapping. E.g. the URL of the CrossWalk from an official site or published link.",
             "type": "string",
-            "format": "uri"
+            "format": "uri",
+            "owl:cardinality": "one"
           }
         },
         "required": [
@@ -5531,11 +5751,13 @@
         "properties": {
           "name": {
             "description": "Name of the property. Note that a property may be heavily nested in one schema, and relatively unnested in another. If a property is heavily nested, use just the unnested property name for this field, and include the hierarchy using the dot notation under 'nestedName'.",
-            "type": "string"
+            "type": "string",
+            "owl:cardinality": "one"
           },
           "nestedName": {
             "description": "The nested name of the property. Note that a property may be heavily nested in one schema, and relatively unnested in another. If a property is heavily nested, include the hierarchy using the dot notation for this property, and the unnested property name for 'name'.",
-            "type": "string"
+            "type": "string",
+            "owl:cardinality": "one"
           },
           "domainIncludes": {
             "description": "Relates a property to a class that is (one of) the type(s) the property is expected to be used on.",
@@ -5585,7 +5807,8 @@
                   "required": []
                 }
               }
-            ]
+            ],
+            "owl:cardinality": "many"
           },
           "rangeIncludes": {
             "description": "Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.",
@@ -5635,7 +5858,8 @@
                   "required": []
                 }
               }
-            ]
+            ],
+            "owl:cardinality": "many"
           },
           "includesTransform": {
             "oneOf": [
@@ -5720,7 +5944,8 @@
                   "required": []
                 }
               }
-            ]
+            ],
+            "owl:cardinality": "many"
           },
           "sameAs": {
             "description": "Equivalent properties in other schemas",
@@ -6704,10 +6929,14 @@
                   ]
                 }
               }
-            ]
+            ],
+            "owl:cardinality": "many"
           },
           "url": {
-            "description": "The url to the property in its respective schema. Example, for something like 'dct:conformsTo', it the url would be 'http://purl.org/dc/terms/conformsTo'."
+            "description": "The url to the property in its respective schema. Example, for something like 'dct:conformsTo', it the url would be 'http://purl.org/dc/terms/conformsTo'.",
+            "type": "string",
+            "format": "uri",
+            "owl:cardinality": "one"
           },
           "isPartOf": {
             "description": "The schema or Data Element set (if it is a mix and match instead of concept set-based) to which this property belongs.",
@@ -6963,7 +7192,8 @@
                   "required": []
                 }
               }
-            ]
+            ],
+            "owl:cardinality": "many"
           },
           "cardinality": {
             "description": "The cardinality of this property if available as defined in its respective schema. Note, that a schema may have multiple classes and the cardinality of the property may vary based on class, if this is the case the cardinality should be considered 'variable'. If it is not defined in a schema (like in schema.org), it should be considered 'unspecified.",
@@ -6973,7 +7203,8 @@
               "many",
               "variable",
               "unspecified"
-            ]
+            ],
+            "owl:cardinality": "one"
           },
           "marginality": {
             "description": "The marginality of the property as defined in its respective schema. Note that a schema may include multiple classes and the marginality for the same property may vary between classes within the same schema. If this is the case, use: 'variable'. Otherwise, if the marginality is not specified like in schema.org, use 'unspecified'.",
@@ -6984,7 +7215,8 @@
               "optional",
               "variable",
               "unspecified"
-            ]
+            ],
+            "owl:cardinality": "one"
           }
         },
         "required": [
@@ -7830,25 +8062,6 @@
       ]
     },
     {
-      "@id": "crosswalks:marginality",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The marginality (minimal/required, recommended, optional) of a property.",
-      "rdfs:label": "marginality",
-      "schema:domainIncludes": [
-        {
-          "@id": "crosswalks:Property"
-        },
-        {
-          "@id": "crosswalks:Property"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        }
-      ]
-    },
-    {
       "@id": "crosswalks:nestedName",
       "@type": "rdf:Property",
       "rdfs:comment": "The nested name of a property using dot notation. If a property is heavily nested, its hierarchy may be captured using the dot notation for inclusion as the nested name. For example the name of the property 'distribution.url' should be 'url' for consistency with schema.org, but the nestedName will be 'distribution.url' for improved interpretability and interoperability.",
@@ -7883,6 +8096,25 @@
       "schema:rangeIncludes": [
         {
           "@id": "schema:CreativeWork"
+        }
+      ]
+    },
+    {
+      "@id": "crosswalks:marginality",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The marginality (minimal/required, recommended, optional) of a property.",
+      "rdfs:label": "marginality",
+      "schema:domainIncludes": [
+        {
+          "@id": "crosswalks:Property"
+        },
+        {
+          "@id": "crosswalks:Property"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
         }
       ]
     }
