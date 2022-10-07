@@ -140,7 +140,7 @@
         "definitions": {
           "transformSpec": {
             "description": "The transofrmation needed to convert the value of the subjcted property to the mapped target property.",
-            "@type": "crosswalks:DataTransformSpecification",
+            "@type": "crosswalks:DataTransformer",
             "type": "object",
             "properties": {
               "pattern": {
@@ -401,10 +401,10 @@
       }
     },
     {
-      "@id": "crosswalks:DataTransformSpecification",
+      "@id": "crosswalks:DataTransformer",
       "@type": "rdfs:Class",
       "rdfs:comment": "This is the schema for defining a data transformation needed for converting the value of one property to be suitable for the corresponding mapped property.",
-      "rdfs:label": "DataTransformSpecification",
+      "rdfs:label": "DataTransformer",
       "rdfs:subClassOf": {
         "@id": "schema:CreativeWork"
       }
@@ -419,7 +419,7 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "crosswalks:DataTransformSpecification"
+          "@id": "crosswalks:DataTransformer"
         }
       ]
     },
