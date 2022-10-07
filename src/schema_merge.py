@@ -121,7 +121,7 @@ def validate_and_export(data_path,crosswalks):
         print('validation failed')
 
         
-def update_schema(data_path)
+def update_schema(data_path):
     local = True
     crosswalks = merge_specs(data_path,local)
     validate_and_export(data_path,crosswalks)
