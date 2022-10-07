@@ -3,7 +3,7 @@
     "schema": "http://schema.org/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "owl": "http://www.w3.org/2002/07/owl#",
+    "owl": "http://www.w3.org/2002/07/owl/",
     "crosswalks": "https://discovery.biothings.io/view/crosswalks/"
   },
   "@graph": [
@@ -83,7 +83,7 @@
             ]
           },
           "url": {
-              "description": "The url to the property in its respective schema. Example, for something like 'owl:cardinality', it the url would be 'https://www.w3.org/TR/owl-ref/#cardinality-def'."
+              "description": "The url to the property in its respective schema. Example, for something like 'dct:conformsTo', it the url would be 'http://purl.org/dc/terms/conformsTo'."
           },
           "isPartOf": {
             "description": "The schema or Data Element set (if it is a mix and match instead of concept set-based) to which this property belongs.",
@@ -139,7 +139,7 @@
         ],
         "definitions": {
           "transformSpec": {
-            "description": "A property that is mapped across (a) different schema(s). ",
+            "description": "The transofrmation needed to convert the value of the subjcted property to the mapped target property.",
             "@type": "crosswalks:DataTransformSpecification",
             "type": "object",
             "properties": {
@@ -173,6 +173,226 @@
                 "description": "URL of the transformation script if available",
                 "type": "string",
                 "format": "uri"
+              }
+            },
+            "required": []
+          },
+          "classObject": {
+            "description": "A schema class or type.",
+            "@type": "schema:Class",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "The name of the class or type.",
+                "type": "string"
+              },
+              "url": {
+                "description": "Url for the class or type",
+                "type": "string",
+                "format": "uri"
+              },
+              "identifier": {
+                "description": "An identifier for the class or type. Suggest using '{schema short name}:{class name}'",
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "citation": {
+            "description": "A citation object.",
+            "@type": "schema:CreativeWork",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "Name of or title of the citation",
+                "type": "string"
+              },
+              "identifier": {
+                "description": "An identifier associated with the citation",
+                "type": "string"
+              },
+              "pmid": {
+                "description": "A pubmed identifier if available",
+                "type": "string"
+              },
+              "doi": {
+                "description": "A doi if available",
+                "type": "string"
+              },
+              "url": {
+                "description": "The url of the resource cited",
+                "type": "string",
+                "format": "uri"
+              },
+              "citeText": {
+                "description": "The bibliographic citation for the referenced resource as is provided",
+                "type": "string"
+              }
+            },
+            "required": []
+          },
+          "sameAsObject": {
+            "description": "A property object which details a property and its mapping across different schema.",
+            "@type": "crosswalks:Property",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "Name of the property. Note that a property may be heavily nested in one schema, and relatively unnested in another. If the property is heavily nested, use just the unnested property name for this field, and include the hierarchy using the dot notation under 'nestedName'.",
+                "type": "string"
+              },
+              "nestedName": {
+                "description": "The nested name of the property. Note that a property may be heavily nested in one schema, and relatively unnested in another. If a property is heavily nested, include the hierarchy using the dot notation for this property, and the unnested property name for 'name'.",
+                "type": "string"
+              },
+              "identifier": {
+                "description": "An identifier for the property. Suggested format: '{schema short name}:{property name}'.",
+                "type": "string"
+              },
+              "domainIncludes": {
+                "description": "Relates a property to a class that is (one of) the type(s) the property is expected to be used on.",
+                "oneOf": [
+                  {
+                    "$ref": "#/definitions/classObject"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/classObject"
+                    }
+                  }
+                ]
+              },
+              "rangeIncludes": {
+                "description": "Relates a property to a class that constitutes (one of) the expected type(s) for values of the property.",
+                "type": "array",
+                "oneOf": [
+                  {
+                    "$ref": "#/definitions/classObject"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/classObject"
+                    }
+                  }
+                ]
+              },
+              "includesTransform": {
+                "oneOf": [
+                    {
+                      "$ref": "#/definitions/transformSpec"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/definitions/transformSpec"
+                    }    
+                    }
+                ]
+              },
+              "url": {
+                  "description": "The url to the property in its respective schema. Example, for something like 'owl:cardinality', it the url would be 'https://www.w3.org/TR/owl-ref/#cardinality-def'."
+              },
+              "isPartOf": {
+                "description": "The schema or Data Element set (if it is a mix and match instead of concept set-based) to which this property belongs.",
+                "oneOf": [
+                  {
+                    "$ref": "#/definitions/schemaObject"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/schemaObject"
+                    }
+                  }
+                ]
+              },
+              "cardinality": {
+                "description": "The cardinality of this property if available as defined in its respective schema. Note, that a schema may have multiple classes and the cardinality of the property may vary based on class, if this is the case the cardinality should be considered 'variable'. If it is not defined in a schema (like in schema.org), it should be considered 'unspecified.",
+                "type": "string",
+                "enum": [
+                  "one",
+                  "many",
+                  "variable",
+                  "unspecified"
+                ]
+              },
+              "marginality": {
+                "description": "The marginality of the property as defined in its respective schema. Note that a schema may include multiple classes and the marginality for the same property may vary between classes within the same schema. If this is the case, use: 'variable'. Otherwise, if the marginality is not specified like in schema.org, use 'unspecified'.",
+                "type": "string",
+                "enum": [
+                  "minimal or required",
+                  "recommended",
+                  "optional",
+                  "variable",
+                  "unspecified"
+                ]
+              }
+            },
+            "required": [
+              "name"
+            ]
+          },
+          "schemaObject": {
+            "description": "A schema which was included in the mapping/crosswalk.",
+            "@type": "schema:CreativeWork",
+            "type": "object",
+            "properties": {
+              "name": {
+                "description": "Schema name",
+                "type": "string"
+              },
+              "alternateName": {
+                "description": "Commonly-used abbreviations or short names for the schema",
+                "type": "array",
+                "oneOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                ]
+              },
+              "identifier": {
+                "description": "An identifier for the schema. Suggested format: '{schema short name}: {schema class name}' if class-specific, otherwise use the {schema short name}.",
+                "type": "string"
+              },
+              "url": {
+                "description": "Url of the schema",
+                "type": "string",
+                "format": "uri"
+              },
+              "version": {
+                "description": "The version of the schema referenced if available.",
+                "type": "string"
+              },
+              "citation": {
+                "description": "A citation of the schema if available.",
+                "type": "array",
+                "anyOf": [
+                  {
+                    "$ref": "#/definitions/citation"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/definitions/citation"
+                    }
+                  },
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                ]
               }
             },
             "required": []
@@ -213,7 +433,7 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Text"
         }
       ]
     },

@@ -7,10 +7,10 @@
   },
   "@graph": [
     {
-      "@id": "crosswalks:DataConversionSpecification",
+      "@id": "crosswalks:DataTransformer",
       "@type": "rdfs:Class",
       "rdfs:comment": "This is the schema for defining a data transformation needed for converting the value of one property to be suitable for the corresponding mapped property.",
-      "rdfs:label": "DataConversionSpecification",
+      "rdfs:label": "DataTransformer",
       "rdfs:subClassOf": {
         "@id": "schema:CreativeWork"
       },
