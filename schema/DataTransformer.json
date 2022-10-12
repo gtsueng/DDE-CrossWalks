@@ -53,12 +53,50 @@
             "type": "string",
             "format": "uri",
             "owl:cardinality": "one"
+          },
+          "mainEntity": {
+            "description": "the source property of the transformation",
+            "type": "string",
+            "owl:cardinality": "many"
+          },
+          "targetEntity": {
+            "description": "the target property of the transformation",
+            "type": "string",
+            "owl:cardinality": "many"
           }
         },
         "required": [],
         "recommended": [],
         "optional": []
       }
+    },
+    {
+      "@id": "crosswalks:mainEntity",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The source property of the transformation in a source to target transformation.",
+      "rdfs:label": "mainEntity",
+      "schema:domainIncludes": {
+        "@id": "crosswalks:Property"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "crosswalks:Property"
+        }
+      ]
+    },
+    {
+      "@id": "crosswalks:targetEntity",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The target property of the transformation in a source to target transformation.",
+      "rdfs:label": "mainEntity",
+      "schema:domainIncludes": {
+        "@id": "crosswalks:Property"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "crosswalks:Property"
+        }
+      ]
     }
   ]
 }
