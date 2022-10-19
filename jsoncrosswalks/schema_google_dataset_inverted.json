@@ -17,28 +17,28 @@
       "name": "Mingfang Wu",
       "familyName": "Wu",
       "givenName": "Mingfang",
-      "affiliation": "Australian Research Data Commons"
+      "affiliation": "{\"@type\": \"schema:Organization\", \"name\": \"Australian Research Data Commons\"}"
     },
     {
       "@type": "schema:Person",
       "name": "Penelope Hagan",
       "familyName": "Hagan",
       "givenName": "Penelope",
-      "affiliation": "CSU"
+      "affiliation": "{\"@type\": \"schema:Organization\", \"name\": \"CSU\"}"
     },
     {
       "@type": "schema:Person",
       "name": "Baptiste Cecconi",
       "familyName": "Cecconi",
       "givenName": "Baptiste",
-      "affiliation": "Observatoire de Paris"
+      "affiliation": "{\"@type\": \"schema:Organization\", \"name\": \"Observatoire de Paris\"}"
     },
     {
       "@type": "schema:Person",
       "name": "Stephen M. Richard",
       "familyName": "Richard",
       "givenName": "Stephen",
-      "affiliation": "US Geoscience Information Network"
+      "affiliation": "{\"@type\": \"schema:Organization\", \"name\": \"US Geoscience Information Network\"}"
     },
     {
       "@type": "schema:Person",

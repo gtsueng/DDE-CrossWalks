@@ -6,6 +6,7 @@ from datetime import datetime
 from collections import OrderedDict
 import pathlib
 from copy import deepcopy
+import openpyxl
 
 def generate_context_list(contextdf):
     context_dict = {}
@@ -34,12 +35,18 @@ def clean_citations(schemaObject):
     return schemaObject
 
 def load_authors(data_file):
-    author_info = read_excel(data_file,sheet_name='authorInfo',header=0,index_col=None)
+    try:
+        author_info = read_excel(data_file,sheet_name='authorInfo',header=0,index_col=None)
+    except:
+        author_info = read_excel(data_file,sheet_name='authorInfo',header=0,index_col=None,engine="openpyxl")        
     author_object = author_info.to_dict(orient="records")
     return author_object
 
 def load_funding(data_file):
-    funding_info = read_excel(data_file,sheet_name='fundingInfo',header=0,index_col=None)
+    try:
+        funding_info = read_excel(data_file,sheet_name='fundingInfo',header=0,index_col=None)
+    except:
+        funding_info = read_excel(data_file,sheet_name='fundingInfo',header=0,index_col=None,engine="openpyxl")        
     if len(funding_info)>0:
         funder_info = funding_info[['funder.@type','funder.name']].copy()
         funder_info.rename(columns={'funder.@type':'@type','funder.name':'name'}, inplace=True)
@@ -52,7 +59,10 @@ def load_funding(data_file):
     return fundingdict
 
 def load_schema_objects(data_file):
-    schemaObjects = read_excel(data_file,sheet_name='schemaObjects',header=0,index_col=None)
+    try:
+        schemaObjects = read_excel(data_file,sheet_name='schemaObjects',header=0,index_col=None)
+    except:
+        schemaObjects = read_excel(data_file,sheet_name='schemaObjects',header=0,index_col=None,engine="openpyxl")  
     schemaObjects['version'] = schemaObjects.apply(lambda row: clean_up_dates(row['version']), axis=1)
     schemaContext = schemaObjects[['namespace','@context']].copy()
     context_dict = generate_context_list(schemaContext)
@@ -97,7 +107,10 @@ def clean_up_dates(propvalue):
     return cleanpropvalue
 
 def parse_nestedProps(data_file):
-    nestedProps = read_excel(data_file,sheet_name='nestedProps',header=0,index_col=None)
+    try:
+        nestedProps = read_excel(data_file,sheet_name='nestedProps',header=0,index_col=None)
+    except:
+        nestedProps = read_excel(data_file,sheet_name='nestedProps',header=0,index_col=None,engine="openpyxl") 
     nestedProps.fillna("null",inplace=True)
     proplist = nestedProps['property'].unique().tolist()
     propdict = {}
@@ -177,7 +190,10 @@ def clean_up_props(propertydf,idlist):
 
     
 def generate_prop_included(data_file,idlist):
-    proplist = read_excel(data_file,sheet_name='propertyList',header=0,index_col=None)
+    try:
+        proplist = read_excel(data_file,sheet_name='propertyList',header=0,index_col=None)
+    except:
+        proplist = read_excel(data_file,sheet_name='propertyList',header=0,index_col=None,engine="openpyxl")
     proplist.dropna(axis=1, how='all', inplace=True)
     same_cols = [col for col in proplist.columns if 'sameAs' in col]
     source_cols = [col for col in proplist.columns if 'sameAs' not in col]
@@ -198,7 +214,10 @@ def convert_xls_xwalk(data_file):
     schemaOriginList, schemaTargetList, schemaUsageList, context_dict, idlist = load_schema_objects(data_file)
     propdict = parse_nestedProps(data_file)
     includedprops = generate_prop_included(data_file,idlist)
-    xwalkmeta = read_excel(data_file,sheet_name='metainfo',header=0,index_col=0)
+    try:
+        xwalkmeta = read_excel(data_file,sheet_name='metainfo',header=0,index_col=0)
+    except:
+        xwalkmeta = read_excel(data_file,sheet_name='metainfo',header=0,index_col=0,engine="openpyxl")  
     xwalkmeta.dropna(inplace=True)
     xwalkdict = xwalkmeta.to_dict()
     xwalkclean = OrderedDict(xwalkdict['value'])

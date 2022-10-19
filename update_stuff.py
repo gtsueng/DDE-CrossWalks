@@ -11,6 +11,7 @@ from src.schema_merge import *
 from collections import OrderedDict
 from src.xls_to_json import *
 from copy import deepcopy
+import openpyxl
 
 #### Update the schemas
 script_path = pathlib.Path(__file__).parent.absolute()

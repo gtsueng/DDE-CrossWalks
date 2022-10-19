@@ -17,21 +17,21 @@
       "name": "Laura D. Hughes",
       "familyName": "Hughes",
       "givenName": "Laura",
-      "affiliation": "Scripps Research"
+      "affiliation": "{\"@type\": \"schema:Organization\", \"name\": \"Scripps Research\"}"
     },
     {
       "@type": "schema:Person",
       "name": "Dylan Welzel",
       "familyName": "Welzel",
       "givenName": "Dylan",
-      "affiliation": "Scripps Research"
+      "affiliation": "{\"@type\": \"schema:Organization\", \"name\": \"Scripps Research\"}"
     },
     {
       "@type": "schema:Person",
       "name": "Ginger Tsueng",
       "familyName": "Tsueng",
       "givenName": "Ginger",
-      "affiliation": "Scripps Research"
+      "affiliation": "{\"@type\": \"schema:Organization\", \"name\": \"Scripps Research\"}"
     }
   ],
   "includesProperty": [

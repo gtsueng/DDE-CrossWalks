@@ -17,28 +17,28 @@
       "name": "Laura D. Hughes",
       "familyName": "Hughes",
       "givenName": "Laura",
-      "affiliation": "Scripps Research"
+      "affiliation": "{\"@type\": \"schema:Organization\", \"name\": \"Scripps Research\"}"
     },
     {
       "@type": "schema:Person",
       "name": "Nichollette Acosta",
       "familyName": "Acosta",
       "givenName": "Nicholette",
-      "affiliation": "Scripps Research"
+      "affiliation": "{\"@type\": \"schema:Organization\", \"name\": \"Scripps Research\"}"
     },
     {
       "@type": "schema:Person",
       "name": "Jason Lin",
       "familyName": "Lin",
       "givenName": "Jason",
-      "affiliation": "Scripps Research"
+      "affiliation": "{\"@type\": \"schema:Organization\", \"name\": \"Scripps Research\"}"
     },
     {
       "@type": "schema:Person",
       "name": "Ginger Tsueng",
       "familyName": "Tsueng",
       "givenName": "Ginger",
-      "affiliation": "Scripps Research"
+      "affiliation": "{\"@type\": \"schema:Organization\", \"name\": \"Scripps Research\"}"
     }
   ],
   "includesProperty": [
