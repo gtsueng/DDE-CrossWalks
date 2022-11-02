@@ -1,0 +1,56 @@
+	sameAs.nde:ComputationalTool	sameAs.owl:cardinality	sameAs.marginality	sameAs.domainIncludes	sameAs.rangeIncludes	sameAs.url
+0	date	one	minimal or required	['nde:Dataset', 'nde:ComputationalTool']	schema:Date	https://discovery.biothings.io/view/nde/date
+1	includedInDataCatalog	Unspecified	minimal or required	nde:ComputationalTool	schema:DataCatalog	https://discovery.biothings.io/view/nde/includedInDataCatalog
+2	citedBy	many	recommended	['nde:Dataset', 'nde:ComputationalTool']	schema:ScholarlyArticle	https://discovery.biothings.io/view/nde/citedBy
+3	doi	one	recommended	['nde:Dataset', 'nde:ComputationalTool']	schema:Text	https://discovery.biothings.io/view/nde/doi
+4	topicCategory	many	recommended	['nde:Dataset', 'nde:ComputationalTool']	schema:Text	https://discovery.biothings.io/view/nde/topicCategory
+5	isBasisFor	many	optional	['nde:Dataset', 'nde:ComputationalTool']	nde:ComputationalTool	https://discovery.biothings.io/view/nde/isBasisFor
+6	isRelatedTo	many	optional	['nde:Dataset', 'nde:ComputationalTool']	nde:ComputationalTool	https://discovery.biothings.io/view/nde/isRelatedTo
+7	isSimilarTo	many	optional	['nde:Dataset', 'nde:ComputationalTool']	nde:ComputationalTool	https://discovery.biothings.io/view/nde/isSimilarTo
+8	funding	many	minimal or required	['niaid:Dataset', 'niaid:ComputationalTool']	niaid:MonetaryGrant	https://discovery.biothings.io/view/niaid/funding
+9	codeRepository	many	recommended	niaid:ComputationalTool	schema:URL	https://discovery.biothings.io/view/niaid/codeRepository
+10	programmingLanguage	many	recommended	niaid:ComputationalTool	['schema:Text', 'schema:ComputerLanguage']	https://discovery.biothings.io/view/niaid/programmingLanguage
+11	infectiousAgent	many	optional	['niaid:Dataset', 'niaid:ComputationalTool']	['schema:Text', 'schema:DefinedTerm']	https://discovery.biothings.io/view/niaid/infectiousAgent
+12	healthCondition	many	optional	['niaid:Dataset', 'niaid:ComputationalTool']	['schema:Text', 'schema:DefinedTerm']	https://discovery.biothings.io/view/niaid/healthCondition
+13	species	many	optional	['niaid:Dataset', 'niaid:ComputationalTool']	['schema:Text', 'schema:DefinedTerm']	https://discovery.biothings.io/view/niaid/species
+14	softwareRequirements	many	recommended	bioschemas:ComputationalWorkflow	['schema:Text', 'schema:URL']	https://discovery.biothings.io/view/bioschemas/softwareRequirements
+15	conditionsOfAccess	many	recommended	bioschemas:ComputationalWorkflow	schema:Text	https://discovery.biothings.io/view/bioschemas/conditionsOfAccess
+16	input	many	optional	['bioschemas:ComputationalTool', 'bioschemas:ComputationalWorkflow']	bioschemas:FormalParameter	https://discovery.biothings.io/view/bioschemas/input
+17	output	many	optional	['bioschemas:ComputationalTool', 'bioschemas:ComputationalWorkflow']	bioschemas:FormalParameter	https://discovery.biothings.io/view/bioschemas/output
+18	author	many	minimal or required	['schema:CreativeWork', 'schema:Rating']	['schema:Person', 'schema:Organization']	https://schema.org/author
+19	description	one	minimal or required	schema:Thing	schema:Text	https://schema.org/description
+20	name	one	minimal or required	schema:Thing	schema:Text	https://schema.org/name
+21	applicationCategory	many	recommended	schema:SoftwareApplication	['schema:Text', 'schema:URL']	https://schema.org/applicationCategory
+22	applicationSubCategory	many	recommended	schema:SoftwareApplication	['schema:URL', 'schema:Text']	https://schema.org/applicationSubCategory
+23	softwareVersion	one	recommended	schema:SoftwareApplication	schema:Text	https://schema.org/softwareVersion
+24	citation	many	recommended	schema:CreativeWork	['schema:CreativeWork', 'schema:Text']	https://schema.org/citation
+25	dateModified	one	recommended	['schema:DataFeedItem', 'schema:CreativeWork']	['schema:DateTime', 'schema:Date']	https://schema.org/dateModified
+26	interactionStatistic	many	recommended	['schema:Person', 'schema:Organization', 'schema:CreativeWork']	schema:InteractionCounter	https://schema.org/interactionStatistic
+27	license	one	recommended	schema:CreativeWork	['schema:URL', 'schema:CreativeWork']	https://schema.org/license
+28	identifier	many	recommended	schema:Thing	['schema:URL', 'schema:Text', 'schema:PropertyValue']	https://schema.org/identifier
+29	url	one	recommended	schema:Thing	schema:URL	https://schema.org/url
+30	applicationSuite	many	optional	schema:SoftwareApplication	schema:Text	https://schema.org/applicationSuite
+31	availableOnDevice	many	optional	schema:SoftwareApplication	schema:Text	https://schema.org/availableOnDevice
+32	downloadUrl	many	optional	schema:SoftwareApplication	schema:URL	https://schema.org/downloadUrl
+33	featureList	many	optional	schema:SoftwareApplication	['schema:Text', 'schema:URL']	https://schema.org/featureList
+34	operatingSystem	many	optional	schema:SoftwareApplication	schema:Text	https://schema.org/operatingSystem
+35	processorRequirements	many	optional	schema:SoftwareApplication	schema:Text	https://schema.org/processorRequirements
+36	softwareAddOn	many	optional	schema:SoftwareApplication	schema:SoftwareApplication	https://schema.org/softwareAddOn
+37	softwareHelp	many	optional	schema:SoftwareApplication	schema:CreativeWork	https://schema.org/softwareHelp
+38	aggregateRating	many	optional	['schema:Brand', 'schema:CreativeWork', 'schema:Place', 'schema:Product', 'schema:Event', 'schema:Offer', 'schema:Service', 'schema:Organization']	schema:AggregateRating	https://schema.org/aggregateRating
+39	contributor	many	optional	['schema:Event', 'schema:CreativeWork']	['schema:Organization', 'schema:Person']	https://schema.org/contributor
+40	creator	many	optional	['schema:CreativeWork', 'schema:UserComments']	['schema:Organization', 'schema:Person']	https://schema.org/creator
+41	dateCreated	one	optional	['schema:DataFeedItem', 'schema:CreativeWork']	['schema:Date', 'schema:DateTime']	https://schema.org/dateCreated
+42	datePublished	one	optional	schema:CreativeWork	['schema:Date', 'schema:DateTime']	https://schema.org/datePublished
+43	discussionUrl	many	optional	schema:CreativeWork	schema:URL	https://schema.org/discussionUrl
+44	hasPart	many	optional	schema:CreativeWork	schema:CreativeWork	https://schema.org/hasPart
+45	inLanguage	many	optional	['schema:CommunicateAction', 'schema:BroadcastService', 'schema:Event', 'schema:CreativeWork', 'schema:LinkRole', 'schema:PronounceableText', 'schema:WriteAction']	['schema:Text', 'schema:Language']	https://schema.org/inLanguage
+46	isAccessibleForFree	one	optional	['schema:Place', 'schema:Event', 'schema:CreativeWork']	schema:Boolean	https://schema.org/isAccessibleForFree
+47	isBasedOn	many	optional	schema:CreativeWork	['schema:CreativeWork', 'schema:URL', 'schema:Product']	https://schema.org/isBasedOn
+48	isPartOf	many	optional	schema:CreativeWork	['schema:URL', 'schema:CreativeWork']	https://schema.org/isPartOf
+49	keywords	Unspecified	optional	['schema:Place', 'schema:CreativeWork', 'schema:Organization', 'schema:Product', 'schema:Event']	['schema:DefinedTerm', 'schema:Text', 'schema:URL']	https://schema.org/keywords
+50	provider		optional	['schema:Action', 'schema:CreativeWork', 'schema:EducationalOccupationalProgram', 'schema:Service', 'schema:ParcelDelivery', 'schema:Invoice', 'schema:Reservation', 'schema:Trip']	['schema:Organization', 'schema:Person']	https://schema.org/provider
+51	sdPublisher	many	optional	schema:CreativeWork	['schema:Organization', 'schema:Person']	https://schema.org/sdPublisher
+52	thumbnailUrl	many	optional	schema:CreativeWork	schema:URL	https://schema.org/thumbnailUrl
+53	mainEntityOfPage	many	optional	schema:Thing	['schema:CreativeWork', 'schema:URL']	https://schema.org/mainEntityOfPage
+54	sameAs	many	optional	schema:Thing	schema:URL	https://schema.org/sameAs
