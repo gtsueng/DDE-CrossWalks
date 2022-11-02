@@ -1,0 +1,159 @@
+	name	url	profile	sitemap	potential value	profile grouping
+0	Identifiers.org	https://identifiers.org/	DataCatalog		niaid,rdp,outbreak	dataset
+1	FAIRsharing	https://fairsharing.org/	DataCatalog	('https://fairsharing.org/sitemap.xml',)	niaid,rdp,outbreak	dataset
+2	FAIRsharing	https://fairsharing.org/	Dataset	('https://fairsharing.org/sitemap.xml',)	niaid,rdp,outbreak	dataset
+3	Gigadb	http://gigadb.org/	DataCatalog		niaid,rdp,outbreak	dataset
+4	Human Protein Atlas	https://www.proteinatlas.org/	DataCatalog		niaid,rdp,outbreak	dataset
+5	WikiPathways	https://wikipathways.org/	Dataset	('https://www.wikipathways.org/sitemap.xml',)	niaid,rdp,outbreak	dataset
+6	EGA	https://ega-archive.org/	DataCatalog	('https://ega-archive.org/sitemap.xml',)	niaid,rdp,outbreak	dataset
+7	EGA	https://ega-archive.org/	Dataset	('https://ega-archive.org/sitemap.xml',)	niaid,rdp,outbreak	dataset
+8	IUPHAR/BPS Guide to Pharmacology	https://www.guidetopharmacology.org/	DataCatalog		niaid,rdp,outbreak	dataset
+9	IUPHAR/BPS Guide to Pharmacology	https://www.guidetopharmacology.org/	Dataset		niaid,rdp,outbreak	dataset
+10	MobiDB	https://mobidb.org/	Dataset	('https://mobidb.org/sitemap.xml',)	niaid,rdp,outbreak	dataset
+11	MobiDB	https://mobidb.org/	DataCatalog	('https://mobidb.org/sitemap.xml',)	niaid,rdp,outbreak	dataset
+12	Biosamples	https://www.ebi.ac.uk/biosamples/	DataCatalog	('https://www.ebi.ac.uk/biosamples/sitemap.xml',)	niaid,rdp,outbreak	dataset
+13	DataMed	https://datamed.org/	Dataset		niaid,rdp,outbreak	dataset
+14	OmicsDI	https://www.omicsdi.org/	Dataset		niaid,rdp,outbreak	dataset
+15	CATH-Gene3D	http://www.cathdb.info	Dataset		niaid,rdp,outbreak	dataset
+16	CATH-Gene3D	http://www.cathdb.info	DataCatalog		niaid,rdp,outbreak	dataset
+17	The Molecular INTeraction Database (MINT)	https://mint.bio.uniroma2.it/	Dataset		niaid,rdp,outbreak	dataset
+18	The Molecular INTeraction Database (MINT)	https://mint.bio.uniroma2.it/	DataCatalog		niaid,rdp,outbreak	dataset
+19	DEB Register	https://deb-central.org/	Dataset		niaid,rdp,outbreak	dataset
+20	DEB Register	https://deb-central.org/	DataCatalog		niaid,rdp,outbreak	dataset
+21	CHD7 Database	https://www.chd7.org/	Dataset		niaid,rdp,outbreak	dataset
+22	CHD7 Database	https://www.chd7.org/	DataCatalog		niaid,rdp,outbreak	dataset
+23	International Microvillus Inclusion Disease (MVID) Patient Registry	http://mvid-central.org/	Dataset		niaid,rdp,outbreak	dataset
+24	International Microvillus Inclusion Disease (MVID) Patient Registry	http://mvid-central.org/	DataCatalog		niaid,rdp,outbreak	dataset
+25	AIP Mutation Database	https://aip.fipapatients.org/	Dataset		niaid,rdp,outbreak	dataset
+26	AIP Mutation Database	https://aip.fipapatients.org/	DataCatalog		niaid,rdp,outbreak	dataset
+27	Reactome	https://reactome.org/	Dataset		niaid,rdp,outbreak	dataset
+28	ChEMBL	https://www.ebi.ac.uk/chembl/	Dataset		niaid,rdp,outbreak	dataset
+29	ChEMBL	https://www.ebi.ac.uk/chembl/	DataCatalog		niaid,rdp,outbreak	dataset
+30	Alliance of Genome Resources	https://www.alliancegenome.org/	Dataset	('https://www.alliancegenome.org/sitemap.xml',)	niaid,rdp,outbreak	dataset
+31	SWISS-MODEL	https://swissmodel.expasy.org/	DataCatalog	('https://swissmodel.expasy.org/sitemap.xml',)	niaid,rdp,outbreak	dataset
+32	SWISS-MODEL	https://swissmodel.expasy.org/	Dataset	('https://swissmodel.expasy.org/sitemap.xml',)	niaid,rdp,outbreak	dataset
+33	ModelArchive	https://modelarchive.org/	DataCatalog		niaid,rdp,outbreak	dataset
+34	HAMAP	https://hamap.expasy.org/	Dataset		niaid,rdp,outbreak	dataset
+35	HAMAP	https://hamap.expasy.org/	DataCatalog		niaid,rdp,outbreak	dataset
+36	ENZYME - The Enzyme Data Bank	https://enzyme.expasy.org	Dataset		niaid,rdp,outbreak	dataset
+37	PROSITE - Protein domains, families and functional sites description	https://prosite.expasy.org	Dataset	('https://prosite.expasy.org/sitemap.xml',)	niaid,rdp,outbreak	dataset
+38	Ensembl Genome Browser	https://www.ensembl.org/	Dataset	('http://www.ensembl.org/sitemaps/index.xml',)	niaid,rdp,outbreak	dataset
+39	Ensembl Genome Browser	https://www.ensembl.org/	DataCatalog	('http://www.ensembl.org/sitemaps/index.xml',)	niaid,rdp,outbreak	dataset
+40	ITSoneDB	http://itsonedb.cloud.ba.infn.it/	DataCatalog		niaid,rdp,outbreak	dataset
+41	ITSoneDB	http://itsonedb.cloud.ba.infn.it/	Dataset		niaid,rdp,outbreak	dataset
+42	Global Biodiversity Information Facility (GBIF)	https://www.gbif.org/	Dataset	('https://www.gbif.org/sitemap.xml',)	niaid,rdp,outbreak	dataset
+43	COSMIC Gene at Sanger	http://cancer.sanger.ac.uk/cosmic/	Dataset	('https://cancer.sanger.ac.uk/cosmic/sitemap.xml',)	niaid,rdp,outbreak	dataset
+44	SynBioHub	https://synbiohub.org/	DataCatalog		niaid,rdp,outbreak	dataset
+45	SynBioHub	https://synbiohub.org/	Dataset		niaid,rdp,outbreak	dataset
+46	SynBioHub	https://synbiohub.org/	DataRecord		niaid,rdp,outbreak	dataset
+47	FlyMine	https://flymine.org/	Dataset		niaid,rdp,outbreak	dataset
+48	HumanMine	https://humanmine.org/	Dataset		niaid,rdp,outbreak	dataset
+49	DisProt	https://disprot.org	Dataset	('https://disprot.org/sitemap.xml',)	niaid,rdp,outbreak	dataset
+50	DisProt	https://disprot.org	DataCatalog	('https://disprot.org/sitemap.xml',)	niaid,rdp,outbreak	dataset
+51	Protein Ensemble (PED)	https://proteinensemble.org/	Dataset	('https://proteinensemble.org/sitemap.xml',)	niaid,rdp,outbreak	dataset
+52	Protein Ensemble (PED)	https://proteinensemble.org/	DataCatalog	('https://proteinensemble.org/sitemap.xml',)	niaid,rdp,outbreak	dataset
+53	UniProt	https://www.uniprot.org/	Dataset	('https://www.uniprot.org/sitemap.xml',)	niaid,rdp,outbreak	dataset
+54	PCDDB	https://pcddb.cryst.bbk.ac.uk/	DataCatalog	('https://pcddb.cryst.bbk.ac.uk/sitemap/sitemap.xml',)	niaid,rdp,outbreak	dataset
+55	PCDDB	https://pcddb.cryst.bbk.ac.uk/	Dataset	('https://pcddb.cryst.bbk.ac.uk/sitemap/sitemap.xml',)	niaid,rdp,outbreak	dataset
+56	PhenPath	http://phenpath.biocomp.unibo.it/phenpath/	DataCatalog		niaid,rdp,outbreak	dataset
+57	PhenPath	http://phenpath.biocomp.unibo.it/phenpath/	Dataset		niaid,rdp,outbreak	dataset
+58	eDGAR	http://edgar.biocomp.unibo.it/	DataCatalog		niaid,rdp,outbreak	dataset
+59	eDGAR	http://edgar.biocomp.unibo.it/	Dataset		niaid,rdp,outbreak	dataset
+60	WorkflowHub	https://workflowhub.eu/	DataCatalog		niaid,rdp,outbreak	dataset
+61	BridgeDb	https://bridgedb.github.io/	Dataset	('https://bridgedb.github.io/sitemap.xml',)	niaid,rdp,outbreak	dataset
+62	NanoCommons	https://www.nanocommons.eu/	DataCatalog	('https://nanocommons.github.io/sitemap.xml',)	niaid,rdp,outbreak	dataset
+63	NanoCommons	https://www.nanocommons.eu/	Dataset	('https://nanocommons.github.io/sitemap.xml',)	niaid,rdp,outbreak	dataset
+64	opalesurfcasting.net	https://www.opalesurfcasting.net/	Dataset		niaid,rdp,outbreak	dataset
+65	MassBank Europe	https://massbank.eu/MassBank/	Dataset	('https://massbank.eu/MassBank/sitemapindex.xml',)	niaid,rdp,outbreak	dataset
+66	iPPI-DB	https://ippidb.pasteur.fr/	Dataset	('https://ippidb.pasteur.fr/sitemap.xml',)	niaid,rdp,outbreak	dataset
+67	iPPI-DB	https://ippidb.pasteur.fr/	DataCatalog	('https://ippidb.pasteur.fr/sitemap.xml',)	niaid,rdp,outbreak	dataset
+68	COVID-19 Data Portal	https://www.covid19dataportal.org/	DataCatalog	('https://www.covid19dataportal.org/sitemap.xml',)	niaid,rdp,outbreak	dataset
+69	COVID-19 Data Portal	https://www.covid19dataportal.org/	Dataset	('https://www.covid19dataportal.org/sitemap.xml',)	niaid,rdp,outbreak	dataset
+70	STRING	https://string-db.org/	DataCatalog		niaid,rdp,outbreak	dataset
+71	Paired Omics Data Platform	https://pairedomicsdata.bioinformatics.nl/	Dataset	('https://pairedomicsdata.bioinformatics.nl/sitemap.xml',)	niaid,rdp,outbreak	dataset
+72	Paired Omics Data Platform	https://pairedomicsdata.bioinformatics.nl/	DataCatalog	('https://pairedomicsdata.bioinformatics.nl/sitemap.xml',)	niaid,rdp,outbreak	dataset
+73	HUGO Gene Nomenclature Committee	https://www.genenames.org/	Dataset		niaid,rdp,outbreak	dataset
+74	HUGO Gene Nomenclature Committee	https://www.genenames.org/	DataCatalog		niaid,rdp,outbreak	dataset
+75	IMI Data Catalog	https://datacatalog.elixir-luxembourg.org/	Dataset		niaid,rdp,outbreak	dataset
+76	IMI Data Catalog	https://datacatalog.elixir-luxembourg.org/	DataCatalog		niaid,rdp,outbreak	dataset
+77	InterPro	https://www.ebi.ac.uk/interpro/	Dataset	('https://www.ebi.ac.uk/interpro/sitemap/interpro.sitemap.txt',)	niaid,rdp,outbreak	dataset
+78	Biological Magnetic Resonance Data Bank (BMRB)	https://bmrb.io/	Dataset		niaid,rdp,outbreak	dataset
+79	MetaNetX	https://www.metanetx.org/	DataCatalog	('https://www.metanetx.org/sitemap.xml',)	niaid,rdp,outbreak	dataset
+80	MetaNetX	https://www.metanetx.org/	Dataset	('https://www.metanetx.org/sitemap.xml',)	niaid,rdp,outbreak	dataset
+81	Bioversions	https://biopragmatics.github.io/bioversions/	Dataset	('https://biopragmatics.github.io/bioversions/sitemap.xml',)	niaid,rdp,outbreak	dataset
+82	Bgee	https://bgee.org/	DataCatalog	('https://bgee.org/sitemap.xml',)	niaid,rdp,outbreak	dataset
+83	Bgee	https://bgee.org/	Dataset	('https://bgee.org/sitemap.xml',)	niaid,rdp,outbreak	dataset
+84	NanoSafety Data Interface	https://search.data.enanomapper.net/	Dataset	('https://search.data.enanomapper.net/sitemap.xml',)	niaid,rdp,outbreak	dataset
+85	DaMaLOS	https://zbmed.github.io/damalos/	Dataset	('https://zbmed.github.io/damalos/sitemap.xml',)	niaid,rdp,outbreak	dataset
+86	PathVisio	https://pathvisio.org/	ComputationalTool		niaid,rdp,outbreak	tool
+87	Pscan	http://159.149.160.88/pscan/	ComputationalTool		niaid,rdp,outbreak	tool
+88	PscanChIP	http://159.149.160.88/pscan_chip_dev/	ComputationalTool		niaid,rdp,outbreak	tool
+89	Cscan	http://159.149.160.88/cscan/	ComputationalTool		niaid,rdp,outbreak	tool
+90	BAR 3.0	https://bar.biocomp.unibo.it/bar3/	ComputationalTool		niaid,rdp,outbreak	tool
+91	SWISS-MODEL	https://swissmodel.expasy.org/	ComputationalTool	('https://swissmodel.expasy.org/sitemap.xml',)	niaid,rdp,outbreak	tool
+92	WorkflowHub	https://workflowhub.eu/	ComputationalWorkflow		niaid,rdp,outbreak	tool
+93	BridgeDb	https://bridgedb.github.io/	ComputationalTool	('https://bridgedb.github.io/sitemap.xml',)	niaid,rdp,outbreak	tool
+94	bio.tools	https://bio.tools/	ComputationalTool	('https://bio.tools/api/sitemap.xml',)	niaid,rdp,outbreak	tool
+95	BiGCaT, Maastricht University	http://www.bigcat.unimaas.nl/	TrainingMaterial		rdp,outbreak	training
+96	Galaxy Training Network	https://training.galaxyproject.org/	TrainingMaterial	('https://training.galaxyproject.org/sitemap.xml',)	rdp,outbreak	training
+97	ELIXIR TeSS	https://tess.elixir-europe.org/	Event	('https://tess.elixir-europe.org/sitemap.xml',)	rdp,outbreak	training
+98	French Institute of Bioinformatics (IFB)	https://www.france-bioinformatique.fr/	Event	('https://www.france-bioinformatique.fr/sitemap.xml',)	rdp,outbreak	training
+99	SIB	https://www.sib.swiss/	Event		rdp,outbreak	training
+100	ELIXIR	https://www.elixir-europe.org/	Event		rdp,outbreak	training
+101	Birmingham Metabolomics Training Centre	https://www.birmingham.ac.uk/	Event		rdp,outbreak	training
+102	Galaxy Project	https://galaxyproject.org/	Event		rdp,outbreak	training
+103	NanoCommons	https://www.nanocommons.eu/	TrainingMaterial	('https://nanocommons.github.io/sitemap.xml',)	rdp,outbreak	training
+104	Bioschemas	https://bioschemas.org/	TrainingMaterial	('https://bioschemas.org/sitemap.xml',)	rdp,outbreak	training
+105	Bioschemas	https://bioschemas.org/	Course	('https://bioschemas.org/sitemap.xml',)	rdp,outbreak	training
+106	Bioschemas	https://bioschemas.org/	CourseInstance	('https://bioschemas.org/sitemap.xml',)	rdp,outbreak	training
+107	eNanoMapper Tutorials	https://enanomapper.github.io/tutorials/	TrainingMaterial	('https://enanomapper.github.io/tutorials/sitemap.xml',)	rdp,outbreak	training
+108	Biomedical semantics, information retrieval and knowledge discovery	https://zbmed-semtec.github.io/BioMedSem-IR-KD	TrainingMaterial	('https://zbmed-semtec.github.io/BioMedSem-IR-KD/sitemap',)	rdp,outbreak	training
+109	DOME recommendations with a Galaxy tutorial as use case	https://zbmed-semtec.github.io/dome-galaxy-training	TrainingMaterial	('https://zbmed-semtec.github.io/dome-galaxy-training/sitemap.xml',)	rdp,outbreak	training
+110	EMBL-EBI Training Courses	https://www.ebi.ac.uk/training	Course		rdp,outbreak	training
+111	EMBL-EBI Training Courses	https://www.ebi.ac.uk/training	CourseInstance		rdp,outbreak	training
+112	Bioinformatics.ca	https://bioinformatics.ca/	Course		rdp,outbreak	training
+113	Bioinformatics.ca	https://bioinformatics.ca/	CourseInstance		rdp,outbreak	training
+114	Galaxy Training Network	https://training.galaxyproject.org/	Person	('https://training.galaxyproject.org/sitemap.xml',)	rdp	agent
+115	Protein Ensemble (PED)	https://proteinensemble.org/	Organization	('https://proteinensemble.org/sitemap.xml',)	rdp	agent
+116	WorkflowHub	https://workflowhub.eu/	Person		rdp	agent
+117	RDMkit	https://rdmkit.elixir-europe.org/	Person	('https://rdmkit.elixir-europe.org/sitemap.xml',)	rdp	agent
+118	EGA	https://ega-archive.org/	Study	('https://ega-archive.org/sitemap.xml',)	niaid,rdp,outbreak	study
+119	PIPPA: PSB Interface for Plant Phenotype Analysis	https://pippa.psb.ugent.be/	Study		niaid,rdp,outbreak	study
+120	IUPHAR/BPS Guide to Pharmacology	https://www.guidetopharmacology.org/	MolecularEntity		mychem,biothings,translator	chemical
+121	ChEMBL	https://www.ebi.ac.uk/chembl/	MolecularEntity		mychem,biothings,translator	chemical
+122	Scholia	https://scholia.toolforge.org/	MolecularEntity		mychem,biothings,translator	chemical
+123	NanoCommons	https://www.nanocommons.eu/	ChemicalSubstance	('https://nanocommons.github.io/sitemap.xml',)	mychem,biothings,translator	chemical
+124	RiskGONE	https://riskgone.eu/	ChemicalSubstance	('https://h2020-riskgone.github.io/riskgone-materials/sitemap.xml',)	mychem,biothings,translator	chemical
+125	MassBank Europe	https://massbank.eu/MassBank/	MolecularEntity	('https://massbank.eu/MassBank/sitemapindex.xml',)	mychem,biothings,translator	chemical
+126	iPPI-DB	https://ippidb.pasteur.fr/	MolecularEntity	('https://ippidb.pasteur.fr/sitemap.xml',)	mychem,biothings,translator	chemical
+127	MetaNetX	https://www.metanetx.org/	MolecularEntity	('https://www.metanetx.org/sitemap.xml',)	mychem,biothings,translator	chemical
+128	IUPHAR/BPS Guide to Pharmacology	https://www.guidetopharmacology.org/	Protein		mygene,biothings,translator	gene
+129	MobiDB	https://mobidb.org/	Protein	('https://mobidb.org/sitemap.xml',)	mygene,biothings,translator	gene
+130	MobiDB	https://mobidb.org/	SequenceAnnotation	('https://mobidb.org/sitemap.xml',)	mygene,biothings,translator	gene
+131	MobiDB	https://mobidb.org/	SequenceRange	('https://mobidb.org/sitemap.xml',)	mygene,biothings,translator	gene
+132	PDBe	http://www.ebi.ac.uk/pdbe/	Protein	('https://www.ebi.ac.uk/pdbe/sitemap.xml',)	mygene,biothings,translator	gene
+133	PDBe	http://www.ebi.ac.uk/pdbe/	ProteinStructure	('https://www.ebi.ac.uk/pdbe/sitemap.xml',)	mygene,biothings,translator	gene
+134	HmmerWeb	http://www.ebi.ac.uk/Tools/hmmer/	Protein		mygene,biothings,translator	gene
+135	HmmerWeb	http://www.ebi.ac.uk/Tools/hmmer/	ProteinStructure		mygene,biothings,translator	gene
+136	HmmerWeb	http://www.ebi.ac.uk/Tools/hmmer/	ProteinAnnotation		mygene,biothings,translator	gene
+137	Alliance of Genome Resources	https://www.alliancegenome.org/	Gene	('https://www.alliancegenome.org/sitemap.xml',)	mygene,biothings,translator	gene
+138	Ensembl Genome Browser	https://www.ensembl.org/	Gene	('http://www.ensembl.org/sitemaps/index.xml',)	mygene,biothings,translator	gene
+139	DisProt	https://disprot.org	Protein	('https://disprot.org/sitemap.xml',)	mygene,biothings,translator	gene
+140	DisProt	https://disprot.org	SequenceAnnotation	('https://disprot.org/sitemap.xml',)	mygene,biothings,translator	gene
+141	DisProt	https://disprot.org	SequenceRange	('https://disprot.org/sitemap.xml',)	mygene,biothings,translator	gene
+142	Protein Ensemble (PED)	https://proteinensemble.org/	Protein	('https://proteinensemble.org/sitemap.xml',)	mygene,biothings,translator	gene
+143	Protein Ensemble (PED)	https://proteinensemble.org/	SequenceAnnotation	('https://proteinensemble.org/sitemap.xml',)	mygene,biothings,translator	gene
+144	Protein Ensemble (PED)	https://proteinensemble.org/	SequenceRange	('https://proteinensemble.org/sitemap.xml',)	mygene,biothings,translator	gene
+145	Scholia	https://scholia.toolforge.org/	Gene		mygene,biothings,translator	gene
+146	Scholia	https://scholia.toolforge.org/	Protein		mygene,biothings,translator	gene
+147	eDGAR	http://edgar.biocomp.unibo.it/	Gene		mygene,biothings,translator	gene
+148	STRING	https://string-db.org/	Protein		mygene,biothings,translator	gene
+149	HUGO Gene Nomenclature Committee	https://www.genenames.org/	Gene		mygene,biothings,translator	gene
+150	CorkOakDB	https://corkoakdb.org/	Gene		mygene,biothings,translator	gene
+151	InterPro	https://www.ebi.ac.uk/interpro/	ProteinAnnotation	('https://www.ebi.ac.uk/interpro/sitemap/interpro.sitemap.txt',)	mygene,biothings,translator	gene
+152	Bgee	https://bgee.org/	Gene	('https://bgee.org/sitemap.xml',)	mygene,biothings,translator	gene
+153	PSnpBind	https://psnpbind.org/	Protein	('https://psnpbind.org/sitemap.xml',)	mygene,biothings,translator	gene
+154	Orphanet	https://www.orpha.net/	Disease	('https://www.orpha.net/consor/cgi-bin/html/orphanet-googlemap.xml',)	mydisease,biothings,translator	disease
+155	Biosamples	https://www.ebi.ac.uk/biosamples/	Sample	('https://www.ebi.ac.uk/biosamples/sitemap.xml',)	biothings,translator	sample
+156	hPSCreg: Human Pluripotent Stem Cell Registry	https://hpscreg.eu/	BioSample	('https://hpscreg.eu/sitemap.xml',)	biothings,translator	sample
+157	EBiSC: European Bank for Induced pluripotent Stem Cells	https://ebisc.org/	BioSample	('https://ebisc.org/sitemap.xml',)	biothings,translator	sample
