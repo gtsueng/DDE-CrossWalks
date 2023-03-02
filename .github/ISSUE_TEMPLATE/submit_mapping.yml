@@ -29,8 +29,8 @@ body:
       label: urlType
       description: Where is the completed crosswalk stored?
       options:
-        - googledrive (Default)
-        - GitHub (to be merged via pull request)
+        - Gsheet
+        - GitHub
     validations:
       required: true
   - type: textarea
