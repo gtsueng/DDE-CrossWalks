@@ -1,12 +1,12 @@
-name: Completed Crosswalk submission
-description: Submit an online xls or xlsx crosswalk. This is only for completed, reviewed crosswalks/mappings that use the required template. For help using a template or any other issue, please use the other forms.
+name: Submit a Crosswalk
+description: Submit an online xls or xlsx crosswalk. 
 title: "[Crosswalk Submission]: "
 labels: ["crosswalk submission"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to submit a google spreadsheet crosswalk, or pushing an xls/xlsx into the crosswalks repository
+        This is only for completed, reviewed crosswalks/mappings that use the required template. For help using a template or any other issue, please use the other forms.
   - type: input
     id: contact
     attributes:
@@ -29,8 +29,8 @@ body:
       label: urlType
       description: Where is the completed crosswalk stored?
       options:
-        - googledrive (Default)
-        - GitHub (to be merged via pull request)
+        - Gsheet
+        - GitHub
     validations:
       required: true
   - type: textarea
