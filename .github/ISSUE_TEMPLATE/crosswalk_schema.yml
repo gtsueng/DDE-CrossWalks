@@ -1,0 +1,38 @@
+name: Crosswalk/Mapping schema suggestions
+description: Suggest an improvement for the crosswalk/mappings schema itself
+title: "[schema]: "
+labels: ["schema"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This schema includes the minimal amount of information needed for a mapping between two schema. Multi-schema mappings, have to be submitted by pairs.
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+  - type: textarea
+    id: what-schema
+    attributes:
+      label: Schema suggestion
+      description: What properties or class changes are needed for your use of this schema?
+    validations:
+      required: false
+  - type: textarea
+    id: what-use
+    attributes:
+      label: Use suggestion
+      description: What tool, visualization or usage suggestion do you have for this schema?
+    validations:
+      required: false
+  - type: textarea
+    id: other
+    attributes:
+      label: Other suggestion
+      description: Other issues with the mapping/crosswalk schema itself
+    validations:
+      required: false

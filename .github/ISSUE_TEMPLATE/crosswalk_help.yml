@@ -1,0 +1,24 @@
+name: Mapping help
+description: Request help on using the crosswalk template
+title: "[Mapping help]: "
+labels: ["mapping help"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Questions or comments about the crosswalk template itself or how to use it? Use this form. Note, mapping suggestions (eg- I need a mapping between x and y) are welcome, but likely won't be fulfilled without the help of the community.
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+  - type: textarea
+    id: what-issue
+    attributes:
+      label: What is the issue?
+      description: Enter your questions or comments about the crosswalk template or how to use it.
+    validations:
+      required: true
