@@ -1,2 +1,4 @@
 .ipynb_checkpoints
 __pycache__/
+client_secrets.json
+credentials.json
