@@ -63,16 +63,16 @@ def get_xwalk_meta(parent_path, inputurl):
     if data_file != None:
         try:
             try:
-                values = pd.read_excel(data_file,sheet_name='metainfo',header=0,index_col=None)
+                values = pd.read_excel(data_file,sheet_name='metaInfo',header=0,index_col=None)
             except:
                 data_stream = BytesIO(data_file)
-                values = pd.read_excel(data_stream,sheet_name='metainfo',header=0,index_col=None)
+                values = pd.read_excel(data_stream,sheet_name='metaInfo',header=0,index_col=None)
         except:
             try:
-                values = pd.read_excel(data_file,sheet_name='metainfo',header=0,index_col=None,engine="openpyxl")
+                values = pd.read_excel(data_file,sheet_name='metaInfo',header=0,index_col=None,engine="openpyxl")
             except:
                 data_stream = BytesIO(data_file)
-                values = pd.read_excel(data_stream,sheet_name='metainfo',header=0,index_col=None,engine="openpyxl")                
+                values = pd.read_excel(data_stream,sheet_name='metaInfo',header=0,index_col=None,engine="openpyxl")                
         fileid = values['value'].loc[values['property']=='identifier']
         version = values['value'].loc[values['property']=='dateModified']
         xwalk_dict['identifier'] = fileid.iloc[0]
@@ -104,9 +104,9 @@ def get_json_version(parent_path,data_file):
 
 def get_xls_version(data_file):
     try:
-        xwalkmeta = pd.read_excel(data_file,sheet_name='metainfo',header=0,index_col=0)
+        xwalkmeta = pd.read_excel(data_file,sheet_name='metaInfo',header=0,index_col=0)
     except:
-        xwalkmeta = pd.read_excel(data_file,sheet_name='metainfo',header=0,index_col=0,engine="openpyxl")
+        xwalkmeta = pd.read_excel(data_file,sheet_name='metaInfo',header=0,index_col=0,engine="openpyxl")
     xwalkdict = xwalkmeta.to_dict()
     dateModified = xwalkdict['value']['dateModified']
     if isinstance(dateModified,str):
@@ -258,7 +258,7 @@ def check_an_issue(parent_path,eachissue,test=False):
             crosswalklist = pd.concat((crosswalklist,issuedf),ignore_index=True)
             print("crosswalklist updated")
         if test == False:
-            crosswalklist.to_csv(os.path.join(parent_path,'crosswalkslist.txt'),sep='\t',header=True)
+            crosswalklist.to_csv(os.path.join(parent_path,'crosswalkslist.txt'),sep='\t',header=True,index=False)
         else:
             print('test completed')
            
