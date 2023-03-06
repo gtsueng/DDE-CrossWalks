@@ -263,6 +263,22 @@ def generate_inverted_crosswalk(xwalkclean):
     return(invertedxwalk)
 
 
+def convert_a_crosswalk(script_path,filename):
+    data_file = os.path.join(script_path,'crosswalks',filename)
+    export_file = os.path.join(script_path,'jsoncrosswalks',filename.replace('xls','json'))
+    inverted_export_file = os.path.join(script_path,'jsoncrosswalks',filename.replace('.xls','_inverted.json'))
+    try:
+        xwalkjson = convert_xls_xwalk(data_file)
+        with open(export_file,'w') as outfile:
+            jsonfile = json.dumps(xwalkjson, indent=2)
+            outfile.write(jsonfile)
+        invertedxwalk = generate_inverted_crosswalk(xwalkjson)
+        with open(inverted_export_file,'w') as outfile:
+            jsonfile = json.dumps(invertedxwalk, indent=2)
+            outfile.write(jsonfile)
+    except:
+        print("failed to convert: ",filename) 
+
 
 def convert_crosswalks(script_path):
     data_path = os.path.join(script_path,'crosswalks')
