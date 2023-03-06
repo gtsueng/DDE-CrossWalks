@@ -141,10 +141,10 @@ def check_crosswalks_conversion(parent_path):
             ### If it does, check if the version is up-to-date
             if jsonversion < xlsversion:
                 ### If the jsonversion is older than the xls version, run the conversion
-                convert_a_crosswalk(crosswalks_path,eachfile,json_crosswalks_path)
+                convert_a_crosswalk(parent_path,eachfile)
         ### If it doesn't exist, run the conversion             
         else:
-            convert_a_crosswalk(crosswalks_path,eachfile,json_crosswalks_path) 
+            convert_a_crosswalk(parent_path,eachfile) 
             
 
 #### Check if items in crosswalks list are in the crosswalks folder
@@ -200,16 +200,19 @@ def check_labels(eachissue):
 ## Parse a mapping submitted via GitHub issue form
 def parse_mapping_submission(eachissue):
     md_result = eachissue['body']
-    no_space = md_result.replace('\n\n','|')
-    to_parse = f"[*|{no_space}|*]"
-    clean_outer = to_parse.replace('*|### ','{"').replace('|*','"}')
-    clean_inner = clean_outer.replace('|### ','",\n"')
-    replace_keys = clean_inner.replace('|','":"')
-    ditch_list = replace_keys.replace('[','').replace(']','')
-    dict_result = json.loads(ditch_list)
+    no_response = md_result.replace("_No response_","N/A")
+    no_space = no_response.replace(' ','')
+    no_space = no_space.replace('\n\n\n','\n\n').replace('\n\n','\n')
+    dict_result = {}
+    linelist = no_space.split('\n')
+    i=0
+    while i < len(linelist):
+        if '###' in linelist[i]:
+            dict_result[linelist[i].replace('###','')] = linelist[i+1]
+        i=i+2
     dict_result['version'] = datetime.strptime(dict_result['version'],'%m/%d/%Y')
     try:
-        dict_result.pop('Contact Details')
+        dict_result.pop('ContactDetails')
     except:
         pass
     return dict_result
