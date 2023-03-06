@@ -215,9 +215,9 @@ def convert_xls_xwalk(data_file):
     propdict = parse_nestedProps(data_file)
     includedprops = generate_prop_included(data_file,idlist)
     try:
-        xwalkmeta = read_excel(data_file,sheet_name='metainfo',header=0,index_col=0)
+        xwalkmeta = read_excel(data_file,sheet_name='metaInfo',header=0,index_col=0)
     except:
-        xwalkmeta = read_excel(data_file,sheet_name='metainfo',header=0,index_col=0,engine="openpyxl")  
+        xwalkmeta = read_excel(data_file,sheet_name='metaInfo',header=0,index_col=0,engine="openpyxl")  
     xwalkmeta.dropna(inplace=True)
     xwalkdict = xwalkmeta.to_dict()
     xwalkclean = OrderedDict(xwalkdict['value'])
