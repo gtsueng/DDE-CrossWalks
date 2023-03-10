@@ -265,8 +265,8 @@ def generate_inverted_crosswalk(xwalkclean):
 
 def convert_a_crosswalk(script_path,filename):
     data_file = os.path.join(script_path,'crosswalks',filename)
-    clean_filename = filename.replace('.xlsx','xls')
-    export_file = os.path.join(script_path,'jsoncrosswalks',clean_filename.replace('xls','json'))
+    clean_filename = filename.replace('.xlsx','.xls')
+    export_file = os.path.join(script_path,'jsoncrosswalks',clean_filename.replace('.xls','.json'))
     inverted_export_file = os.path.join(script_path,'jsoncrosswalks',clean_filename.replace('.xls','_inverted.json'))
     try:
         xwalkjson = convert_xls_xwalk(data_file)
@@ -287,8 +287,9 @@ def convert_crosswalks(script_path):
     data_files = os.listdir(data_path)
     for filename in data_files:
         data_file = os.path.join(data_path,filename)
-        export_file = os.path.join(export_path,filename.replace('xls','json').replace('xlsx','json'))
-        inverted_export_file = os.path.join(export_path,filename.replace('.xls','_inverted.json').replace('.xlsx','_inverted.json'))
+        clean_filename = filename.replace('.xlsx','.xls')
+        export_file = os.path.join(script_path,'jsoncrosswalks',clean_filename.replace('.xls','.json'))
+        inverted_export_file = os.path.join(script_path,'jsoncrosswalks',clean_filename.replace('.xls','_inverted.json'))
         try:
             xwalkjson = convert_xls_xwalk(data_file)
             with open(export_file,'w') as outfile:
