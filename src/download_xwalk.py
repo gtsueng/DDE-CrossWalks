@@ -7,7 +7,6 @@ import openpyxl
 from io import BytesIO as BytesIO
 from src.xls_to_json import *
 
-
 #### Handle spreadsheets from google
 def parse_g_sheet_url(gsheeturl):
     baseurl = 'https://docs.google.com/spreadsheets/d/'
@@ -22,7 +21,7 @@ def load_g_cred(parent_path):
     from pydrive2.auth import ServiceAccountCredentials
     gauth = GoogleAuth()
     scope = ['https://www.googleapis.com/auth/drive']
-    gauth.credentials = ServiceAccountCredentials.from_json_keyfile_name(os.path.join(parent_path,'credentials.json'), scope)
+    gauth.credentials = ServiceAccountCredentials.from_json_keyfile_name(credentials), scope)
     return gauth
 
 def load_g_sheet_data(parent_path, gsheeturl):

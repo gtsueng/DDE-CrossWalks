@@ -1,11 +1,15 @@
-# Workflow for converting xls crosswalks to json
-### This script checks GitHub issues for submission of crosswalks (googlesheets) and runs the conversion if a new one has been submitted
+# Workflow for updating the crosswalks schema
+### This script updates the crosswalks schema itself if changes were made to the schema files
 
-name: CrossWalks xls to json conversion
+name: CrossWalks schema update
 
 on:
-  issues:
-    types: [opened, edited, milestoned]
+  push:
+    branches: [ main ]
+    paths:
+      - schema/**
+  pull_request:
+    branches: [ main ]
 
 #  schedule: 
 #    - cron:  '* * * * *'
@@ -13,10 +17,6 @@ on:
 jobs: 
   run:
     runs-on: windows-latest
-    env: 
-      ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-      GSUITE_CREDENTIALS: ${{secrets.GSUITE_CREDENTIALS}}
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python
@@ -27,14 +27,14 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        python update_stuff.py
+        python update_schema.py
     - name: Commit files
       id: commit
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "github-actions"
         git add --all
-        git commit -m "update data" -a
+        git commit -m "update schema" -a
     - name: push changes
       uses: ad-m/github-push-action@v0.6.0
       with:
