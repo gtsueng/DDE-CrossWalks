@@ -27,7 +27,7 @@ script_path = pathlib.Path(__file__).parent.absolute()
 
 #### Check for new crosswalks
 check_repo(REPO, PERSONAL_TOKEN,script_path,test)
-check_crosswalks_list(script_path)
+check_crosswalks_list(script_path,credentials)
 check_crosswalks_conversion(script_path)
 
 #### Update the schemas

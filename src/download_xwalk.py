@@ -15,7 +15,7 @@ def parse_g_sheet_url(gsheeturl):
     spreadsheetId = tmpurlcontent[0]
     return spreadsheetId
 
-def load_g_cred(parent_path):
+def load_g_cred(parent_path,credentials):
     from pydrive2.auth import GoogleAuth
     from pydrive2.drive import GoogleDrive
     from pydrive2.auth import ServiceAccountCredentials
@@ -24,8 +24,8 @@ def load_g_cred(parent_path):
     gauth.credentials = ServiceAccountCredentials.from_json_keyfile_name(credentials, scope)
     return gauth
 
-def load_g_sheet_data(parent_path, gsheeturl):
-    gauth = load_g_cred(parent_path)
+def load_g_sheet_data(parent_path, gsheeturl,credentials):
+    gauth = load_g_cred(parent_path,credentials)
     spreadsheetID = parse_g_sheet_url(gsheeturl)
     url = f"https://docs.google.com/spreadsheets/export?id={spreadsheetID}&exportFormat=xlsx"
     res = requests.get(url, headers={"Authorization": "Bearer " + str(gauth.attr['credentials'].access_token)})
@@ -46,12 +46,12 @@ def load_xls_data(otherurl):
     return data_File
 
 #### Pull basic metadata from spreadsheet
-def get_xwalk_meta(parent_path, inputurl):
+def get_xwalk_meta(parent_path, inputurl, credentials):
     if 'github' in inputurl:
         data_file = load_github_data(inputurl)
         xwalk_dict = {'url':inputurl, 'urlType':'GitHub'}
     elif 'google' in inputurl:
-        data_file = load_g_sheet_data(parent_path, inputurl)
+        data_file = load_g_sheet_data(parent_path, inputurl, credentials)
         xwalk_dict = {'url':inputurl, 'urlType':'Gsheet'}
     else:
         try:
@@ -79,14 +79,14 @@ def get_xwalk_meta(parent_path, inputurl):
     return xwalk_dict, data_file
 
 
-def download_spreadsheet(parent_path,url):
+def download_spreadsheet(parent_path,url, credentials):
     if 'xlsx' in url:
         extension = '.xlsx'
     elif 'google' in url:
         extension = '.xlsx'
     else:
         extension = '.xls'
-    xwalk_dict, data_file = get_xwalk_meta(parent_path, url)
+    xwalk_dict, data_file = get_xwalk_meta(parent_path, url, credentials)
     identifier = xwalk_dict['identifier']
     if data_file != None:
         with open(os.path.join(parent_path,'crosswalks',f"{identifier}{extension}"), 'wb') as output:
@@ -147,7 +147,7 @@ def check_crosswalks_conversion(parent_path):
             
 
 #### Check if items in crosswalks list are in the crosswalks folder
-def check_crosswalks_list(parent_path):
+def check_crosswalks_list(parent_path,credentials):
     try:
         crosswalksdf = pd.read_csv(os.path.join(parent_path,'crosswalkslist.txt'),delimiter='\t',header=0, parse_dates=['version'])
     except:
@@ -170,10 +170,10 @@ def check_crosswalks_list(parent_path):
             newer = compare_versions(txtversion,xlsversion)
             ## if the one listed in the textfile is newer, download it
             if newer == txtversion:
-                download_spreadsheet(parent_path,txturl)
+                download_spreadsheet(parent_path,txturl,credentials)
         else:
             ### If it doesn't exist or is not up-to-date, download it
-            download_spreadsheet(parent_path,txturl)
+            download_spreadsheet(parent_path,txturl,credentials)
 
             
 #### Functions for GitHub issue parsing
