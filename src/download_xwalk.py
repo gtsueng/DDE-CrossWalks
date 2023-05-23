@@ -299,6 +299,6 @@ def check_repo(REPO, PERSONAL_TOKEN,parent_path,test=False):
         else:
             print("failed to retrieve GitHub issues")
             print(r.status_code)
-            print(r.
+            print(r.text)
         i=i+1
             
