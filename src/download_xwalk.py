@@ -268,33 +268,37 @@ def check_repo(REPO, PERSONAL_TOKEN,parent_path,test=False):
     while i < len(REPO):
         headers = {'Authorization': 'token %s' % PERSONAL_TOKEN }
         params_payload = { 'state' : 'open', 'labels' : 'crosswalk submission' , 'sort' : 'updated'} 
-        ISSUES_FOR_REPO_URL = 'https://api.github.com/repos/%s/issues' % REPO[i]
-        r = requests.get(ISSUES_FOR_REPO_URL, params=params_payload, headers=headers) 
-        repo_issues = json.loads(r.text)
-        for eachissue in repo_issues:
-            check_an_issue(parent_path,eachissue,test)               
-        # Check for more pages using the 'Link' header
-        if 'Link' in r.headers:
-            while check == True:
-                # Create overview regarding the different Links, usually previous, first, last and next
-                data = {}
-                for links in r.headers['Link'].split(","):
-                    raw = links.split(";")
-                    data[raw[1][6:6+4]] = raw[0].strip()
+        ISSUES_FOR_REPO_URL = f'https://api.github.com/repos/{REPO[i]}/issues'
+        r = requests.get(ISSUES_FOR_REPO_URL, params=params_payload, headers=headers)
+        if r.status_code == 200:
+            repo_issues = json.loads(r.text)
+            for eachissue in repo_issues:
+                check_an_issue(parent_path,eachissue,test)               
+            # Check for more pages using the 'Link' header
+            if 'Link' in r.headers:
+                while check == True:
+                    # Create overview regarding the different Links, usually previous, first, last and next
+                    data = {}
+                    for links in r.headers['Link'].split(","):
+                        raw = links.split(";")
+                        data[raw[1][6:6+4]] = raw[0].strip()
 
-                if "next" in data:
-                    newlink = data["next"][1:-1]
-                    r = requests.get(newlink, headers=headers)
-                    print("Now processing page: " + newlink)
-                    write_issues(r)
-                    if data["next"] == data["last"]:
+                    if "next" in data:
+                        newlink = data["next"][1:-1]
+                        r = requests.get(newlink, headers=headers)
+                        print("Now processing page: " + newlink)
+                        write_issues(r)
+                        if data["next"] == data["last"]:
+                            check = False
+                            print("Done with Repository: " + REPO[i])
+                    else:
                         check = False
                         print("Done with Repository: " + REPO[i])
-                else:
-                    check = False
-                    print("Done with Repository: " + REPO[i])
+            else:
+                print("Done with Repository: " + REPO[i])
         else:
-            print("Done with Repository: " + REPO[i])
-
+            print("failed to retrieve GitHub issues")
+            print(r.status_code)
+            print(r.
         i=i+1
             
