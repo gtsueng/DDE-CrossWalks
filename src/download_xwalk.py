@@ -21,7 +21,7 @@ def load_g_cred(parent_path):
     from pydrive2.auth import ServiceAccountCredentials
     gauth = GoogleAuth()
     scope = ['https://www.googleapis.com/auth/drive']
-    gauth.credentials = ServiceAccountCredentials.from_json_keyfile_name(credentials), scope)
+    gauth.credentials = ServiceAccountCredentials.from_json_keyfile_name(credentials, scope)
     return gauth
 
 def load_g_sheet_data(parent_path, gsheeturl):
