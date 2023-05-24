@@ -18,7 +18,6 @@ def parse_g_sheet_url(gsheeturl):
 def load_g_sheet_data(parent_path, gsheeturl, credentials):
     spreadsheetID = parse_g_sheet_url(gsheeturl)
     mimetype = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-    url = f"https://docs.google.com/spreadsheets/export?id={spreadsheetID}&exportFormat=xlsx"
     res = requests.get(f'https://www.googleapis.com/drive/v3/files/{spreadsheetId}/export?mimeType={mimetype}&key={credentials}')
     data_file = res.content
     return data_file
