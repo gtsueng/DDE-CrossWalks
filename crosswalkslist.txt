@@ -1,2 +1,3 @@
 identifier	url	urlType	version
-nde_xref_biotools_ComputationalTools	https://github.com/gtsueng/DDE-CrossWalks/blob/main/crosswalks/nde_xref_biotools_ComputationalTools.xls	GitHub	9/28/2022
+nde_xref_biotools_ComputationalTools	https://github.com/gtsueng/DDE-CrossWalks/blob/main/crosswalks/nde_xref_biotools_ComputationalTools.xls	GitHub	2022-09-28
+acd_niaid_xref_nde_dataset	https://docs.google.com/spreadsheets/d/1NWnq5SqqVsj0oIHhSoEldL38dbmp9TlujqGmZXUBlak/edit?usp=sharing	Gsheet	2023-03-02
