@@ -2,5 +2,4 @@ pandas == 1.5.3
 pathlib
 git+https://github.com/biothings/biothings_schema.py#egg=biothings_schema
 openpyxl
-pydrive2
 xlrd
