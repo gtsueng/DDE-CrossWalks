@@ -729,7 +729,7 @@
             "@id": "schema:Text"
           }
         ],
-        "url": "https://discovery.biothings.io/view/nde/doi",
+        "url": "https://discovery.biothings.io/ns/nde/doi",
         "isPartOf": {
           "@id": "nde:Dataset"
         },
@@ -756,7 +756,7 @@
       "identifier": "nde:Dataset",
       "name": "NIAID Data Ecosystem (NDE) Dataset Schema",
       "alternateName": "nde:Dataset",
-      "url": "https://discovery.biothings.io/view/nde/Dataset/",
+      "url": "https://discovery.biothings.io/ns/nde/Dataset/",
       "version": "2022-09-20",
       "citation": {
         "@type": "WebSite",

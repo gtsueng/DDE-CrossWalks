@@ -1,7 +1,7 @@
 {
   "@type": "crosswalks:MetadataCrosswalk",
   "@context": {
-    "nde": "https://discovery.biothings.io/view/nde/",
+    "nde": "https://discovery.biothings.io/ns/nde/",
     "schema": "https://schema.org/",
     "owl": "http://www.w3.org/2002/07/owl/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -359,7 +359,7 @@
             "@id": "schema:Text"
           }
         ],
-        "url": "https://discovery.biothings.io/view/nde/pmid",
+        "url": "https://discovery.biothings.io/ns/nde/pmid",
         "isPartOf": {
           "@id": "nde:Dataset"
         },
@@ -467,7 +467,7 @@
             "@id": "schema:DefinedTerm"
           }
         ],
-        "url": "https://discovery.biothings.io/view/nde/species",
+        "url": "https://discovery.biothings.io/ns/nde/species",
         "isPartOf": {
           "@id": "nde:Dataset"
         },
@@ -629,12 +629,12 @@
       "identifier": "nde:Dataset",
       "name": "NIAID Data Ecosystem (NDE) Dataset Schema",
       "alternateName": "nde:Dataset",
-      "url": "https://discovery.biothings.io/view/nde/Dataset/",
+      "url": "https://discovery.biothings.io/ns/nde/Dataset/",
       "version": "2022-06-09",
       "citation": {
         "@type": "WebSite",
         "name": "NIAID Data Ecosystem (NDE) schema",
-        "url": "https://discovery.biothings.io/view/nde/Dataset"
+        "url": "https://discovery.biothings.io/ns/nde/Dataset"
       }
     }
   ],

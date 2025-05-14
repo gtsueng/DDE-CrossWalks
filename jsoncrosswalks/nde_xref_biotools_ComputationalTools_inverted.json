@@ -1,7 +1,7 @@
 {
   "@type": "crosswalks:MetadataCrosswalk",
   "@context": {
-    "nde": "https://discovery.biothings.io/view/nde/",
+    "nde": "https://discovery.biothings.io/ns/nde/",
     "schema": "https://schema.org/",
     "owl": "http://www.w3.org/2002/07/owl/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -711,7 +711,7 @@
       "citation": {
         "@type": "WebSite",
         "name": "NIAID Data Ecosystem (NDE) schema",
-        "url": "https://discovery.biothings.io/view/nde/ComputationalTool"
+        "url": "https://discovery.biothings.io/ns/nde/ComputationalTool"
       }
     }
   ],

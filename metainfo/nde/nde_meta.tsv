@@ -9,7 +9,7 @@
 7	dde	infectiousDisease	infectiousDisease
 8	dde	species	species
 9	zenodo	title	name
-10	zenodo	header	dateModifed, url
+10	zenodo	header	"dateModifed, url"
 11	zenodo	description	description
 12	zenodo	date	datePublished
 13	zenodo	language	inLanguage.name
@@ -20,7 +20,7 @@
 18	zenodo	xml[creator][creatorName]	author.name
 19	zenodo	xml[creator][affiliation]	author.affiliation
 20	zenodo	xml[creator][nameIdentifier]	author.identifier
-21	zenodo	xml[rights]	conditionsOfAccess, license
+21	zenodo	xml[rights]	"conditionsOfAccess, license"
 22	zenodo	xml[relatedIdentifier][relationType]	citedBy
 23	zenodo	xml[contributor][contributorName]	funding.funder.name
 24	reframedb	assay_id	identifer
@@ -45,7 +45,7 @@
 43	acd_niaid	most_recent_update	dateModified
 44	acd_niaid	data_available	additionalType
 45	acd_niaid	creator	funding.funder.name
-46	acd_niaid	nct_number	nctid, identifier
+46	acd_niaid	nct_number	"nctid, identifier"
 47	acd_niaid	condition	healthCondition
 48	acd_niaid	clinical_trial_website	mainEntityOfPage
 49	acd_niaid	publications	citation
@@ -154,7 +154,7 @@
 152	sb_apps	sbg:categories	applicationSubCategory
 153	sb_apps	sbg:toolAuthor	author
 154	sb_apps	sbg:appVersion	softwareVersion
-155	sb_apps	sbg:id	url, identifier
+155	sb_apps	sbg:id	"url, identifier"
 156	sb_apps	sbg:revisionNotes	version
 157	sb_apps	sbg:modifiedOn	dateModified
 158	sb_apps	sbg:createdOn	dateCreated
@@ -174,7 +174,7 @@
 172	dryad	name	name
 173	dryad	description	description
 174	dryad	contentUrl	contentUrl
-175	dryad	identifier	identifier, doi
+175	dryad	identifier	"identifier, doi"
 176	dryad	keywords	keywords
 177	dryad	creator	author
 178	dryad	distribution	distribution

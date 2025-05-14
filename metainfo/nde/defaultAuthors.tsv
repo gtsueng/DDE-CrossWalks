@@ -1,6 +1,6 @@
 @type	name	familyName	givenName	affiliation
-schema:Person	Laura D. Hughes	Hughes	Laura	{"@type": "schema:Organization", "name": "Scripps Research"}
-schema:Person	Nichollette Acosta	Acosta	Nicholette	{"@type": "schema:Organization", "name": "Scripps Research"}
-schema:Person	Jason Lin	Lin	Jason	{"@type": "schema:Organization", "name": "Scripps Research"}
-schema:Person	Ginger Tsueng	Tsueng	Ginger	{"@type": "schema:Organization", "name": "Scripps Research"}
-schema:Person	Dylan Welzel	Welzel	Dylan	{"@type": "schema:Organization", "name": "Scripps Research"}
+schema:Person	Laura D. Hughes	Hughes	Laura	"{""@type"": ""schema:Organization"", ""name"": ""Scripps Research""}"
+schema:Person	Nichollette Acosta	Acosta	Nicholette	"{""@type"": ""schema:Organization"", ""name"": ""Scripps Research""}"
+schema:Person	Jason Lin	Lin	Jason	"{""@type"": ""schema:Organization"", ""name"": ""Scripps Research""}"
+schema:Person	Ginger Tsueng	Tsueng	Ginger	"{""@type"": ""schema:Organization"", ""name"": ""Scripps Research""}"
+schema:Person	Dylan Welzel	Welzel	Dylan	"{""@type"": ""schema:Organization"", ""name"": ""Scripps Research""}"

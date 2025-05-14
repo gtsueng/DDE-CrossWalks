@@ -2,7 +2,7 @@
   "@type": "crosswalks:MetadataCrosswalk",
   "@context": {
     "outbreak": "https://discovery.biothings.io/view/outbreak/",
-    "nde": "https://discovery.biothings.io/view/nde/",
+    "nde": "https://discovery.biothings.io/ns/nde/",
     "schema": "https://schema.org/",
     "owl": "http://www.w3.org/2002/07/owl/",
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
@@ -165,7 +165,7 @@
           "@id": "schema:ScholarlyArticle"
         }
       ],
-      "url": "https://discovery.biothings.io/view/nde/citedBy",
+      "url": "https://discovery.biothings.io/ns/nde/citedBy",
       "isPartOf": {
         "@id": "nde:Dataset"
       },
@@ -411,7 +411,7 @@
           "@id": "schema:Text"
         }
       ],
-      "url": "https://discovery.biothings.io/view/nde/doi",
+      "url": "https://discovery.biothings.io/ns/nde/doi",
       "isPartOf": {
         "@id": "nde:Dataset"
       },
@@ -700,7 +700,7 @@
           "@id": "schema:CreativeWork"
         }
       ],
-      "url": "https://discovery.biothings.io/view/nde/isBasisFor",
+      "url": "https://discovery.biothings.io/ns/nde/isBasisFor",
       "isPartOf": {
         "@id": "nde:Dataset"
       },
@@ -740,7 +740,7 @@
           "@id": "schema:CreativeWork"
         }
       ],
-      "url": "https://discovery.biothings.io/view/nde/isRelatedTo",
+      "url": "https://discovery.biothings.io/ns/nde/isRelatedTo",
       "isPartOf": {
         "@id": "nde:Dataset"
       },
@@ -780,7 +780,7 @@
           "@id": "schema:CreativeWork"
         }
       ],
-      "url": "https://discovery.biothings.io/view/nde/isSimilarTo",
+      "url": "https://discovery.biothings.io/ns/nde/isSimilarTo",
       "isPartOf": {
         "@id": "nde:Dataset"
       },
@@ -1072,7 +1072,7 @@
           "@id": "schema:DataCatalog"
         }
       ],
-      "url": "https://discovery.biothings.io/view/nde/topicCategory",
+      "url": "https://discovery.biothings.io/ns/nde/topicCategory",
       "isPartOf": {
         "@id": "nde:Dataset"
       },
@@ -1118,7 +1118,7 @@
           "@id": "schema:Text"
         }
       ],
-      "url": "https://discovery.biothings.io/view/nde/topicCategory",
+      "url": "https://discovery.biothings.io/ns/nde/topicCategory",
       "isPartOf": {
         "@id": "nde:Dataset"
       },
@@ -1204,12 +1204,12 @@
       "identifier": "nde:Dataset",
       "name": "NIAID Data Ecosystem (NDE) Dataset Schema",
       "alternateName": "nde:Dataset",
-      "url": "https://discovery.biothings.io/view/nde/Dataset/",
+      "url": "https://discovery.biothings.io/ns/nde/Dataset/",
       "version": "2022-09-21",
       "citation": {
         "@type": "WebSite",
         "name": "NIAID Data Ecosystem (NDE) schema",
-        "url": "https://discovery.biothings.io/view/nde/Dataset"
+        "url": "https://discovery.biothings.io/ns/nde/Dataset"
       }
     }
   ],
